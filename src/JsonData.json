@@ -1,0 +1,12 @@
+{
+    "PersonalData":{
+        "FirstName":"Lacy",
+        "LastName":"Grace",
+        "Profession":"Graphic Designer",
+        "Contact":{
+            "Phone":"+91 999 8888 000",
+            "Email":"lacygrace@gmail.com",
+            "Website":"https://larainfo.com/blogs"
+        }
+    }
+}

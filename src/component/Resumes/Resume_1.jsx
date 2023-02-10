@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { PrimaryButton } from "../Button";
 import ReactToPrint from "react-to-print";
-
+import MyData from '../../JsonData.json'
 function Resume_1() {
     const printRef = useRef(null);
+    const [Information,SetInformation] = useState(MyData)
     return (<>
 
 
@@ -17,14 +18,14 @@ function Resume_1() {
                 <nav className="bg-gray-300   h-32 md:h-56 flex">
                     <div className="flex flex-col w-full my-auto pl-10">
                         <p className="text-sm  font-light ">Resume</p>
-                        <p className="text-2xl ">Your Name</p>
-                        <p className="text-sm font-light ">Your Profession</p>
+                        <p className="text-2xl ">{Information.PersonalData.FirstName+" "+Information.PersonalData.LastName}</p>
+                        <p className="text-sm font-light ">{Information.PersonalData.Profession}</p>
                     </div>
                     <div className="flex w-full my-auto">
                             <div className="ml-auto flex flex-col gap-3 mr-10">
-                                <p className="font-light text-sm"> <span className="font-medium  ">T :</span> +91 999 8888 000</p>
-                                <p className="font-light text-sm "> <span className="font-medium  ">M :</span> prakashmandal.iv@gmail.com</p>
-                                <p className="font-light text-sm "> <span className="font-medium  ">W :</span> https://larainfo.com/blogs</p>
+                                <p className="font-light text-sm"> <span className="font-medium  ">T :</span> {Information.PersonalData.Contact.Phone}</p>
+                                <p className="font-light text-sm "> <span className="font-medium  ">M :</span> {Information.PersonalData.Contact.Email}</p>
+                                <p className="font-light text-sm "> <span className="font-medium  ">W :</span> {Information.PersonalData.Contact.Website}</p>
                             </div>
                     </div>
                 </nav>
