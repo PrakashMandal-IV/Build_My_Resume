@@ -39,7 +39,7 @@ const PrimaryButtonStyle = styled.button`
 
     return (
         <>
-        <PrimaryButtonStyle> {props.Name}</PrimaryButtonStyle>
+        <PrimaryButtonStyle onClick={()=>props.onClick()}> {props.Name}</PrimaryButtonStyle>
         
         </>
     )
