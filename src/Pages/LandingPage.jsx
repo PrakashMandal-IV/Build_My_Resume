@@ -23,7 +23,7 @@ const StartBuilding=()=>{
      }, 300);
 }
     return (<>
-        <div className="flex flex-col md:flex-row  w-full h-[100vh]">
+        <div className="  flex flex-col md:flex-row  w-full h-[100vh]">
             <div className={"flex flex-1 bg-gradient-to-r from-sky-500 to-sky-700 shadow-2xl shadow-sky-700 z-50  transition-all duration-300  "+LoadingAnimation.right}>
                 <div className="m-auto w-2/3">
 
