@@ -10,7 +10,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-area, #printable-area * {
+    visibility: visible;
+  }
+  #printable-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .print:bg-slate-400 {
+    background-color: #3c4858 !important;
+  }
+  .print:h-32 {
+    height: 32px !important;
+  }
+  .print:h-52 {
+    height: 52px !important;
+  }
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
