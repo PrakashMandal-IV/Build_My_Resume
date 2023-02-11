@@ -26,6 +26,7 @@ code {
     position: absolute;
     left: 0;
     top: 0;
+    width:210mm;
   }
   .print:bg-slate-400 {
     background-color: #3c4858 !important;
