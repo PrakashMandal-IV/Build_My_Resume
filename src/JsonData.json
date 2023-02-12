@@ -1,53 +1,76 @@
 {
-    "PersonalData":{
-        "FirstName":"Lacy",
-        "LastName":"Grace",
-        "Profession":"Graphic Designer",
-        "Contact":{
-            "Phone":"+91 999 8888 000",
-            "Email":"lacygrace@gmail.com",
-            "Website":"https://larainfo.com/blogs"
+    "PersonalData": {
+        "FirstName": "Lacy",
+        "LastName": "Grace",
+        "Profession": "Graphic Designer",
+        "Contact": {
+            "Phone": "+91 999 8888 000",
+            "Email": "lacygrace@gmail.com",
+            "Website": "https://larainfo.com/blogs"
         }
     },
-    "Education":[
+    "Education": [
         {
-            "Title":"Masters in Designing",
-            "Duration":"2020-2021"
+            "Title": "Masters in Designing",
+            "Duration": "2020-2021"
         },
         {
-            "Title":"Udemy Course",
-            "Duration":"2018-2020"
+            "Title": "Udemy Course",
+            "Duration": "2018-2020"
         },
         {
-            "Title":"B.tecth (CSE)",
-            "Duration":"2016-2020"
+            "Title": "B.tecth (CSE)",
+            "Duration": "2016-2020"
         },
         {
-            "Title":"12th (Science)",
-            "Duration":"2015-2016"
+            "Title": "12th (Science)",
+            "Duration": "2015-2016"
         }
     ],
-    "Skills":[
+    "Skills": [
         {
-            "Title":"Adobe Xd",
-            "Duration":"2020-2021"
+            "Title": "Adobe Xd",
+            "Duration": "2020-2021"
         },
         {
-            "Title":"Figma",
-            "Duration":"2018-2020"
+            "Title": "Figma",
+            "Duration": "2018-2020"
         },
         {
-            "Title":"Wireframe",
-            "Duration":"2016-2020"
+            "Title": "Wireframe",
+            "Duration": "2016-2020"
         },
         {
-            "Title":"Photoshop",
-            "Duration":"2015-2016"
+            "Title": "Photoshop",
+            "Duration": "2015-2016"
         },
         {
-            "Title":"Blender",
-            "Duration":"2015-2016"
+            "Title": "Blender",
+            "Duration": "2015-2016"
+        }
+    ],
+    "Hobbies": [
+        "Art",
+        "Video game",
+        "Coding",
+        "Travel"
+    ],
+    "Socials": [
+        {
+            "Type": "instagram",
+            "Link":""
+        },
+        {
+            "Type": "linkedin",
+            "Link":""
+        },
+        {
+            "Type": "twitter",
+            "Link":""
+        },
+        {
+            "Type": "facebook",
+            "Link":""
         }
     ]
-
 }
