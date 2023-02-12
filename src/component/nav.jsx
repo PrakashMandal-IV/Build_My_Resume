@@ -8,9 +8,9 @@ const Nav = () => {
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                        <a href="javascript:void(0)">
+                       
                             <h2 className="text-2xl font-bold text-white">Build My <span className="text-lime-400      ">Resume</span></h2>
-                        </a>
+                        
                         <div className="md:hidden">
                             <button
                                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -56,16 +56,16 @@ const Nav = () => {
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             <li className="text-white hover:text-lime-400">
-                                <a href="javascript:void(0)">Home</a>
+                                Home
                             </li>
                             <li className="text-white hover:text-lime-400 ">
-                                <a href="javascript:void(0)">Blog</a>
+                              Blog
                             </li>
                             <li className="text-white hover:text-lime-400 ">
-                                <a href="javascript:void(0)">About US</a>
+                               About US
                             </li>
                             <li className="text-white hover:text-lime-400 ">
-                                <a href="javascript:void(0)">Contact US</a>
+                                Contact US
                             </li>
                         </ul>
 
