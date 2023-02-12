@@ -1,7 +1,6 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.body{
+.body {
     width: 600px;
     height: 800px;
 
@@ -9,8 +8,33 @@
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
 }
+
 p {
     margin: 0;
     padding: 0;
-    font-size: 10px;
+}
+
+.titles {
+    border-left: 4px solid orange;
+    padding-left: 6px;
+    font-weight: 500;
+    color: grey;
+}
+.item-title{
+    --tw-translate-x: -3.5px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    display: flex;
+    gap: 5px;
+}
+.item-dot{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    background-color: orange;
+}
+.item{
+    border-left: 1px solid orange;
+
 }

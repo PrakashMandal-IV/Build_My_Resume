@@ -8,5 +8,46 @@
             "Email":"lacygrace@gmail.com",
             "Website":"https://larainfo.com/blogs"
         }
-    }
+    },
+    "Education":[
+        {
+            "Title":"Masters in Designing",
+            "Duration":"2020-2021"
+        },
+        {
+            "Title":"Udemy Course",
+            "Duration":"2018-2020"
+        },
+        {
+            "Title":"B.tecth (CSE)",
+            "Duration":"2016-2020"
+        },
+        {
+            "Title":"12th (Science)",
+            "Duration":"2015-2016"
+        }
+    ],
+    "Skills":[
+        {
+            "Title":"Adobe Xd",
+            "Duration":"2020-2021"
+        },
+        {
+            "Title":"Figma",
+            "Duration":"2018-2020"
+        },
+        {
+            "Title":"Wireframe",
+            "Duration":"2016-2020"
+        },
+        {
+            "Title":"Photoshop",
+            "Duration":"2015-2016"
+        },
+        {
+            "Title":"Blender",
+            "Duration":"2015-2016"
+        }
+    ]
+
 }
