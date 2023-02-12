@@ -37,11 +37,11 @@ function Resume_1() {
         </div>
       </div>
       {/* Body */}
-      <div className="" style={{ marginTop: "60px", display: "flex", flexDirection: "column", gap: "20px", marginLeft: "40px", marginRight: "50px" }}>
+      <div className="" style={{ marginTop: "60px", display: "flex", flexDirection: "column", gap: "20px", marginLeft: "40px", marginRight: "50px",flexGrow:"1" }}>
         <p className="" style={{ marginLeft: "12px", fontWeight: "500", fontSize: "12px", letterSpacing: "2px", borderBottom: "1px solid orange" }}>Welcome to my Resume</p>
-        <div className="" style={{ display: "flex", gap: "4px" }}>
+        <div className="" style={{ display: "flex", gap: "4px",height:"100%",marginBottom:"5px" }}>
           {/* Left */}
-          <div className="" style={{ width: "40%", borderRight: "1px solid orange",display:"flex",flexDirection:"column",gap:"40px" }}>
+          <div className="" style={{ width: "40%",height:"100%", borderRight: "1px solid orange",display:"flex",flexDirection:"column",gap:"20px" }}>
             {/* Education */}
             <div className="">
               <p className="titles">Education</p>
@@ -61,12 +61,17 @@ function Resume_1() {
               <p className="titles">Skills</p>
               <div className="left-items" style={{ marginLeft: "12px" }}>
                 {Information.Skills.map((item, idx) => {
-                  return (<div className="item">
+                  return (<div className="item"style={{paddingBottom:"4px"}}>
                     <div className="item-title  " >
                       <div className="item-dot" ></div>
                       <p className="" key={idx} style={{ fontSize: "10px" }}>{item.Title}</p>
                     </div>
-                    {}
+                    <div className="" style={{display:"flex",marginLeft:"6px",gap:"5px"}}>
+                       <div className="" style={{backgroundColor:"orange",width:"20px",height:"4px"}}></div>
+                       <div className="" style={{backgroundColor:"orange",width:"20px",height:"4px"}}></div>
+                       <div className="" style={{backgroundColor:"rgb(212, 212, 212)",width:"20px",height:"4px"}}></div>
+                       <div className="" style={{backgroundColor:"rgb(212, 212, 212)",width:"20px",height:"4px"}}></div>
+                    </div>
                   </div>)
                 })}
               </div>

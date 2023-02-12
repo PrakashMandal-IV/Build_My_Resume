@@ -25,6 +25,7 @@ p {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     display: flex;
     gap: 5px;
+    padding-bottom: 2px;
 }
 .item-dot{
     margin-top: auto;
@@ -36,5 +37,4 @@ p {
 }
 .item{
     border-left: 1px solid orange;
-
 }
