@@ -15,7 +15,9 @@ code {
     monospace;
 }
 @media print {
+  
   body * {
+    size: A4;
     visibility: hidden;
   }
   #printable-area, #printable-area * {
@@ -23,10 +25,10 @@ code {
   }
   #printable-area {
     position: absolute;
+  
     left: 0;
     top: 0;
-    width:21cm;
-    height:29.7cm;
+   
   }
   .print:bg-slate-400 {
     background-color: #3c4858 !important;
@@ -38,6 +40,7 @@ code {
     height: 52px !important;
   }
 }
+
 
 
 

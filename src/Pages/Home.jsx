@@ -9,8 +9,8 @@ const Home = () => {
 
 
   return (<>
-    <div className="flex flex-col md:flex-row h-[95vh]">
-      <div className="w-1/3 border border-purple-500 ">
+    <div className="flex flex-col md:flex-row h-[100vh-3rem]">
+      <div className="w-1/3  mt-auto ">
       <ReactToPrint
           trigger={() => <PrimaryButton Name="Print"/>}
           content={() => printref.current}
@@ -19,8 +19,8 @@ const Home = () => {
      
   
       </div>
-      <div className="md:w-2/3">
-        <div className="md:w-[48%]  mx-auto" >
+      <div className="w-full pt-5 bg-gray-300">
+        <div className="mx-auto md:w-[45rem] shadow-md" >
         <Resume_1 printref={printref}/>
         </div>
 
