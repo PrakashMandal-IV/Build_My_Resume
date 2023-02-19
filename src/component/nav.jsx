@@ -4,10 +4,10 @@ import { Outlet } from "react-router-dom"
 const Nav = () => {
     const [navbar, setNavbar] = useState(false);
     return (<>
-        <nav className="w-full bg-sky-600 shadow">
-            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+        <nav className="w-full bg-sky-600 shadow h-[5vh]">
+            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex ">
                 <div>
-                    <div className="flex items-center justify-between py-3 md:py-5 md:block">
+                    <div className="flex items-center justify-between py-3 md:py-3 md:block">
                        
                             <h2 className="text-2xl font-bold text-white">Build My <span className="text-lime-400      ">Resume</span></h2>
                         
