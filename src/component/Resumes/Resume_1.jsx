@@ -266,7 +266,7 @@ function Resume_1(props) {
   }
  
   return (<>
-        <div id="printable-area" ref={props.printref} className="body">
+        <div id="printable-area" ref={props.printref} className=" body border">
       {/* header */}
       <div    className="header bg-gray-200" style={{ height: "160px" }}>
         <div className="" style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%" }}>

@@ -13,8 +13,8 @@ const Home = () => {
           content={() => printRef.current}
         />
       </div>
-      <div className="w-2/3  border border-red-500  ">
-        <div className="">
+      <div className="w-2/3  p-5 border border-red-500 flex">
+        <div className="h-full mx-auto" >
         <Resume_1 printref={printRef}/>
         </div>
 
