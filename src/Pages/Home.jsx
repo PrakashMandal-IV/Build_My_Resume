@@ -1,21 +1,27 @@
 import Resume_1 from "../component/Resumes/Resume_1"
-import { PDFDownloadLink, Document, Page, View, Text } from '@react-pdf/renderer';
 import { PrimaryButton } from "../component/Button";
 import ReactToPrint from "react-to-print";
-import { useRef } from "react";
+import { createRef, useRef } from "react";
+
+
 const Home = () => {
-  const printRef = useRef(null);
+  const printref = createRef();
+
+
   return (<>
-    <div className="flex h-[95vh]">
+    <div className="flex flex-col md:flex-row h-[95vh]">
       <div className="w-1/3 border border-purple-500 ">
       <ReactToPrint
           trigger={() => <PrimaryButton Name="Print"/>}
-          content={() => printRef.current}
+          content={() => printref.current}
         />
+     
+     
+  
       </div>
-      <div className="w-2/3  p-5 border border-red-500 flex">
-        <div className="h-full mx-auto" >
-        <Resume_1 printref={printRef}/>
+      <div className="md:w-2/3">
+        <div className="md:w-[48%]  mx-auto" >
+        <Resume_1 printref={printref}/>
         </div>
 
 

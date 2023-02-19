@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 
 import './Resume_1.css'
 import MyData from '../../JsonData.json'
-import { PrimaryButton } from "../Button";
-import ReactToPrint from "react-to-print";
 function Resume_1(props) {
   const [Information, SetInformation] = useState(MyData)
  
@@ -264,11 +262,11 @@ function Resume_1(props) {
      
       // winPrint.print();
   }
- 
+
   return (<>
-        <div id="printable-area" ref={props.printref} className=" body border">
+        <div id="printable-area" ref={props.printref} className="body">
       {/* header */}
-      <div    className="header bg-gray-200" style={{ height: "160px" }}>
+      <div    className="header bg-gray-200 h-[15%]" >
         <div className="" style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%" }}>
           <div className=" " style={{ marginTop: "auto", marginBottom: "auto", display: "flex" }}>
             <div className="" style={{ flexGrow: "1", marginLeft: "52px" }}>
