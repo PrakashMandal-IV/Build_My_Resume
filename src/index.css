@@ -25,10 +25,8 @@ code {
   }
   #printable-area {
     position: absolute;
-  
     left: 0;
     top: 0;
-   
   }
   .print:bg-slate-400 {
     background-color: #3c4858 !important;

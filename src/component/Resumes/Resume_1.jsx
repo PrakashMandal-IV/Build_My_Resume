@@ -264,29 +264,29 @@ function Resume_1(props) {
   }
 
   return (<>
-        <div id="printable-area" ref={props.printref} className="body bg-white">
+        <div id="printable-area" ref={props.printref} className="body bg-white" size="A4">
       {/* header */}
       <div    className="header bg-gray-200 h-[15%]" >
         <div className="" style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%" }}>
           <div className=" " style={{ marginTop: "auto", marginBottom: "auto", display: "flex" }}>
             <div className="" style={{ flexGrow: "1", marginLeft: "52px" }}>
-              <p className="border" style={{ fontSize: "10px" }}>Resume</p>
-              <p className="" style={{ fontSize: "20px", fontWeight: "500", letterSpacing: "2px" }}>{Information.PersonalData.FirstName + " " + Information.PersonalData.LastName}</p>
-              <p className="" style={{ fontSize: "10px" }}>{Information.PersonalData.Profession}</p>
+              <p className="text-sm">Resume</p>
+              <p className="text-2xl" style={{ fontWeight: "500", letterSpacing: "2px" }}>{Information.PersonalData.FirstName + " " + Information.PersonalData.LastName}</p>
+              <p className="text-sm" >{Information.PersonalData.Profession}</p>
             </div>
-            <div className="" style={{ flexGrow: "1", display: "flex", flexDirection: "column", gap: "2px" }}>
+            <div className="my-auto" style={{ flexGrow: "1", display: "flex", flexDirection: "column", gap: "2px" }}>
               <div className="" style={{ marginLeft: "auto", marginRight: "25px", display: "flex", flexDirection: "column", gap: "4px" }}>
                 <div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
-                  <p className="" style={{ fontSize: "8px", fontWeight: "bold" }}>T : </p>
-                  <p className="" style={{ fontSize: "8px" }}>{Information.PersonalData.Contact.Phone}</p>
+                  <p className="text-[.6rem]" style={{ fontWeight: "bold" }}>T : </p>
+                  <p className="text-[.6rem]" >{Information.PersonalData.Contact.Phone}</p>
                 </div>
                 <div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
-                  <p className="" style={{ fontSize: "8px", fontWeight: "bold" }}>M : </p>
-                  <a href={"mailto:" + Information.PersonalData.Contact.Email} target="_blank" className="" style={{ fontSize: "8px" }}>{Information.PersonalData.Contact.Email}</a>
+                  <p className="text-[.6rem]" style={{ fontWeight: "bold" }}>M : </p>
+                  <a href={"mailto:" + Information.PersonalData.Contact.Email} target="_blank" className="text-[.6rem]">{Information.PersonalData.Contact.Email}</a>
                 </div>
                 <div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
-                  <p className="" style={{ fontSize: "8px", fontWeight: "bold" }}>W : </p>
-                  <a href={Information.PersonalData.Contact.Website} target="_blank" className="" style={{ fontSize: "8px" }}>{Information.PersonalData.Contact.Website}</a>
+                  <p className="text-[.6rem]" style={{ fontWeight: "bold" }}>W : </p>
+                  <a href={Information.PersonalData.Contact.Website} target="_blank" className="text-[.6rem]" >{Information.PersonalData.Contact.Website}</a>
                 </div>
               </div>
             </div>
@@ -294,20 +294,20 @@ function Resume_1(props) {
         </div>
       </div>
       {/* Body */}
-      <div className="" style={{ marginTop: "40px", display: "flex", flexDirection: "column", gap: "20px", marginLeft: "40px", marginRight: "50px", flexGrow: "1" }}>
-        <p className="" style={{ marginLeft: "12px", fontWeight: "500", fontSize: "12px", letterSpacing: "2px", borderBottom: "1px solid orange" }}>Welcome to my Resume</p>
+      <div className="mb-5" style={{ marginTop: "40px", display: "flex", flexDirection: "column", gap: "20px", marginLeft: "40px", marginRight: "50px", flexGrow: "1" }}>
+        <p className="" style={{ marginLeft: "12px", fontWeight: "500", letterSpacing: "2px", borderBottom: "1px solid orange" }}>Welcome to my Resume</p>
         <div className="" style={{ display: "flex", gap: "10px", height: "100%", marginBottom: "5px" }}>
           {/* Left */}
           <div className="" style={{ width: "40%", display: "flex", flexDirection: "column", gap: "20px" }}>
             {/* Education */}
             <div className="">
-              <p className="titles">Education</p>
+              <p className="titles text-xl">Education</p>
               <div className="left-items" style={{ marginLeft: "12px" }}>
                 {Information.Education.map((item, idx) => {
                   return (<div className="item" key={idx} >
                     <div className="item-title  " >
                       <div className="item-dot" ></div>
-                      <p className=""  style={{ fontSize: "10px" }}>{item.Title}</p>
+                      <p className="text-[.9rem]">{item.Title}</p>
                     </div>
                     <p className="" style={{ fontSize: "8px", marginLeft: "6px", color: "gray" }} >{item.Duration}</p>
                   </div>)
@@ -315,13 +315,13 @@ function Resume_1(props) {
               </div>
             </div>
             <div className="">
-              <p className="titles">Skills</p>
+              <p className="titles text-xl">Skills</p>
               <div className="left-items" style={{ marginLeft: "12px" }}>
                 {Information.Skills.map((item, idx) => {
                   return (<div className="item" style={{ paddingBottom: "4px" }} key={idx}>
                     <div className="item-title  " >
                       <div className="item-dot" ></div>
-                      <p className="" key={idx} style={{ fontSize: "10px" }}>{item.Title}</p>
+                      <p className="text-[.9rem]" key={idx}>{item.Title}</p>
                     </div>
                     <div className="" style={{ display: "flex", marginLeft: "6px", gap: "5px" }}>
                       <div className="" style={{ backgroundColor: "orange", width: "20px", height: "4px" }}></div>
@@ -334,13 +334,13 @@ function Resume_1(props) {
               </div>
             </div>
             <div className="">
-              <p className="titles">Hobbies</p>
+              <p className="titles text-xl">Hobbies</p>
               <div className="left-items" style={{ marginLeft: "12px" }} >
                 {Information.Hobbies.map((item, idx) => {
                   return (<div className="item" key={idx}>
                     <div className="item-title  " >
                       <div className="item-dot" ></div>
-                      <p className="" key={idx} style={{ fontSize: "10px" }}>{item}</p>
+                      <p className="text-[.9rem]" key={idx}>{item}</p>
                     </div>
                   </div>)
                 })}
@@ -378,37 +378,37 @@ function Resume_1(props) {
           <div className="" style={{ width: "40%", display: "flex", flexDirection: "column", gap: "20px", flexGrow: "1" }}>
             {/* Section 1 */}
             <div className="">
-              <p className="mainPagetitle">About Me</p>
-              <div className="aboutme" dangerouslySetInnerHTML={{ __html: Information.PersonalData.AboutMe }}>
+              <p className="mainPagetitle text-xl">About Me</p>
+              <div className="aboutme text-[.8rem] mt-2 pl-2" dangerouslySetInnerHTML={{ __html: Information.PersonalData.AboutMe }}>
 
               </div>
             </div>
             {/* Section 2 */}
             <div className="" style={{ display: "flex", gap: "10px" }}>
               <div className="" style={{ flexGrow: "1" }}>
-                <p className="mainPagetitle">Experience</p>
-                <div className="left-items" style={{ marginLeft: "12px" }}>
+                <p className="mainPagetitle text-xl">Experience</p>
+                <div className="left-items mt-2" style={{ marginLeft: "12px" }}>
                   {Information.Experience.map((item, idx) => {
                     return (<div className="item" key={idx}>
                       <div className="item-title  " style={{ paddingBottom: 0 }} >
                         <div className="item-dot" ></div>
-                        <p className="" style={{ fontSize: "10px" }}>{item.Title}</p>
+                        <p className="text-[.9rem]" >{item.Title}</p>
 
                       </div>
-                      <p className="" style={{ fontSize: "8px", marginLeft: "6px", color: "gray" }}>{item.JobTitle}</p>
-                      <p className="" style={{ fontSize: "8px", marginLeft: "6px", color: "gray" }} >{item.Duration}</p>
+                      <p className="text-[.6rem]" style={{ marginLeft: "6px", color: "gray" }}>{item.JobTitle}</p>
+                      <p className="" style={{ fontSize: "9px", marginLeft: "6px", color: "gray" }} >{item.Duration}</p>
                     </div>)
                   })}
                 </div>
               </div>
               <div className="" style={{ flexGrow: "1" }}>
-                <p className="mainPagetitle">Cretificates</p>
-                <div className="left-items" style={{ marginLeft: "12px" }}>
+                <p className="mainPagetitle  text-xl">Cretificates</p>
+                <div className="left-items mt-2" style={{ marginLeft: "12px" }}>
                   {Information.Certificates.map((item, idx) => {
                     return (<div className="item" key={idx}>
                       <div className="item-title  " >
                         <div className="item-dot" ></div>
-                        <p className="" key={idx} style={{ fontSize: "10px" }}>{item.Title}</p>
+                        <p className="" key={idx} style={{ fontSize: ".9rem" }}>{item.Title}</p>
                       </div>
                       <p className="" style={{ fontSize: "8px", marginLeft: "6px", color: "gray" }} >{item.Duration}</p>
                     </div>)
@@ -424,10 +424,11 @@ function Resume_1(props) {
               </div>
               <div style={{ marginTop: "5px", display: "flex", flexDirection: "column", gap: "4px" }}>
                 {Information.Projects.map((item, idx) => (
-                  <div className="ProjectCard" key={idx}>
-                    <p className="" style={{ fontSize: "12px" }}>{item.Name}</p>
-                    <p className="" style={{ fontSize: "8px" }} >{item.Description}</p>
+                 <a href={item.Link} target="_blank" ><div className="ProjectCard " key={idx}>
+                    <p className="text-md" >{item.Name}</p>
+                    <p className="text-[.7rem]"  >{item.Description}</p>
                   </div>
+                  </a> 
                 ))}
               </div>
             </div>

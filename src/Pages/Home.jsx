@@ -19,8 +19,8 @@ const Home = () => {
      
   
       </div>
-      <div className="w-full pt-5 bg-gray-300">
-        <div className="mx-auto md:w-[45rem] shadow-md" >
+      <div className="w-2/3 pt-5 bg-gray-300">
+        <div className="mx-auto md:w-[50rem] shadow-md" >
         <Resume_1 printref={printref}/>
         </div>
 

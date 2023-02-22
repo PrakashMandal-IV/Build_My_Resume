@@ -1,14 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
- .body {
-    
+.body {
+    background: white;
     display: flex;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
+    
     width: 100%;
     aspect-ratio: 0.707/1;
-} 
+}
+
+div[size="A4"] {
+    width: 21cm;
+    height: 29.7cm;
+}
+
+div[size="A4"][layout="portrait"] {
+    width: 29.7cm;
+    height: 21cm;
+
+}
+
 p {
     margin: 0;
     padding: 0;
@@ -18,16 +31,18 @@ p {
     border-left: 4px solid orange;
     padding-left: 6px;
     font-weight: 500;
-    color: grey;
+
 }
-.item-title{
+
+.item-title {
     --tw-translate-x: -3px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     display: flex;
     gap: 5px;
-    padding-bottom: 2px;
+    padding-bottom: 4px;
 }
-.item-dot{
+
+.item-dot {
     margin-top: auto;
     margin-bottom: auto;
     width: 5px;
@@ -35,22 +50,21 @@ p {
     border-radius: 100%;
     background-color: orange;
 }
-.item{
+
+.item {
     border-left: 1px solid orange;
 }
-.mainPagetitle{
+
+.mainPagetitle {
     border-left: 4px solid orange;
     padding-left: 6px;
     font-weight: 500;
-    color: grey;
+
 }
-.aboutme{
-    font-size: 9px;
-}
-.ProjectCard{
-    
-    height: 40px;
-    border:1px solid rgb(223, 223, 223);
+
+.ProjectCard {
+
+    border: 1px solid rgb(223, 223, 223);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
