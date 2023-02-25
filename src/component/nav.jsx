@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom"
-import logo from "../logo.svg"
 import { Logo } from "./Icons";
 const Nav = () => {
 
