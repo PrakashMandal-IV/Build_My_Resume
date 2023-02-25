@@ -8,6 +8,8 @@ body {
   font-family: "Cascadia Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
 }
 
 code {
@@ -19,6 +21,7 @@ code {
   body * {
     size: A4;
     visibility: hidden;
+    
   }
   #printable-area, #printable-area * {
     visibility: visible;

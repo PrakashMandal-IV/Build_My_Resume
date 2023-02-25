@@ -2,7 +2,7 @@ import Resume_1 from "../component/Resumes/Resume_1"
 import { PrimaryButton } from "../component/Button";
 import ReactToPrint from "react-to-print";
 import { createRef, useRef } from "react";
-
+import homepageBg from '../Assets/HomepageBG.png';
 
 const Home = () => {
   const printref = createRef();
@@ -25,8 +25,19 @@ const Home = () => {
       </div>
 
     </div> */}
-     
-    
+    <div className=" md:block  bg-no-repeat bg-right bg-contain bg-transparent h-1/2  md:bg-cover  md:h-[100vh] md:max-h-[1920px]" style={{ backgroundImage: `url(${homepageBg})` }}>
+      
+    </div>
+
+    <div className="h-[60vh]"></div>
+
   </>)
 }
 export default Home
+
+
+const HeroSection=()=>{
+  return (<>
+  <div className="">Home</div>
+  </>)
+}
