@@ -1,10 +1,10 @@
 <svg width="147" height="71" viewBox="0 0 147 71" fill="none" xmlns="http://www.w3.org/2000/svg">
-<line x1="46.5496" y1="48.7051" x2="93.0222" y2="2.23255" stroke="black" stroke-width="5"/>
-<line x1="89.7678" y1="2.23223" x2="113.004" y2="25.4685" stroke="black" stroke-width="5"/>
-<line x1="2.23223" y1="48.7051" x2="48.7048" y2="2.23255" stroke="black" stroke-width="5"/>
-<line x1="45.7678" y1="2.23223" x2="69.0041" y2="25.4685" stroke="black" stroke-width="5"/>
-<line x1="144.768" y1="22.5461" x2="98.2952" y2="69.0187" stroke="black" stroke-width="5"/>
-<line x1="101.243" y1="69.0186" x2="78.007" y2="45.7823" stroke="black" stroke-width="5"/>
-<line x1="99.7678" y1="22.5463" x2="53.2952" y2="69.0189" stroke="black" stroke-width="5"/>
-<line x1="56.8807" y1="69.0186" x2="33.6444" y2="45.7823" stroke="black" stroke-width="5"/>
+<line x1="46.5496" y1="48.7051" x2="93.0222" y2="2.23255" stroke="black" strokeWidth="5"/>
+<line x1="89.7678" y1="2.23223" x2="113.004" y2="25.4685" stroke="black" strokeWidth="5"/>
+<line x1="2.23223" y1="48.7051" x2="48.7048" y2="2.23255" stroke="black" strokeWidth="5"/>
+<line x1="45.7678" y1="2.23223" x2="69.0041" y2="25.4685" stroke="black" strokeWidth="5"/>
+<line x1="144.768" y1="22.5461" x2="98.2952" y2="69.0187" stroke="black" strokeWidth="5"/>
+<line x1="101.243" y1="69.0186" x2="78.007" y2="45.7823" stroke="black" strokeWidth="5"/>
+<line x1="99.7678" y1="22.5463" x2="53.2952" y2="69.0189" stroke="black" strokeWidth="5"/>
+<line x1="56.8807" y1="69.0186" x2="33.6444" y2="45.7823" stroke="black" strokeWidth="5"/>
 </svg>

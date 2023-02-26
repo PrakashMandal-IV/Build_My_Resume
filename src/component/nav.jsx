@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom"
+import { Outlet} from "react-router-dom"
 import { Logo } from "./Icons";
+
+
 const Nav = () => {
     const [navVisible, setNavVisible] = useState(true);
+   
     useEffect(() => {
         const handleScroll = () => {
           if (window.pageYOffset > 0 && navVisible) {
@@ -27,7 +30,9 @@ const Nav = () => {
                     <p className="my-auto">Home</p>
                 </div>
                 <div className="text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all">
-                    <p className="my-auto">Designs</p>
+                    <a href="#Designs" className="my-auto">
+                    <p className="">Designs</p>
+                    </a>
                 </div>
                 <div className="text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all">
                     <p className="my-auto">About Us</p>
