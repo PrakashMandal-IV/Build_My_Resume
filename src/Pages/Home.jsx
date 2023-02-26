@@ -53,7 +53,7 @@ const Home = () => {
         
       </div>
     </div>
-    <div className="h-[60vh]"></div>
+    <div className="h-[90vh]"></div>
 
   </>)
 }
