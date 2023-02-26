@@ -15,7 +15,19 @@ body {
   margin: 0;
   padding: 0;
 }
+body::-webkit-scrollbar {
+  
+  width: 5px;
+}
 
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background:  #60A5FA;
+  
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
