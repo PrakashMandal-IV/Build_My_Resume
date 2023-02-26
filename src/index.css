@@ -29,6 +29,23 @@ body::-webkit-scrollbar-thumb {
   background:  #60A5FA;
   
 }
+.ImageSlider::-webkit-scrollbar {
+  border-radius: 10px;
+  height: 5px;
+}
+
+.ImageSlider::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ImageSlider::-webkit-scrollbar-thumb {
+  background:  #60A5FA;
+  
+}
+.ImageSlider {
+  scroll-behavior: smooth;
+  transition: transform 0.5s ease-in-out;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

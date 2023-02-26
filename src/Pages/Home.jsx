@@ -59,7 +59,7 @@ const Home = () => {
 
     </div> */}
     <div className="hidden lg:flex  bg-no-repeat bg-right    bg-transparent h-1/2  md:bg-cover  md:h-[100vh] md:max-h-[1920px] p-4" style={{ backgroundImage: `url(${homepageBg})` }}>
-      <div className="my-auto w-1/2  px-10 flex flex-col gap-10">
+      <div className="my-auto w-1/2  px-10 flex flex-col gap-10 ">
         <p className="w-2/3 ">Elevate your job search with our <b> user-friendly website</b>. With multiple intuitive designs and templates, you can effortlessly create a professional <b>resume for free</b> . Impress potential employers and land your dream job today!</p>
         <div className="flex gap-10">
           <div className="w-2/5">
@@ -86,14 +86,11 @@ const Home = () => {
 
       </div>
     </div>
-    <div className="p-6 relative" id="Designs">
+    <div className="p-6 relative  h-[60vh]" id="Designs">
       <p className="text-xl text-center my-10">Checkout our new <b>Designs</b></p>
       <ImageSlideshow images={Images} />
     </div>
-    <div className="p-6" id="Designs">
-      <p className="text-xl text-center my-10">Checkout our new <b>Designs</b></p>
-      <ImageSlideshow images={Images} />
-    </div>
+    
 
   </>)
 }
