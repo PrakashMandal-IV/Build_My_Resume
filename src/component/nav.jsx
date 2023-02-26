@@ -1,99 +1,43 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom"
-
+import { Logo } from "./Icons";
 const Nav = () => {
-    const [navbar, setNavbar] = useState(false);
+    const [navVisible, setNavVisible] = useState(true);
+    useEffect(() => {
+        const handleScroll = () => {
+          if (window.pageYOffset > 0 && navVisible) {
+            setNavVisible(false);
+          } else if (window.pageYOffset === 0 && !navVisible) {
+            setNavVisible(true);
+          }
+        };
+      
+        window.addEventListener('scroll', handleScroll);
+      
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, [navVisible]);
+      
     return (<>
-        <nav className="w-full bg-sky-600 shadow">
-            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-                <div>
-                    <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                        <a href="javascript:void(0)">
-                            <h2 className="text-2xl font-bold text-white">Build My <span className="text-lime-400      ">Resume</span></h2>
-                        </a>
-                        <div className="md:hidden">
-                            <button
-                                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                                onClick={() => setNavbar(!navbar)}
-                            >
-                                {navbar ? (
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="w-6 h-6 text-white"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                    >
-                                        <path
-                                            fillRule="evenodd"
-                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                            clipRule="evenodd"
-                                        />
-                                    </svg>
-                                ) : (
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="w-6 h-6 text-white"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M4 6h16M4 12h16M4 18h16"
-                                        />
-                                    </svg>
-                                )}
-                            </button>
-                        </div>
-                    </div>
+        <div className={`fixed top-0 w-full flex-col md:flex-row flex gap-5 md:gap-20 m-4 transition-all  ${navVisible ? '' : ' -translate-y-[200px]  '}`}>
+            <Logo className="h-14 ml-0" />
+            <div className="flex gap-20 justify-center ">
+                <div className=" text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all">
+                    <p className="my-auto">Home</p>
                 </div>
-                <div>
-                    <div
-                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
-                            }`}
-                    >
-                        <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li className="text-white hover:text-lime-400">
-                                <a href="javascript:void(0)">Home</a>
-                            </li>
-                            <li className="text-white hover:text-lime-400 ">
-                                <a href="javascript:void(0)">Blog</a>
-                            </li>
-                            <li className="text-white hover:text-lime-400 ">
-                                <a href="javascript:void(0)">About US</a>
-                            </li>
-                            <li className="text-white hover:text-lime-400 ">
-                                <a href="javascript:void(0)">Contact US</a>
-                            </li>
-                        </ul>
-
-                        {/* <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-                            <a
-                                href="javascript:void(0)"
-                                className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-                            >
-                                Sign in
-                            </a>
-                            <a
-                                href="javascript:void(0)"
-                                className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-                            >
-                                Sign up
-                            </a>
-                        </div> */}
-                    </div>
+                <div className="text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all">
+                    <p className="my-auto">Designs</p>
                 </div>
-                
-            </div>
-        </nav>
-        <div className='flex-fill'>
-            <div id='dashboard-header'></div>
-            <div id='dashboard-content'>
-                <Outlet />
+                <div className="text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all">
+                    <p className="my-auto">About Us</p>
+                </div>
             </div>
         </div>
-    </>)
+
+        <Outlet />
+
+    </>
+    )
 }
 export default Nav

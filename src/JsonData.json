@@ -1,0 +1,143 @@
+{
+    "PersonalData": {
+        "FirstName": "Lacy",
+        "LastName": "Grace",
+        "Profession": "Graphic Designer",
+        "AboutMe":"<div><p>Hi there, my name is Lacy and I am a full-stack web developer with experience in creating dynamic and interactive web applications. With a strong experience in C#, Javascript, HTML/CSS etc. I am capable of bringing your vision to life and delivering high-quality results in a timely manner.</p><p>Thank you for taking the time to read about me.</div>",
+        "Contact": {
+            "Phone": "+91 999 8888 000",
+            "Email": "lacygrace@gmail.com",
+            "Website": "https://larainfo.com/blogs"
+        }
+    },
+    "Education": [
+        {
+            "Title": "Masters in Designing",
+            "Duration": "2020-2021"
+        },
+        {
+            "Title": "Udemy Course",
+            "Duration": "2018-2020"
+        },
+        {
+            "Title": "B.tecth (CSE)",
+            "Duration": "2016-2020"
+        },
+        {
+            "Title": "12th (Science)",
+            "Duration": "2015-2016"
+        }
+    ],
+    "Skills": [
+        {
+            "Title": "Adobe Xd",
+            "Duration": "2020-2021"
+        },
+        {
+            "Title": "Figma",
+            "Duration": "2018-2020"
+        },
+        {
+            "Title": "Wireframe",
+            "Duration": "2016-2020"
+        },
+        {
+            "Title": "Photoshop",
+            "Duration": "2015-2016"
+        },
+        {
+            "Title": "Blender",
+            "Duration": "2015-2016"
+        }
+    ],
+    "Hobbies": [
+        "Art",
+        "Video game",
+        "Coding",
+        "Travel"
+    ],
+    "Socials": [
+        {
+            "Type": "instagram",
+            "Link":""
+        },
+        {
+            "Type": "linkedin",
+            "Link":""
+        },
+        {
+            "Type": "twitter",
+            "Link":""
+        },
+        {
+            "Type": "facebook",
+            "Link":""
+        }
+    ],
+    "Experience":[
+        {
+            "Title":"XXX Company",
+            "JobTitle":"Project Manager",
+            "Duration":"2025-Current"
+        },
+        {
+            "Title":"XXX Company",
+            "JobTitle":"Senior Forntend Developer",
+            "Duration":"2022-2025"
+        },
+        {
+            "Title":"XXX Company",
+            "JobTitle":"Junior Forntend Developer",
+            "Duration":"2021-2022"
+        },
+        {
+            "Title":"XXX Company",
+            "JobTitle":"Forntend Intern",
+            "Duration":"2020-2021"
+        }
+    ],
+    "Certificates": [
+        {
+            "Title": "Codecon",
+            "Duration": "2020-2021"
+        },
+        {
+            "Title": "Leetcode",
+            "Duration": "2018-2020"
+        },
+        {
+            "Title": "Hackathon",
+            "Duration": "2016-2020"
+        },
+        {
+            "Title": "JS Master class",
+            "Duration": "2015-2016"
+        }
+    ],
+    "Projects":[
+        {
+            "Image":"https://i.pinimg.com/564x/82/09/11/820911e5ded735f2c06d0669ca99afb4.jpg",
+            "Name":"Pendora 3d",
+            "Description":"Hi there, my name is Prakash and I am a full-stack web developer",
+            "Link":"https://mathiasbynens.github.io/rel-noopener/#recommen"
+        },
+        {
+            "Image":"https://i.pinimg.com/564x/82/09/11/820911e5ded735f2c06d0669ca99afb4.jpg",
+            "Name":"Pendora 3d",
+            "Description":"Hi there, my name is Prakash and I am a full-stack web developer",
+            "Link":"https://mathiasbynens.github.io/rel-noopener/#recommen"
+        },
+        {
+            "Image":"https://i.pinimg.com/564x/82/09/11/820911e5ded735f2c06d0669ca99afb4.jpg",
+            "Name":"Pendora 3d",
+            "Description":"Hi there, my name is Prakash and I am a full-stack web developer",
+            "Link":"https://mathiasbynens.github.io/rel-noopener/#recommen"
+        },
+        {
+            "Image":"https://i.pinimg.com/564x/82/09/11/820911e5ded735f2c06d0669ca99afb4.jpg",
+            "Name":"Pendora 3d",
+            "Description":"Hi there, my name is Prakash and I am a full-stack web developer",
+            "Link":"https://mathiasbynens.github.io/rel-noopener/#recommen"
+        }
+    ]
+}
