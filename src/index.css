@@ -30,8 +30,9 @@ body::-webkit-scrollbar-thumb {
   
 }
 .ImageSlider::-webkit-scrollbar {
+  cursor:grab;
   border-radius: 10px;
-  height: 5px;
+  height: 8px;
 }
 
 .ImageSlider::-webkit-scrollbar-track {
@@ -42,10 +43,7 @@ body::-webkit-scrollbar-thumb {
   background:  #60A5FA;
   
 }
-.ImageSlider {
-  scroll-behavior: smooth;
-  transition: transform 0.5s ease-in-out;
-}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

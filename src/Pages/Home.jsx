@@ -86,11 +86,23 @@ const Home = () => {
 
       </div>
     </div>
-    <div className="p-6 relative  h-[60vh]" id="Designs">
-      <p className="text-xl text-center my-10">Checkout our new <b>Designs</b></p>
+    <div className="p-6 relative  " id="Designs">
+      <p className="text-xl text-center">Checkout our new <b>Designs</b></p>
       <ImageSlideshow images={Images} />
     </div>
-    
+    <div className="p-10  flex h-[60vh] " >
+      <div className="w-1/2 flex flex-col justify-center align-middle items-center py-10  px-20 ">
+      <div class="h-full flex flex-col justify-center align-middle items-center  w-full rounded-md bg-sky-600  ">
+         <p className="text-2xl text-sky-200">What is Resume?</p>
+      </div>
+
+      </div>
+      <div className="w-1/2 flex p-10">
+        <p className=" my-auto w-2/3">
+        A resume is a document that summarizes an individual's education, work experience, skills, and achievements in a concise and structured way. It is typically used to apply for job opportunities and is often the first point of contact between the job seeker and potential employer. A well-crafted resume can help job seekers stand out from other applicants and increase their chances of being invited for an interview. A resume should be tailored to the specific job and industry being applied to, and should highlight the job seeker's most relevant skills and accomplishments.
+        </p>
+      </div>
+    </div>
 
   </>)
 }
