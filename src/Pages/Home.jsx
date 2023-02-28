@@ -69,13 +69,34 @@ const Home = () => {
           </div>
           <PrimaryButton Name="Get Started" className="h-10 mt-auto font-semibold   " />
         </div>
+        <div className="mt-32 flex gap-10 w-2/3">
+          <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-sky-400 to-sky-500 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center">
+            <div className="my-auto">
+              <p className="text-lg font-bold text-white text-center">10+</p>
+              <p className="text-white ">Designs</p>
+            </div>
+          </div>
+          <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-sky-400 to-sky-500 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center align-middle">
+            <div className="my-auto">
+              <p className="text-lg font-bold text-white text-center">100+</p>
+              <p className="text-white ">Creations</p>
+            </div>
+          </div>
+          <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-sky-400 to-sky-500 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center align-middle">
+            <div className="my-auto">
+              <p className="text-lg font-bold text-white text-center">100+</p>
+              <p className="text-white ">Users</p>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
     <div className="flex lg:hidden md:bg-cover h-[50vh]">
       <div className="mt-auto px-10 flex flex-col gap-10">
         <p className=" text-sm text-center mx-auto ">Elevate your job search with our <b> user-friendly website</b>. With multiple intuitive designs and templates, you can effortlessly create a professional <b>resume for free</b> . Impress potential employers and land your dream job today!</p>
 
-        <div className="flex gap-10  mx-auto">
+        <div className="flex gap-10  mx-auto mb-10">
           <div className="">
 
             <InputBox className="h-10 w-full text-sm" placeholder="Tell us your Name" />
@@ -84,23 +105,33 @@ const Home = () => {
           <PrimaryButton Name="Get Started" className="h-10 mt-auto font-semibold   " />
         </div>
 
+
       </div>
     </div>
-    <div className="p-6 relative  " id="Designs">
+    <div className="p-6 relative   " id="Designs">
       <p className="text-xl text-center">Checkout our new <b>Designs</b></p>
       <ImageSlideshow images={Images} />
     </div>
-    <div className="p-10  flex h-[60vh] " >
-      <div className="w-1/2 flex flex-col justify-center align-middle items-center py-10  px-20 ">
-      <div class="h-full flex flex-col justify-center align-middle items-center  w-full rounded-md bg-sky-600  ">
-         <p className="text-2xl text-sky-200">What is Resume?</p>
-      </div>
+    <div className="p-2 md:p-10 " >
+      <p className="text-xl text-center mb-10">What makes Resume a  <b> Good Resume ?</b></p>
+      <div className="flex">
+        {/* left */}
+        <div className="w-1/2 border-r-4  border-sky-500 ">
+          <div className="flex py-10 ">
+            <div className="w-full ml-auto md:w-1/3">
+              <p className="text-xs md:text-sm   text-center font-bold ">Clearity</p>
+              <p className=" text-xs md:text-sm   text-center">A resume should be easy to read and comprehend. Use clear fonts, spacing, and bullet points to make it easy to scan quickly.</p>
 
-      </div>
-      <div className="w-1/2 flex p-10">
-        <p className=" my-auto w-2/3">
-        A resume is a document that summarizes an individual's education, work experience, skills, and achievements in a concise and structured way. It is typically used to apply for job opportunities and is often the first point of contact between the job seeker and potential employer. A well-crafted resume can help job seekers stand out from other applicants and increase their chances of being invited for an interview. A resume should be tailored to the specific job and industry being applied to, and should highlight the job seeker's most relevant skills and accomplishments.
-        </p>
+            </div>
+            <div className="ml-auto border translate-x-[calc(50%+2px)] my-auto">
+              <div className="bg-gradient-to-br from-sky-200 to-sky-300  w-[30px] h-[30px] rounded-full flex shadow-md ring-4    ring-sky-600">
+                {/* <div className="w-[10px] h-[10px] m-auto bg-sky-600 rounded-full ring-2 ring-blue-400 "></div> */}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* right */}
+        <div className="w-1/2 "></div>
       </div>
     </div>
 
@@ -108,9 +139,3 @@ const Home = () => {
 }
 export default Home
 
-
-const HeroSection = () => {
-  return (<>
-    <div className="">Home</div>
-  </>)
-}
