@@ -34,9 +34,9 @@ const StartBuilding=()=>{
                 </div>
             </div>
             <div className={"flex  flex-1 bg-gray-100 transition-all duration-300 "+LoadingAnimation.left}>
-                <div className="m-auto flex flex-col gap-5 ">
+                <div className="m-auto flex flex-col gap-5">
 
-                    <PrimaryButton Name={"Start Building"} onClick={()=>StartBuilding()} />
+                    <PrimaryButton Name={"Start Building"} className="mx-auto" onClick={()=>StartBuilding()} />
                     <PrimaryButton Name={"View Templates"} />
                 </div>
             </div>

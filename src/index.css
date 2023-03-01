@@ -14,6 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 body::-webkit-scrollbar {
   
@@ -28,6 +29,21 @@ body::-webkit-scrollbar-thumb {
   background:  #60A5FA;
   
 }
+.ImageSlider::-webkit-scrollbar {
+  cursor:grab;
+  border-radius: 10px;
+  height: 8px;
+}
+
+.ImageSlider::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ImageSlider::-webkit-scrollbar-thumb {
+  background:  #60A5FA;
+  
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
