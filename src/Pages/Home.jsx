@@ -234,15 +234,16 @@ const Home = () => {
         </div>
         {/* right */}
         <div className="w-1/2 flex py-6 ">
-          <div className="w-full mx-auto md:w-1/3  p-4 rounded-md bg-gradient-to-l from-purple-400 ">
+          <div className="w-full mx-auto md:w-1/3  p-4 rounded-md bg-gradient-to-l from-purple-400">
             <p className="text-xs md:text-sm   text-center font-bold ">Error-free</p>
             <p className=" text-xs md:text-sm   text-center">Make sure your resume is free of grammatical errors and typos. Proofread your resume carefully, and have someone else review it as well.</p>
 
           </div>
         </div>
       </div>
+      <p className="text-center mt-10">Our Designs Follows each and every key features and provides you the best Resume for your next <b> Interview!</b></p>
     </div>
-
+     
   </>)
 }
 export default Home
