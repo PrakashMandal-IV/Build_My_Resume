@@ -108,7 +108,7 @@ const Home = () => {
 
       </div>
     </div>
-    <div className="p-6 relative   " id="Designs">
+    <div className="p-6 relative  " id="Designs">
       <p className="text-xl text-center">Checkout our new <b>Designs</b></p>
       <ImageSlideshow images={Images} />
     </div>
@@ -117,8 +117,8 @@ const Home = () => {
       <div className="flex">
         {/* left */}
         <div className="w-1/2 border-r-4  border-sky-500 ">
-          <div className="flex py-10 ">
-            <div className="w-full ml-auto md:w-1/3">
+          <div className="flex py-6 ">
+            <div className="w-full ml-auto md:w-1/3  p-4 rounded-md bg-gradient-to-l from-transparent    to-yellow-400">
               <p className="text-xs md:text-sm   text-center font-bold ">Clearity</p>
               <p className=" text-xs md:text-sm   text-center">A resume should be easy to read and comprehend. Use clear fonts, spacing, and bullet points to make it easy to scan quickly.</p>
 
@@ -132,6 +132,114 @@ const Home = () => {
         </div>
         {/* right */}
         <div className="w-1/2 "></div>
+      </div>
+
+      {/* {Second} */}
+      <div className="flex">
+        {/* left */}
+        <div className="w-1/2 border-r-4  border-sky-500 ">
+          <div className="flex py-6 h-full">
+
+            <div className="ml-auto border translate-x-[calc(50%+2px)] my-auto">
+              <div className="bg-gradient-to-br from-sky-200 to-sky-300  w-[30px] h-[30px] rounded-full flex shadow-md ring-4    ring-sky-600">
+                {/* <div className="w-[10px] h-[10px] m-auto bg-sky-600 rounded-full ring-2 ring-blue-400 "></div> */}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* right */}
+        <div className="w-1/2 flex py-6 ">
+          <div className="w-full mx-auto md:w-1/3  p-4 rounded-md bg-gradient-to-l from-cyan-400 ">
+            <p className="text-xs md:text-sm   text-center font-bold ">Relevant information</p>
+            <p className=" text-xs md:text-sm   text-center">Your resume should include only relevant information, such as your work experience, education, skills, and achievements. Avoid including personal details such as your age or marital status</p>
+
+          </div>
+        </div>
+      </div>
+
+      {/*Third*/}
+      <div className="flex">
+        {/* left */}
+        <div className="w-1/2 border-r-4  border-sky-500 ">
+          <div className="flex py-6 ">
+            <div className="w-full ml-auto md:w-1/3  p-4 rounded-md bg-gradient-to-l from-transparent    to-green-400">
+              <p className="text-xs md:text-sm   text-center font-bold ">Professionalism</p>
+              <p className=" text-xs md:text-sm   text-center">Your resume should have a professional tone and appearance. Avoid using slang, emojis, or informal language. Use a professional email address and include a professional summary or objective statement.</p>
+
+            </div>
+            <div className="ml-auto border translate-x-[calc(50%+2px)] my-auto">
+              <div className="bg-gradient-to-br from-sky-200 to-sky-300  w-[30px] h-[30px] rounded-full flex shadow-md ring-4    ring-sky-600">
+                {/* <div className="w-[10px] h-[10px] m-auto bg-sky-600 rounded-full ring-2 ring-blue-400 "></div> */}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* right */}
+        <div className="w-1/2 "></div>
+      </div>
+      {/* {Fourth} */}
+      <div className="flex">
+        {/* left */}
+        <div className="w-1/2 border-r-4  border-sky-500 ">
+          <div className="flex py-6 h-full">
+
+            <div className="ml-auto border translate-x-[calc(50%+2px)] my-auto">
+              <div className="bg-gradient-to-br from-sky-200 to-sky-300  w-[30px] h-[30px] rounded-full flex shadow-md ring-4    ring-sky-600">
+                {/* <div className="w-[10px] h-[10px] m-auto bg-sky-600 rounded-full ring-2 ring-blue-400 "></div> */}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* right */}
+        <div className="w-1/2 flex py-6 ">
+          <div className="w-full mx-auto md:w-1/3  p-4 rounded-md bg-gradient-to-l from-pink-400 ">
+            <p className="text-xs md:text-sm   text-center font-bold ">Action-oriented language</p>
+            <p className=" text-xs md:text-sm   text-center">Use action verbs and powerful language to describe your experiences and accomplishments. This will help you stand out and demonstrate your strengths</p>
+
+          </div>
+        </div>
+      </div>
+      {/* {Fifth} */}
+      <div className="flex">
+        {/* left */}
+        <div className="w-1/2 border-r-4  border-sky-500 ">
+          <div className="flex py-6 ">
+            <div className="w-full ml-auto md:w-1/3  p-4 rounded-md bg-gradient-to-l from-transparent    to-orange-400">
+              <p className="text-xs md:text-sm   text-center font-bold ">Length</p>
+              <p className=" text-xs md:text-sm   text-center">Keep your resume concise and focused on the most important information. One or two pages are generally sufficient for most applicants.</p>
+
+            </div>
+            <div className="ml-auto border translate-x-[calc(50%+2px)] my-auto">
+              <div className="bg-gradient-to-br from-sky-200 to-sky-300  w-[30px] h-[30px] rounded-full flex shadow-md ring-4    ring-sky-600">
+                {/* <div className="w-[10px] h-[10px] m-auto bg-sky-600 rounded-full ring-2 ring-blue-400 "></div> */}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* right */}
+        <div className="w-1/2 "></div>
+      </div>
+      {/* Sixth */}
+      <div className="flex">
+        {/* left */}
+        <div className="w-1/2 border-r-4  border-sky-500 ">
+          <div className="flex py-6 h-full">
+
+            <div className="ml-auto border translate-x-[calc(50%+2px)] my-auto">
+              <div className="bg-gradient-to-br from-sky-200 to-sky-300  w-[30px] h-[30px] rounded-full flex shadow-md ring-4    ring-sky-600">
+                {/* <div className="w-[10px] h-[10px] m-auto bg-sky-600 rounded-full ring-2 ring-blue-400 "></div> */}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* right */}
+        <div className="w-1/2 flex py-6 ">
+          <div className="w-full mx-auto md:w-1/3  p-4 rounded-md bg-gradient-to-l from-purple-400 ">
+            <p className="text-xs md:text-sm   text-center font-bold ">Error-free</p>
+            <p className=" text-xs md:text-sm   text-center">Make sure your resume is free of grammatical errors and typos. Proofread your resume carefully, and have someone else review it as well.</p>
+
+          </div>
+        </div>
       </div>
     </div>
 
