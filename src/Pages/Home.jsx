@@ -112,7 +112,7 @@ const Home = () => {
       <p className="text-xl text-center">Checkout our new <b>Designs</b></p>
       <ImageSlideshow images={Images} />
     </div>
-    <div className="p-2 md:p-10 " >
+    <div className="p-2 md:p-10 " id="KeyFeatures" >
       <p className="text-xl text-center mb-10">What makes Resume a  <b> Good Resume ?</b></p>
       <div className="flex">
         {/* left */}
