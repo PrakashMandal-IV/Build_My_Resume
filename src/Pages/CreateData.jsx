@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const CreateData = () => {
     const searchParams = new URLSearchParams(window.location.search);
 
-    const [Form, SetForm] = useState(1)
+    const [Form, SetForm] = useState(3)
     const [Scale, SetScale] = useState('scale-0')
     useEffect(() => {
         SetUserName(searchParams.get('Name'))
@@ -17,6 +17,9 @@ const CreateData = () => {
     const [UserName, SetUserName] = useState('')
     const [Profession, SetProfession] = useState('')
     const [AboutMe,SetAboutMe] = useState('')
+    const [Contacts,SetContacts] = useState({Number:"",
+    Email:"",
+    Link:""})
     function NextClick() {
         SetScale('scale-0')
         setTimeout(() => {
@@ -32,10 +35,25 @@ const CreateData = () => {
             SetScale('')
         }, 200);
     }
+    function AddContacts(type,value){
+        var ContactData={
+            Number:Contacts.Number,
+            Email:Contacts.Email,
+            Link:Contacts.Link
+        }
+        if(type==='number'){
+            ContactData.Number = value
+        }else if(type==='email'){
+            ContactData.Email = value
+        }else if(type==='link'){
+            ContactData.Link = value
+        }
+        SetContacts(ContactData)
+    }
     return (<>
         <div className="flex flex-col w-full max-w-[1920px] h-[60vh] md:max-h-[1920px] mt-[30vh]">
             {/* {"Intro"} */}
-            <div className={"mx-auto w-full transition-transform flex flex-col px-10 h-auto mb-10" + Scale}>
+            <div className={"mx-auto w-full transition-all flex flex-col px-10 h-auto mb-10 " + Scale}>
                 {Form === 1 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 ">
                         <p className=" text-lg">Welcome, <b> {UserName}</b>, Good to see you today</p>
@@ -52,6 +70,14 @@ const CreateData = () => {
                         <p className="text-lg font-bold mt-5">Alright, How will u introduce your self?</p>
                         <textarea placeholder="About Yourself !!" style={{boxShadow:"-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17"}} className="p-2 rounded-md h-36 w-96 outline-none bg-[#f5f5fa]" value={AboutMe} onChange={(e) => SetAboutMe(e.target.value)} />
                     </div>
+                </>)}
+                {Form === 3 && (<>
+                    <div className="mx-auto text-center flex flex-col gap-4">
+                        <p className="text-lg font-bold mt-5 mx-32">How to reach you?</p>
+                        <InputBox placeholder="Number" value={Contacts.Number} onChange={(e) =>AddContacts("number",e.target.value)} />
+                        <InputBox placeholder="Email" value={Contacts.Email} onChange={(e) => AddContacts("email",e.target.value)} />
+                        <InputBox placeholder="Your Website" value={Contacts.Link} onChange={(e) => AddContacts("link",e.target.value)} />
+                        </div>
                 </>)}
             </div>
             <div className="mx-auto mt-auto flex gap-20 mb-10">
