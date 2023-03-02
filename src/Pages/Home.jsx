@@ -43,7 +43,7 @@ const Home = () => {
  const [UserName,SetUserName] = useState()
  const nav = useNavigate()
  function GetStarted(){
-  debugger
+ 
    if(UserName===""){
      return
    }
