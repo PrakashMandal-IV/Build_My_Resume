@@ -47,6 +47,7 @@ const Home = () => {
     if (UserName === "") {
       return
     }
+    SetChangeLink(false)
     SetHomePage('translate-x-full')
     SetHomePageContent('-translate-x-[200%]')
     setTimeout(() => {
@@ -58,9 +59,20 @@ const Home = () => {
   }
   const [LoadHomePage, SetHomePage] = useState('translate-x-full')
   const [HomePageContent, SetHomePageContent] = useState('-translate-x-[200%]')
+  const searchParams = new URLSearchParams(window.location.search);
+  const [ChangeLink,SetChangeLink] = useState(true)
   useEffect(() => {
     LoadPage()
+    
   }, [])
+  useEffect(()=>{
+    if(searchParams.get('ScrollTo')&&ChangeLink){
+      const myDiv = document.querySelector('#'+searchParams.get('ScrollTo'));
+
+      // Scroll to the div with the ID "myDiv"
+      myDiv.scrollIntoView({behavior: "smooth"});
+     }
+  },[searchParams])
 
   function LoadPage() {
     setTimeout(() => {

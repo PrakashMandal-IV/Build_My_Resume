@@ -27,24 +27,24 @@ const Nav = () => {
       <Logo className="h-14 ml-0" />
       <div className="flex gap-20 justify-center ">
         <div className=" text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all">
-          <p className="my-auto" onClick={()=>nav('home')}>Home</p>
+          <p className="my-auto" onClick={() => nav('home')}>Home</p>
         </div>
         <div className="text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all">
-          <a href="#Designs" className="my-auto">
-            <p className="" >Designs</p>
-          </a>
+
+          <p className="my-auto" onClick={() => nav('home?ScrollTo=Designs')} >Designs</p>
+
         </div>
         <div className="text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all">
-          <a href="#KeyFeatures" className="my-auto">
-            <p className="my-auto">Key Features</p>
-          </a>
+
+          <p className="my-auto" onClick={() => nav('home?ScrollTo=KeyFeatures')}>Key Features</p>
+
 
         </div>
       </div>
     </div>
 
     <Outlet />
-    <div className="mt-auto h-28 flex gap-10 justify-center">
+    <div className="mt-auto h-20 flex gap-10 justify-center">
       <div className="">
         <Logo className="h-14 ml-0" />
       </div>
