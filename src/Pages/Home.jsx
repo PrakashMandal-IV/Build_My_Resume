@@ -40,10 +40,10 @@ const Home = () => {
       alt: "Image 8"
     }
   ]
-  const [UserName, SetUserName] = useState()
+  const [UserName, SetUserName] = useState('')
   const nav = useNavigate()
   function GetStarted() {
-
+  
     if (UserName === "") {
       return
     }

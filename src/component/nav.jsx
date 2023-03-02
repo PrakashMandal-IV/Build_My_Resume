@@ -31,7 +31,7 @@ const Nav = () => {
         </div>
         <div className="text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all">
           <a href="#Designs" className="my-auto">
-            <p className="">Designs</p>
+            <p className="" >Designs</p>
           </a>
         </div>
         <div className="text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all">
