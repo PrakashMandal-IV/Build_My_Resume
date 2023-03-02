@@ -23,7 +23,7 @@ const Nav = () => {
   }, [navVisible]);
 
   return (<div className="flex flex-col min-h-screen ">
-    <div className={`fixed top-0 w-full flex-col md:flex-row flex gap-5 md:gap-20 m-4 transition-all  ${navVisible ? '' : ' -translate-y-[200px]  '}`}>
+    <div className={`fixed top-0 w-full flex-col md:flex-row flex gap-5 md:gap-20 p-2 max-h-20 transition-all  ${navVisible ? '' : ' -translate-y-[200px]  '}`}>
       <Logo className="h-14 ml-0" />
       <div className="flex gap-20 justify-center ">
         <div className=" text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all">
