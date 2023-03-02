@@ -1,13 +1,13 @@
 import Resume_1 from "../component/Resumes/Resume_1"
 import { InputBox, PrimaryButton } from "../component/Button";
 import ReactToPrint from "react-to-print";
-import { createRef, useRef, useState } from "react";
+import { createRef, useEffect, useRef, useState } from "react";
 import homepageBg from '../Assets/HomepageBG.png';
 import ImageSlideshow from "../component/ImageSlider";
 import { useNavigate } from "react-router";
 import styled from 'styled-components'
 const Home = () => {
-  
+
   const Images = [
     {
       src: "https://i.pinimg.com/564x/7b/2d/b2/7b2db207c68b2e41717fdf73589a24b6.jpg",
@@ -40,18 +40,35 @@ const Home = () => {
       alt: "Image 8"
     }
   ]
- const [UserName,SetUserName] = useState()
- const nav = useNavigate()
- function GetStarted(){
- 
-   if(UserName===""){
-     return
-   }
-  nav("/createdata?Name="+UserName)
+  const [UserName, SetUserName] = useState()
+  const nav = useNavigate()
+  function GetStarted() {
+
+    if (UserName === "") {
+      return
+    }
+    SetHomePage('translate-x-full')
+    SetHomePageContent('-translate-x-[200%]')
+    setTimeout(() => {
+      nav("/createdata?Name=" + UserName)
+    }, 200);
+    
 
 
- }
-  return (<>
+  }
+  const [LoadHomePage, SetHomePage] = useState('translate-x-full')
+  const [HomePageContent, SetHomePageContent] = useState('-translate-x-[200%]')
+  useEffect(() => {
+    LoadPage()
+  }, [])
+
+  function LoadPage() {
+    setTimeout(() => {
+      SetHomePage('')
+      SetHomePageContent('')
+    }, 200);
+  }
+  return (<div className="overflow-hidden">
     {/* <div className="flex flex-col md:flex-row h-[100vh-3rem]">
       <div className="w-1/3  mt-auto ">
       <ReactToPrint
@@ -68,40 +85,40 @@ const Home = () => {
       </div>
 
     </div> */}
-    <div className="hidden lg:flex  bg-no-repeat bg-right     bg-transparent h-1/2  md:bg-cover  md:h-[100vh] md:max-h-[1920px] p-4" style={{ backgroundImage: `url(${homepageBg})` }}>
-    <div className="flex items-center h-screen">
-      <div className="w-1/2 px-10 flex flex-col gap-10  mt-auto mb-auto" style={{ maxHeight: 'calc(100vh - 8rem)' }}>
-        <p className="w-2/3 ">Elevate your job search with our <b> user-friendly website</b>. With multiple intuitive designs and templates, you can effortlessly create a professional <b>resume for free</b> . Impress potential employers and land your dream job today!</p>
-        <div className="flex gap-10">
-          <div className="w-2/5">
+    <div className={"hidden lg:flex  bg-no-repeat bg-right     bg-transparent h-1/2  md:bg-cover  md:h-[100vh] md:max-h-[1920px] p-4 transition-all " + LoadHomePage} style={{ backgroundImage: `url(${homepageBg})` }}>
+      <div className={"flex items-center h-screen transition-all " + HomePageContent}>
+        <div className="w-1/2 px-10 flex flex-col gap-10  mt-auto mb-auto" style={{ maxHeight: 'calc(100vh - 8rem)' }}>
+          <p className="w-2/3 ">Elevate your job search with our <b> user-friendly website</b>. With multiple intuitive designs and templates, you can effortlessly create a professional <b>resume for free</b> . Impress potential employers and land your dream job today!</p>
+          <div className="flex gap-10">
+            <div className="w-2/5">
 
-            <InputBoxStyle type="text" className="h-10 w-full " value={UserName} placeholder="Tell us your Name" onChange={(e)=>SetUserName(e.target.value)}/>
+              <InputBoxStyle type="text" className="h-10 w-full " value={UserName} placeholder="Tell us your Name" onChange={(e) => SetUserName(e.target.value)} />
 
-          </div>
-          <PrimaryButton Name="Get Started" className="h-10 mt-auto font-semibold   " onClick={()=>GetStarted()} />
-        </div>
-        <div className="mt-32 flex gap-10 w-2/3" >
-          <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-sky-400 to-green-400 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center">
-            <div className="my-auto">
-              <p className="text-lg font-bold text-white text-center">10+</p>
-              <p className="text-white ">Designs</p>
             </div>
+            <PrimaryButton Name="Get Started" className="h-10 mt-auto font-semibold   " onClick={() => GetStarted()} />
           </div>
-          <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-yellow-400 to-green-400 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center align-middle">
-            <div className="my-auto">
-              <p className="text-lg font-bold text-white text-center">100+</p>
-              <p className="text-white ">Creations</p>
+          <div className="mt-32 flex gap-10 w-2/3" >
+            <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-sky-400 to-green-400 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center">
+              <div className="my-auto">
+                <p className="text-lg font-bold text-white text-center">10+</p>
+                <p className="text-white ">Designs</p>
+              </div>
             </div>
-          </div>
-          <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-green-400 to-sky-400 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center align-middle">
-            <div className="my-auto">
-              <p className="text-lg font-bold text-white text-center">100+</p>
-              <p className="text-white ">Users</p>
+            <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-yellow-400 to-green-400 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center align-middle">
+              <div className="my-auto">
+                <p className="text-lg font-bold text-white text-center">100+</p>
+                <p className="text-white ">Creations</p>
+              </div>
+            </div>
+            <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-green-400 to-sky-400 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center align-middle">
+              <div className="my-auto">
+                <p className="text-lg font-bold text-white text-center">100+</p>
+                <p className="text-white ">Users</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-</div>
     </div>
     <div className="flex lg:hidden md:bg-cover h-[50vh]">
       <div className="mt-auto px-10 flex flex-col gap-10">
@@ -254,8 +271,8 @@ const Home = () => {
       </div>
       <p className="text-center mt-10">Our Designs Follows each and every key features and provides you the best Resume for your next <b> Interview!</b></p>
     </div>
-     
-  </>)
+
+  </div>)
 }
 export default Home
 
