@@ -70,19 +70,19 @@ const Home = () => {
           <PrimaryButton Name="Get Started" className="h-10 mt-auto font-semibold   " />
         </div>
         <div className="mt-32 flex gap-10 w-2/3">
-          <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-sky-400 to-sky-500 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center">
+          <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-sky-400 to-green-400 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center">
             <div className="my-auto">
               <p className="text-lg font-bold text-white text-center">10+</p>
               <p className="text-white ">Designs</p>
             </div>
           </div>
-          <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-sky-400 to-sky-500 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center align-middle">
+          <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-yellow-400 to-green-400 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center align-middle">
             <div className="my-auto">
               <p className="text-lg font-bold text-white text-center">100+</p>
               <p className="text-white ">Creations</p>
             </div>
           </div>
-          <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-sky-400 to-sky-500 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center align-middle">
+          <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-green-400 to-sky-400 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center align-middle">
             <div className="my-auto">
               <p className="text-lg font-bold text-white text-center">100+</p>
               <p className="text-white ">Users</p>
