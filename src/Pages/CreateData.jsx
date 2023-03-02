@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
+import { PrimaryButton } from "../component/Button";
 
 const CreateData=()=>{
     const searchParams = new URLSearchParams(window.location.search);
-  const [UserName,SetUserName] = useState()
-  const [Form,SetForm] = useState('')
+  
+  const [Form,SetForm] = useState(1)
   const [Scale,SetScale] = useState('scale-0')
 useEffect(()=>{
      SetUserName(searchParams.get('Name'))
@@ -11,13 +12,27 @@ useEffect(()=>{
          SetScale('')
      }, 200);
 },[])
+
+//UserData
+const [UserName,SetUserName] = useState()
+
+
+
     return (<>
-            <div className="flex flex-col w-full max-w-[1920px] h-full mt-[30vh]">
+            <div className="flex flex-col w-full max-w-[1920px] h-[55vh] mt-[30vh]">
                 {/* {"Intro"} */}
-                   <div className={"mx-auto w-full transition-transform "+Scale}>
+                <div className={"mx-auto w-full transition-transform "+Scale}>
+                  {Form===1&&(<>
+                   
                        <p className="text-center text-lg">Welcome, <b> {UserName}</b>, Good to see you today</p>
                        <p className="text-center text-lg">Let's start Building your Resume !!</p>
-                   </div>
+                  
+                  </>)}
+                  </div>
+                  <div className="mx-auto mt-auto flex gap-20">
+                    {Form!==1&&(<PrimaryButton Name="Back"  onClick={()=>SetForm(Form-1)} className="w-36" />)}
+                      <PrimaryButton Name="Next" onClick={()=>SetForm(Form+1)} className="w-36 transition-all" />
+                  </div>
             </div>
     </>)
 }

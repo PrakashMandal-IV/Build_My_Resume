@@ -22,7 +22,6 @@ const PrimaryButtonStyle = styled.button`
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: pre;
-  width: max-content;
   word-break: normal;
   word-spacing: normal;
   
