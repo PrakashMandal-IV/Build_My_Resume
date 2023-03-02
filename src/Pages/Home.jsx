@@ -1,12 +1,13 @@
 import Resume_1 from "../component/Resumes/Resume_1"
 import { InputBox, PrimaryButton } from "../component/Button";
 import ReactToPrint from "react-to-print";
-import { createRef, useRef } from "react";
+import { createRef, useRef, useState } from "react";
 import homepageBg from '../Assets/HomepageBG.png';
 import ImageSlideshow from "../component/ImageSlider";
-
+import { useNavigate } from "react-router";
+import styled from 'styled-components'
 const Home = () => {
-  const printref = createRef();
+  
   const Images = [
     {
       src: "https://i.pinimg.com/564x/7b/2d/b2/7b2db207c68b2e41717fdf73589a24b6.jpg",
@@ -39,8 +40,17 @@ const Home = () => {
       alt: "Image 8"
     }
   ]
+ const [UserName,SetUserName] = useState()
+ const nav = useNavigate()
+ function GetStarted(){
+  debugger
+   if(UserName===""){
+     return
+   }
+  nav("/createdata?Name="+UserName)
 
 
+ }
   return (<>
     {/* <div className="flex flex-col md:flex-row h-[100vh-3rem]">
       <div className="w-1/3  mt-auto ">
@@ -64,12 +74,12 @@ const Home = () => {
         <div className="flex gap-10">
           <div className="w-2/5">
 
-            <InputBox className="h-10 w-full " placeholder="Tell us your Name" />
+            <InputBoxStyle type="text" className="h-10 w-full " value={UserName} placeholder="Tell us your Name" onChange={(e)=>SetUserName(e.target.value)}/>
 
           </div>
-          <PrimaryButton Name="Get Started" className="h-10 mt-auto font-semibold   " />
+          <PrimaryButton Name="Get Started" className="h-10 mt-auto font-semibold   " onClick={()=>GetStarted()} />
         </div>
-        <div className="mt-32 flex gap-10 w-2/3">
+        <div className="mt-32 flex gap-10 w-2/3" >
           <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-sky-400 to-green-400 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center">
             <div className="my-auto">
               <p className="text-lg font-bold text-white text-center">10+</p>
@@ -248,3 +258,35 @@ const Home = () => {
 }
 export default Home
 
+const InputBoxStyle = styled.input`
+align-items: center;
+background: #f5f5fa;
+border: 0;
+border-radius: 8px;
+box-shadow: -10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17;
+box-sizing: border-box;
+color: #2a1f62;
+display: flex;
+font-size: 1rem;
+justify-content: center;
+padding: 15px;
+position: relative;
+text-align: left;
+transition: .2s;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+white-space: pre;
+outline: none;
+word-break: normal;
+word-spacing: normal;
+&:hover {
+  background: #f8f8ff;
+  box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+}
+
+@media (min-width: 768px) {
+  padding: 24px;
+}
+
+`

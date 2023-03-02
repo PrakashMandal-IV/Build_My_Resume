@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom"
+import { Outlet, useNavigate } from "react-router-dom"
 import { Logo } from "./Icons";
 
 
 const Nav = () => {
   const [navVisible, setNavVisible] = useState(true);
-
+  const nav = useNavigate()
   useEffect(() => {
     const handleScroll = () => {
       if (window.pageYOffset > 0 && navVisible) {
@@ -22,12 +22,12 @@ const Nav = () => {
     };
   }, [navVisible]);
 
-  return (<>
+  return (<div className="flex flex-col min-h-screen ">
     <div className={`fixed top-0 w-full flex-col md:flex-row flex gap-5 md:gap-20 m-4 transition-all  ${navVisible ? '' : ' -translate-y-[200px]  '}`}>
       <Logo className="h-14 ml-0" />
       <div className="flex gap-20 justify-center ">
         <div className=" text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all">
-          <p className="my-auto">Home</p>
+          <p className="my-auto" onClick={()=>nav('home')}>Home</p>
         </div>
         <div className="text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all">
           <a href="#Designs" className="my-auto">
@@ -44,7 +44,7 @@ const Nav = () => {
     </div>
 
     <Outlet />
-    <div className="h-28 flex gap-10 justify-center">
+    <div className="mt-auto h-28 flex gap-10 justify-center">
       <div className="">
         <Logo className="h-14 ml-0" />
       </div>
@@ -66,7 +66,7 @@ const Nav = () => {
         <p className="text-xs">BuildMyResume@Copyright 2023</p>
       </div>
     </div>
-  </>
+  </div>
   )
 }
 export default Nav
