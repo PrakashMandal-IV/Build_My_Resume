@@ -4,8 +4,9 @@ import styled from 'styled-components'
 const CreateData = () => {
     const searchParams = new URLSearchParams(window.location.search);
 
-    const [Form, SetForm] = useState(3)
+    const [Form, SetForm] = useState(4)
     const [Scale, SetScale] = useState('scale-0')
+    const [SideBoard, SetSideBaord] = useState(false)
     useEffect(() => {
         SetUserName(searchParams.get('Name'))
         setTimeout(() => {
@@ -16,10 +17,27 @@ const CreateData = () => {
     //UserData
     const [UserName, SetUserName] = useState('')
     const [Profession, SetProfession] = useState('')
-    const [AboutMe,SetAboutMe] = useState('')
-    const [Contacts,SetContacts] = useState({Number:"",
-    Email:"",
-    Link:""})
+    const [AboutMe, SetAboutMe] = useState('')
+    const [Contacts, SetContacts] = useState({
+        Number: "",
+        Email: "",
+        Link: ""
+    })
+    const [Education, SetEducation] = useState([{
+        Title: "12th (Science)",
+        From: "School name",
+        Year: "2012"
+    },
+    {
+        Title: "12th (Science)",
+        From: "School name",
+        Year: "2012"
+    },
+    {
+        Title: "12th (Science)",
+        From: "School name",
+        Year: "2012"
+    }])
     function NextClick() {
         SetScale('scale-0')
         setTimeout(() => {
@@ -35,23 +53,27 @@ const CreateData = () => {
             SetScale('')
         }, 200);
     }
-    function AddContacts(type,value){
-        var ContactData={
-            Number:Contacts.Number,
-            Email:Contacts.Email,
-            Link:Contacts.Link
+    function AddContacts(type, value) {
+        var ContactData = {
+            Number: Contacts.Number,
+            Email: Contacts.Email,
+            Link: Contacts.Link
         }
-        if(type==='number'){
+        if (type === 'number') {
             ContactData.Number = value
-        }else if(type==='email'){
+        } else if (type === 'email') {
             ContactData.Email = value
-        }else if(type==='link'){
+        } else if (type === 'link') {
             ContactData.Link = value
         }
         SetContacts(ContactData)
     }
+
+    function RemoveEducation(id){
+      SetEducation(Education.map((v,idx)=>{if(idx!==id){return v}}).filter(item=>item!==undefined))
+    }
     return (<>
-        <div className="flex flex-col w-full max-w-[1920px] h-[60vh] md:max-h-[1920px] mt-[30vh]">
+        <div className="flex flex-col w-full max-w-[1920px] h-[60vh] md:max-h-[1920px] mt-[20vh]">
             {/* {"Intro"} */}
             <div className={"mx-auto w-full transition-all flex flex-col px-10 h-auto mb-10 " + Scale}>
                 {Form === 1 && (<>
@@ -67,17 +89,55 @@ const CreateData = () => {
                 </>)}
                 {Form === 2 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4">
-                        <p className="text-lg font-bold mt-5">Alright, How will u introduce your self?</p>
-                        <textarea placeholder="About Yourself !!" style={{boxShadow:"-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17"}} className="p-2 rounded-md h-36 w-96 outline-none bg-[#f5f5fa]" value={AboutMe} onChange={(e) => SetAboutMe(e.target.value)} />
+                        <p className="text-lg font-bold mt-5">Alright, How will you introduce your self?</p>
+                        <textarea placeholder="About Yourself !!" style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} className="p-2 mx-auto rounded-md h-36 w-96 outline-none bg-[#f5f5fa]" value={AboutMe} onChange={(e) => SetAboutMe(e.target.value)} />
+                        <p className="text-center w-full md:w-[40rem] mt-5">Your "Introduction" section should be brief and highlight your key strengths and experiences that make you a great candidate for the job. Focus on showcasing your relevant skills, experience, and achievements in just a few lines.</p>
                     </div>
                 </>)}
                 {Form === 3 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4">
                         <p className="text-lg font-bold mt-5 mx-32">How to reach you?</p>
-                        <InputBox placeholder="Number" value={Contacts.Number} onChange={(e) =>AddContacts("number",e.target.value)} />
-                        <InputBox placeholder="Email" value={Contacts.Email} onChange={(e) => AddContacts("email",e.target.value)} />
-                        <InputBox placeholder="Your Website" value={Contacts.Link} onChange={(e) => AddContacts("link",e.target.value)} />
+                        <InputBox placeholder="Number" value={Contacts.Number} onChange={(e) => AddContacts("number", e.target.value)} />
+                        <InputBox placeholder="Email" value={Contacts.Email} onChange={(e) => AddContacts("email", e.target.value)} />
+                        <InputBox placeholder="Your Website" value={Contacts.Link} onChange={(e) => AddContacts("link", e.target.value)} />
+                    </div>
+                </>)}
+                {Form === 4 && (<>
+                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
+                        <p className="text-lg font-bold mt-5 ">Tell us about your Educations</p>
+                        <div className="flex gap-2 ">
+                            <div className={"flex flex-col gap-5 transition-all "+(SideBoard?"w-1/2":"w-full")}>
+                                {/* Education items */}
+                                {Education.map((item, idx) => (
+                                    <div className="w-full  p-2 flex bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  " style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
+                                        <div className="mr-auto text-left">
+                                            <p className="text-lg font-semibold ">{item.Title}</p>
+                                            <p className="">{item.From}</p>
+                                            <p className="title-xs">{item.Year}</p>
+                                        </div>
+                                        <div className="ml-auto my-auto transition-all" onClick={()=>RemoveEducation(idx)}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                ))}
+                                {/* Button to toggle SideBoard */}
+                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-8 h-8 transition-all  "+(SideBoard?"rotate-45":"")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className="w-full transition-all mt-5" />
+                            </div>
+                            {/* Left div that appears when SideBoard is true */}
+                            
+                                <div className={"transition-all transform  flex flex-col gap-2 "+(SideBoard?"w-1/2":"hidden w-0")}>
+                                <InputBox placeholder="Title" className="h-10" value={Contacts.Number} onChange={(e) => AddContacts("number", e.target.value)} />
+                                <InputBox placeholder="From" className="h-10" value={Contacts.Number} onChange={(e) => AddContacts("number", e.target.value)} />
+                                <InputBox placeholder="Complition Year" className="h-10" value={Contacts.Number} onChange={(e) => AddContacts("number", e.target.value)} />
+                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)}  Name="Add" className="h-10 w-full transition-all mt-5" />
+                         
+                                </div>
+
                         </div>
+
+                    </div>
                 </>)}
             </div>
             <div className="mx-auto mt-auto flex gap-20 mb-10">
