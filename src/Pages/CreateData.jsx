@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import { PrimaryButton } from "../component/Button";
 import styled from 'styled-components'
+import { ProgressBar } from "../component/ProgressBar";
 const CreateData = () => {
     const searchParams = new URLSearchParams(window.location.search);
 
-    const [Form, SetForm] = useState(6)
+    const [Form, SetForm] = useState(0)
+    const FinalFormNumber=6
     const [Scale, SetScale] = useState('scale-0')
     const [SideBoard, SetSideBaord] = useState(false)
     useEffect(() => {
@@ -43,19 +45,24 @@ const CreateData = () => {
         Duration: ""
     })
     function NextClick() {
-        SetScale('scale-0')
+        if(Form!==FinalFormNumber){
+            SetScale('scale-0')
         setTimeout(() => {
             SetForm(Form + 1)
             SetScale('')
         }, 200);
+        }
     }
 
     function BackClick() {
-        SetScale('scale-0')
-        setTimeout(() => {
-            SetForm(Form - 1)
-            SetScale('')
-        }, 200);
+        if(Form!==1){
+            SetScale('scale-0')
+            setTimeout(() => {
+                SetForm(Form - 1)
+                SetScale('')
+            }, 200);
+        }
+      
     }
     function AddContacts(type, value) {
         var ContactData = {
@@ -163,10 +170,14 @@ const CreateData = () => {
         SetSideBaord(!SideBoard)
     }
     return (<>
-        <div className="flex flex-col w-full max-w-[1920px] h-[60vh] md:max-h-[1920px] mt-[20vh]">
+
+        <div className="flex flex-col w-full max-w-[1920px] h-[60vh] md:max-h-[1920px] mt-[15vh]">
             {/* {"Intro"} */}
+          <div className="w-10/12 mx-auto mb-16">
+          <ProgressBar FinalFormNumber={FinalFormNumber} Form={Form} />
+          </div>
             <div className={"mx-auto w-full transition-all flex flex-col px-10 h-auto mb-10 " + Scale}>
-                {Form === 1 && (<>
+                {Form === 0 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 ">
                         <p className=" text-lg">Welcome, <b> {UserName}</b>, Good to see you today</p>
                         <p className=" text-lg">Let's start Building your Resume !!</p>
@@ -177,14 +188,14 @@ const CreateData = () => {
                             avoid exaggeration, be specific, and tailor your title to the job.</p>
                     </div>
                 </>)}
-                {Form === 2 && (<>
+                {Form === 1 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4">
                         <p className="text-lg font-bold mt-5">Alright, How will you introduce your self?</p>
                         <textarea placeholder="About Yourself !!" style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} className="p-2 mx-auto rounded-md h-36 w-96 outline-none bg-[#f5f5fa]" value={AboutMe} onChange={(e) => SetAboutMe(e.target.value)} />
                         <p className="text-center w-full md:w-[40rem] mt-5">Your "Introduction" section should be brief and highlight your key strengths and experiences that make you a great candidate for the job. Focus on showcasing your relevant skills, experience, and achievements in just a few lines.</p>
                     </div>
                 </>)}
-                {Form === 3 && (<>
+                {Form === 2 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4">
                         <p className="text-lg font-bold mt-5 mx-32">How to reach you?</p>
                         <InputBox placeholder="Number" value={Contacts.Number} onChange={(e) => AddContacts("number", e.target.value)} />
@@ -192,7 +203,7 @@ const CreateData = () => {
                         <InputBox placeholder="Your Website" value={Contacts.Link} onChange={(e) => AddContacts("link", e.target.value)} />
                     </div>
                 </>)}
-                {Form === 4 && (<>
+                {Form === 3 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
                         <p className="text-lg font-bold mt-5 ">Tell us about your Educations</p>
                         <div className="flex gap-2 ">
@@ -229,7 +240,7 @@ const CreateData = () => {
 
                     </div>
                 </>)}
-                {Form === 5 && (<>
+                {Form === 4 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
                         <div className="mt-5">
                             <p className="text-lg font-bold ">Mentioning your skills always</p>
@@ -270,7 +281,7 @@ const CreateData = () => {
 
                     </div>
                 </>)}
-                {Form === 6 && (<>
+                {Form === 5 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
                         <p className="text-lg font-bold mt-5 ">Tell us about your Experiences</p>
                         <div className="flex gap-2 ">
