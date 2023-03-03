@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const CreateData = () => {
     const searchParams = new URLSearchParams(window.location.search);
 
-    const [Form, SetForm] = useState(5)
+    const [Form, SetForm] = useState(6)
     const [Scale, SetScale] = useState('scale-0')
     const [SideBoard, SetSideBaord] = useState(false)
     useEffect(() => {
@@ -30,31 +30,17 @@ const CreateData = () => {
         Year: ""
     })
 
-    const [SkillList,SetSkillList] = useState([{
-        Name:"SQL",
-        Level:5
-    },{
-        Name:"SQL",
-        Level:5
-    },{
-        Name:"SQL",
-        Level:5
-    },{
-        Name:"SQL",
-        Level:5
-    },{
-        Name:"SQL",
-        Level:5
-    },{
-        Name:"SQL",
-        Level:5
-    },{
-        Name:"SQL",
-        Level:5
-    }])
+    const [SkillList,SetSkillList] = useState([])
     const [AddSkill,SetAddSkill] = useState({
         Name:"",
         Level:""
+    })
+
+    const [ExperienceList, SetExperienceList] = useState([])
+    const [AddExperience, SetAddExperience] = useState({
+        Job: "",
+        Company: "",
+        Duration: ""
     })
     function NextClick() {
         SetScale('scale-0')
@@ -135,12 +121,44 @@ const CreateData = () => {
         SetAddSkill(TempData)
     }
     function SetAddedSkill() {
-        debugger
+       
         SkillList.push(AddSkill)
         SetSkillList(SkillList)
         SetAddSkill({
             Name:"",
             Level:""
+        })
+        SetSideBaord(!SideBoard)
+    }
+
+
+    function RemoveExperience(id) {
+        SetExperienceList(ExperienceList.map((v, idx) => { if (idx !== id) { return v } }).filter(item => item !== undefined))
+    }
+    function AddExperienceHandler(type, value) {
+        
+        var TempData = {
+            Job: AddExperience.Job,
+            Company:AddExperience.Company,
+            Duration: AddExperience.Duration
+        }
+        if (type === 'job') {
+            TempData.Job = value
+        } else if (type === 'company') {
+            TempData.Company = value
+        } else if (type === 'duration') {
+            TempData.Duration= value
+        }
+        SetAddExperience(TempData)
+    }
+    function SetAddedExperience() {
+       
+        ExperienceList.push(AddExperience)
+        SetExperienceList(ExperienceList)
+        SetAddExperience({
+            Job: "",
+            Company: "",
+            Duration: ""
         })
         SetSideBaord(!SideBoard)
     }
@@ -195,7 +213,7 @@ const CreateData = () => {
                                     </div>
                                 ))}
                                 {/* Button to toggle SideBoard */}
-                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-8 h-8 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className="w-full transition-all mt-5" />
+                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-8 h-8 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className="w-full transition-all h-12" />
                             </div>
                             {/* Left div that appears when SideBoard is true */}
 
@@ -245,6 +263,42 @@ const CreateData = () => {
                                 <InputBox placeholder="Prof. from 0-100" type="number" className="h-10 appearance-none " value={AddSkill.Level} onChange={(e) => AddSkillHandler("level", e.target.value)} />
                                 
                                 <PrimaryButton onClick={() => SetAddedSkill()} Name="Add" className="h-10 w-full transition-all mt-5" />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </>)}
+                {Form === 6 && (<>
+                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
+                        <p className="text-lg font-bold mt-5 ">Tell us about your Experiences</p>
+                        <div className="flex gap-2 ">
+                            <div className={"flex flex-col gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
+                                {/* Education items */}
+                                {ExperienceList.map((item, idx) => (
+                                    <div className="w-full  p-2 flex bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  " style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
+                                        <div className="mr-auto text-left">
+                                            <p className="text-lg font-semibold ">{item.Job}</p>
+                                            <p className="">{item.Company} <span className="text-xs font-bold ">({item.Duration})</span></p>
+                                        </div>
+                                        <div className="ml-auto my-auto transition-all cursor-pointer" onClick={() => RemoveExperience(idx)}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                ))}
+                                {/* Button to toggle SideBoard */}
+                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-8 h-8 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className="w-full transition-all h-12" />
+                            </div>
+                            {/* Left div that appears when SideBoard is true */}
+
+                            <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
+                                <InputBox placeholder="Job" className="h-10" value={AddExperience.Job} onChange={(e) => AddExperienceHandler("job", e.target.value)} />
+                                <InputBox placeholder="Company" className="h-10" value={AddExperience.Company} onChange={(e) => AddExperienceHandler("company", e.target.value)} />
+                                <InputBox placeholder="From-to (eg :2015-2020,2018-Present)" className="h-10" value={AddExperience.Duration} onChange={(e) => AddExperienceHandler("duration", e.target.value)} />
+                                <PrimaryButton onClick={() => SetAddedExperience()} Name="Add" className="h-10 w-full transition-all mt-5" />
 
                             </div>
 
