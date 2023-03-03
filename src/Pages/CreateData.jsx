@@ -23,21 +23,12 @@ const CreateData = () => {
         Email: "",
         Link: ""
     })
-    const [Education, SetEducation] = useState([{
-        Title: "12th (Science)",
-        From: "School name",
-        Year: "2012"
-    },
-    {
-        Title: "12th (Science)",
-        From: "School name",
-        Year: "2012"
-    },
-    {
-        Title: "12th (Science)",
-        From: "School name",
-        Year: "2012"
-    }])
+    const [Education, SetEducation] = useState([])
+    const [AddEducation,SetAddEducation] = useState({
+        Title: "",
+        From: "",
+        Year: ""
+    })
     function NextClick() {
         SetScale('scale-0')
         setTimeout(() => {
@@ -71,6 +62,32 @@ const CreateData = () => {
 
     function RemoveEducation(id){
       SetEducation(Education.map((v,idx)=>{if(idx!==id){return v}}).filter(item=>item!==undefined))
+    }
+    function AddEducationHandler(type, value) {
+       
+        var TempData = {
+            Title: AddEducation.Title,
+            From: AddEducation.From,
+            Year: AddEducation.Year
+        }
+        if (type === 'title') {
+            TempData.Title = value
+        } else if (type === 'from') {
+            TempData.From = value
+        } else if (type === 'year') {
+            TempData.Year = value
+        }
+        SetAddEducation(TempData)
+    }
+    function SetAddedEducaton(){
+        Education.push(AddEducation)
+           SetEducation(Education)
+           SetAddEducation({
+            Title: "",
+            From: "",
+            Year: ""
+        })
+           SetSideBaord(!SideBoard)
     }
     return (<>
         <div className="flex flex-col w-full max-w-[1920px] h-[60vh] md:max-h-[1920px] mt-[20vh]">
@@ -128,10 +145,10 @@ const CreateData = () => {
                             {/* Left div that appears when SideBoard is true */}
                             
                                 <div className={"transition-all transform  flex flex-col gap-2 "+(SideBoard?"w-1/2":"hidden w-0")}>
-                                <InputBox placeholder="Title" className="h-10" value={Contacts.Number} onChange={(e) => AddContacts("number", e.target.value)} />
-                                <InputBox placeholder="From" className="h-10" value={Contacts.Number} onChange={(e) => AddContacts("number", e.target.value)} />
-                                <InputBox placeholder="Complition Year" className="h-10" value={Contacts.Number} onChange={(e) => AddContacts("number", e.target.value)} />
-                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)}  Name="Add" className="h-10 w-full transition-all mt-5" />
+                                <InputBox placeholder="Title" className="h-10" value={AddEducation.Title} onChange={(e) => AddEducationHandler("title", e.target.value)} />
+                                <InputBox placeholder="From" className="h-10" value={AddEducation.From} onChange={(e) => AddEducationHandler("from", e.target.value)} />
+                                <InputBox placeholder="Complition Year" className="h-10" value={AddEducation.Year} onChange={(e) => AddEducationHandler("year", e.target.value)} />
+                                <PrimaryButton onClick={() =>SetAddedEducaton()}  Name="Add" className="h-10 w-full transition-all mt-5" />
                          
                                 </div>
 
