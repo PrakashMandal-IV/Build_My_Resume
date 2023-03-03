@@ -1,6 +1,18 @@
 import styled from 'styled-components'
 
 export const PrimaryButton=(props)=>{
+
+
+    return (
+        <>
+        <PrimaryButtonStyle {...props}> {props.Name}</PrimaryButtonStyle>
+        
+        </>
+    )
+}
+
+
+
 const PrimaryButtonStyle = styled.button`
   align-items: center;
   background: #f5f5fa;
@@ -34,13 +46,5 @@ const PrimaryButtonStyle = styled.button`
   padding: 24px;
 }
 `
-
-    return (
-        <>
-        <PrimaryButtonStyle {...props}> {props.Name}</PrimaryButtonStyle>
-        
-        </>
-    )
-}
 
 

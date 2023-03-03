@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const CreateData = () => {
     const searchParams = new URLSearchParams(window.location.search);
 
-    const [Form, SetForm] = useState(4)
+    const [Form, SetForm] = useState(5)
     const [Scale, SetScale] = useState('scale-0')
     const [SideBoard, SetSideBaord] = useState(false)
     useEffect(() => {
@@ -24,10 +24,37 @@ const CreateData = () => {
         Link: ""
     })
     const [Education, SetEducation] = useState([])
-    const [AddEducation,SetAddEducation] = useState({
+    const [AddEducation, SetAddEducation] = useState({
         Title: "",
         From: "",
         Year: ""
+    })
+
+    const [SkillList,SetSkillList] = useState([{
+        Name:"SQL",
+        Level:5
+    },{
+        Name:"SQL",
+        Level:5
+    },{
+        Name:"SQL",
+        Level:5
+    },{
+        Name:"SQL",
+        Level:5
+    },{
+        Name:"SQL",
+        Level:5
+    },{
+        Name:"SQL",
+        Level:5
+    },{
+        Name:"SQL",
+        Level:5
+    }])
+    const [AddSkill,SetAddSkill] = useState({
+        Name:"",
+        Level:""
     })
     function NextClick() {
         SetScale('scale-0')
@@ -60,11 +87,11 @@ const CreateData = () => {
         SetContacts(ContactData)
     }
 
-    function RemoveEducation(id){
-      SetEducation(Education.map((v,idx)=>{if(idx!==id){return v}}).filter(item=>item!==undefined))
+    function RemoveEducation(id) {
+        SetEducation(Education.map((v, idx) => { if (idx !== id) { return v } }).filter(item => item !== undefined))
     }
     function AddEducationHandler(type, value) {
-       
+
         var TempData = {
             Title: AddEducation.Title,
             From: AddEducation.From,
@@ -79,15 +106,43 @@ const CreateData = () => {
         }
         SetAddEducation(TempData)
     }
-    function SetAddedEducaton(){
+    function SetAddedEducaton() {
         Education.push(AddEducation)
-           SetEducation(Education)
-           SetAddEducation({
+        SetEducation(Education)
+        SetAddEducation({
             Title: "",
             From: "",
             Year: ""
         })
-           SetSideBaord(!SideBoard)
+        SetSideBaord(!SideBoard)
+    }
+    function RemoveSkill(id) {
+        SetSkillList(SkillList.map((v, idx) => { if (idx !== id) { return v } }).filter(item => item !== undefined))
+    }
+    function AddSkillHandler(type, value) {
+
+        var TempData = 
+            {
+                Name:AddSkill.Name,
+                Level:AddSkill.Level
+            }
+        
+        if (type === 'name') {
+            TempData.Name = value
+        } else if (type === 'level') {
+            TempData.Level = value
+        } 
+        SetAddSkill(TempData)
+    }
+    function SetAddedSkill() {
+        debugger
+        SkillList.push(AddSkill)
+        SetSkillList(SkillList)
+        SetAddSkill({
+            Name:"",
+            Level:""
+        })
+        SetSideBaord(!SideBoard)
     }
     return (<>
         <div className="flex flex-col w-full max-w-[1920px] h-[60vh] md:max-h-[1920px] mt-[20vh]">
@@ -123,7 +178,7 @@ const CreateData = () => {
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
                         <p className="text-lg font-bold mt-5 ">Tell us about your Educations</p>
                         <div className="flex gap-2 ">
-                            <div className={"flex flex-col gap-5 transition-all "+(SideBoard?"w-1/2":"w-full")}>
+                            <div className={"flex flex-col gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
                                 {/* Education items */}
                                 {Education.map((item, idx) => (
                                     <div className="w-full  p-2 flex bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  " style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
@@ -132,7 +187,7 @@ const CreateData = () => {
                                             <p className="">{item.From}</p>
                                             <p className="title-xs">{item.Year}</p>
                                         </div>
-                                        <div className="ml-auto my-auto transition-all" onClick={()=>RemoveEducation(idx)}>
+                                        <div className="ml-auto my-auto transition-all cursor-pointer" onClick={() => RemoveEducation(idx)}>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                                             </svg>
@@ -140,17 +195,58 @@ const CreateData = () => {
                                     </div>
                                 ))}
                                 {/* Button to toggle SideBoard */}
-                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-8 h-8 transition-all  "+(SideBoard?"rotate-45":"")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className="w-full transition-all mt-5" />
+                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-8 h-8 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className="w-full transition-all mt-5" />
                             </div>
                             {/* Left div that appears when SideBoard is true */}
-                            
-                                <div className={"transition-all transform  flex flex-col gap-2 "+(SideBoard?"w-1/2":"hidden w-0")}>
+
+                            <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
                                 <InputBox placeholder="Title" className="h-10" value={AddEducation.Title} onChange={(e) => AddEducationHandler("title", e.target.value)} />
                                 <InputBox placeholder="From" className="h-10" value={AddEducation.From} onChange={(e) => AddEducationHandler("from", e.target.value)} />
                                 <InputBox placeholder="Complition Year" className="h-10" value={AddEducation.Year} onChange={(e) => AddEducationHandler("year", e.target.value)} />
-                                <PrimaryButton onClick={() =>SetAddedEducaton()}  Name="Add" className="h-10 w-full transition-all mt-5" />
-                         
-                                </div>
+                                <PrimaryButton onClick={() => SetAddedEducaton()} Name="Add" className="h-10 w-full transition-all mt-5" />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </>)}
+                {Form === 5 && (<>
+                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
+                        <div className="mt-5">
+                            <p className="text-lg font-bold ">Mentioning your skills always</p>
+                            <p className="text-lg font-bold">  give you an edge</p>
+                        </div>
+                        <div className="flex gap-2 ">
+                            <div className={"flex flex-wrap  gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
+                               
+                                {SkillList.map((item, idx) => (
+                                    <div className="  p-2 flex gap-5 bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  h-12 justify-center align-middle items-center" style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
+                                        <div className="mr-auto text-left">
+                                        <p className="font-semibold ">{item.Name} <span className="font-normal ml-2 ">{item.Level}%</span> </p>
+                                           
+                                          
+                                        </div>
+                                        <div className="ml-auto my-auto transition-all cursor-pointer" onClick={() => RemoveSkill(idx)}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                ))}
+                                {/* Button to toggle SideBoard */}
+                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-5 h-5 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className=" transition-all h-4" />
+                           
+                            </div>
+                            {/* Left div that appears when SideBoard is true */}
+
+                            <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
+                                <InputBox placeholder="Skill" className="h-10" value={AddSkill.Name} onChange={(e) => AddSkillHandler("name", e.target.value)} />
+                                <InputBox placeholder="Prof. from 0-100" type="number" className="h-10 appearance-none " value={AddSkill.Level} onChange={(e) => AddSkillHandler("level", e.target.value)} />
+                                
+                                <PrimaryButton onClick={() => SetAddedSkill()} Name="Add" className="h-10 w-full transition-all mt-5" />
+
+                            </div>
 
                         </div>
 
@@ -166,7 +262,6 @@ const CreateData = () => {
 }
 
 export default CreateData
-
 
 
 const InputBox = styled.input`
