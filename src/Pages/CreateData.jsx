@@ -6,7 +6,7 @@ const CreateData = () => {
     const searchParams = new URLSearchParams(window.location.search);
 
     const [Form, SetForm] = useState(7)
-    const FinalFormNumber = 7
+    const FinalFormNumber = 8
     const [Scale, SetScale] = useState('scale-0')
     const [SideBoard, SetSideBaord] = useState(false)
     useEffect(() => {
@@ -57,7 +57,12 @@ const CreateData = () => {
         Name: "",
         Link: ""
     })
-
+    const [ProjectList, SetProjectList] = useState([])
+    const [AddProject, SetAddProject] = useState({
+        Title: "",
+        Details: "",
+        Link: ""
+    })
     function NextClick() {
         if (Form !== FinalFormNumber) {
             SetScale('scale-0')
@@ -212,7 +217,7 @@ const CreateData = () => {
         SetSocials(TempData)
     }
     function AddSocials() {
-        if (Socials.Name !== "none"&&Socials.Name !== "") {
+        if (Socials.Name !== "none" && Socials.Name !== "") {
             SocialsList.push(Socials)
             SetSocialsList(SocialsList)
             SetSocials({
@@ -220,6 +225,37 @@ const CreateData = () => {
                 Link: ""
             })
         }
+
+    }
+
+    //Projects
+    function RemoveProject(id) {
+        SetProjectList(ProjectList.map((v, idx) => { if (idx !== id) { return v } }).filter(item => item !== undefined))
+    }
+    function AddProjectHandler(type, value) {
+
+        var TempData = {
+            Title: AddProject.Title,
+            Details: AddProject.Details,
+            Link: AddProject.Link
+        }
+        if (type === 'title') {
+            TempData.Title = value
+        } else if (type === 'details') {
+            TempData.Details = value
+        } else if (type === 'link') {
+            TempData.Link = value
+        }
+        SetAddProject(TempData)
+    }
+    function SetAddedProject() {
+        ProjectList.push(AddProject)
+        SetProjectList(ProjectList)
+        SetAddProject({
+            Title: "",
+            Details: "",
+            Link: ""
+        })
 
     }
     return (<>
@@ -408,6 +444,46 @@ const CreateData = () => {
                     </div>
                 </>)}
                 {Form === 7 && (<>
+                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
+                        <div className=" mt-5">
+                            <p className="text-lg font-bold ">Mentioning your projects will</p>
+                            <p className="text-lg font-bold">Make u stand out from others !!</p>
+                        </div>
+                        <div className="flex gap-2 ">
+                            <div className={"flex flex-col gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
+
+                                {ProjectList.map((item, idx) => (
+                                    <div key={idx} className="w-full  p-2 flex bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  " style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
+                                        <div className="mr-auto text-left">
+                                            <p className="text-lg font-semibold ">{item.Title}</p>
+                                            <p className="">{item.Details}</p>
+                                        </div>
+                                        <div className="ml-auto my-auto transition-all cursor-pointer" onClick={() => RemoveProject(idx)}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                ))}
+                                {/* Button to toggle SideBoard */}
+                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-8 h-8 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className="w-full transition-all h-12" />
+                            </div>
+                            {/* Left div that appears when SideBoard is true */}
+
+                            <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
+                                <InputBox placeholder="Title" className="h-10" value={AddProject.Title} onChange={(e) => AddProjectHandler("title", e.target.value)} />
+                                <textarea placeholder="Details of your Project!!" style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} className="p-2 mx-auto rounded-md h-36 w-96 outline-none bg-[#f5f5fa]" value={AddProject.Details} onChange={(e) => AddProjectHandler("details", e.target.value)} />
+                                <InputBox placeholder="Link" className="h-10" value={AddProject.Link} onChange={(e) => AddProjectHandler("link", e.target.value)} />
+                                <PrimaryButton onClick={() => SetAddedProject()} Name="Add" className="h-10 w-full transition-all mt-5" />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </>)}
+
+                {Form === 8 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
                         <div className="mt-5">
                             <p className="text-lg font-bold ">Finally , Everyone has some Social Profiles</p>
