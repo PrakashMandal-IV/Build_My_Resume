@@ -6,7 +6,7 @@ const CreateData = (props) => {
     const searchParams = new URLSearchParams(window.location.search);
 
     const [Form, SetForm] = useState(0)
-    const FinalFormNumber = 8
+    const FinalFormNumber = 9
     const [Scale, SetScale] = useState('scale-0')
     const [SideBoard, SetSideBaord] = useState(false)
     useEffect(() => {
@@ -46,6 +46,9 @@ const CreateData = (props) => {
     })
     const [HobbyList, SetHobbyList] = useState([])
     const [Hobby, SetHobby] = useState('')
+
+    const [CertificatesList, SetCertificatesList] = useState([])
+    const [Certificates, SetCertificates] = useState('')
     useEffect(() => {
         SetSideBaord(false)
     }, [Form])
@@ -198,6 +201,15 @@ const CreateData = (props) => {
         SetHobby('')
         //  SetSideBaord(!SideBoard)
     }
+    function RemoveCertificates(id) {
+        SetCertificatesList(CertificatesList.map((v, idx) => { if (idx !== id) { return v } }).filter(item => item !== undefined))
+    }
+    function SetCertificate() {
+        CertificatesList.push(Certificates)
+        SetCertificatesList(CertificatesList)
+        SetCertificates('')
+        //  SetSideBaord(!SideBoard)
+    }
     function RemoveSocials(id) {
 
         SetSocialsList(SocialsList.map((v, idx) => { if (idx !== id) { return v } }).filter(item => item !== undefined))
@@ -276,7 +288,7 @@ const CreateData = (props) => {
             "Hobbies": HobbyList,
             "Socials": SocialsList,
             "Experience":ExperienceList,
-            "Certificates": [],
+            "Certificates":CertificatesList,
             "Projects":ProjectList
         }  
         props.GetUserData(UserData)
@@ -532,6 +544,48 @@ const CreateData = (props) => {
                     </div>
                 </>)}
                 {Form === 8 && (<>
+                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
+                        <div className="mt-5">
+                            <p className="text-lg font-semibold ">Have u achieved something special ? Or Certificates?</p>
+                            <p className="text-lg font-semibold">worth mentioning them as well </p>
+                        </div>
+                        <div className="flex flex-col gap-2 ">
+                          <div className=" ml-auto">
+                           <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-5 h-5 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className=" transition-all h-4" />
+
+                          </div>
+                        </div>
+                        <div className="flex gap-2 ">
+                            <div className={"flex flex-wrap  gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
+                                {CertificatesList.map((item, idx) => (
+                                    <div className="  p-2 flex gap-5 bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  h-12 justify-center align-middle items-center" style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
+                                        <div className="mr-auto text-left">
+                                            <p className="font-semibold ">{item}</p>
+                                        </div>
+                                        <div className="ml-auto my-auto transition-all cursor-pointer" onClick={() => RemoveCertificates(idx)}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                ))}
+                                {/* Button to toggle SideBoard */}
+                               
+                            </div>
+                            {/* Left div that appears when SideBoard is true */}
+
+                            <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
+                                <InputBox placeholder="Hobby" className="h-10" value={Certificates} onChange={(e) => SetCertificates(e.target.value)} />
+
+                                <PrimaryButton onClick={() => SetCertificate()} Name="Add" className="h-10 w-full transition-all mt-5" />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </>)}
+                {Form === 9 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
                         <div className="mt-5">
                             <p className="text-lg font-semibold ">Finally , Everyone has some Social Profiles</p>
