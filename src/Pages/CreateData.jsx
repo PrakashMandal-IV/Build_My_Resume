@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { PrimaryButton } from "../component/Button";
 import styled from 'styled-components'
 import { ProgressBar } from "../component/ProgressBar";
-const CreateData = () => {
+const CreateData = (props) => {
     const searchParams = new URLSearchParams(window.location.search);
 
     const [Form, SetForm] = useState(0)
@@ -256,7 +256,30 @@ const CreateData = () => {
             Details: "",
             Link: ""
         })
+    }
 
+    const CreateData=()=>{
+        const UserData ={
+            "PersonalData": {
+                "FirstName": UserName.split(" ")[0],
+                "LastName": UserName.split(" ")[1]?UserName.split(" ")[1]:"",
+                "Profession": Profession,
+                "AboutMe":AboutMe,
+                "Contact": {
+                    "Phone": Contacts.Number,
+                    "Email": Contacts.Email,
+                    "Website": Contacts.Website
+                }
+            },
+            "Education": Education,
+            "Skills":SkillList,
+            "Hobbies": HobbyList,
+            "Socials": SocialsList,
+            "Experience":ExperienceList,
+            "Certificates": [],
+            "Projects":ProjectList
+        }  
+        props.GetUserData(UserData)
     }
     return (<>
 
