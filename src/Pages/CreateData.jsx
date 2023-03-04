@@ -6,7 +6,7 @@ const CreateData = () => {
     const searchParams = new URLSearchParams(window.location.search);
 
     const [Form, SetForm] = useState(0)
-    const FinalFormNumber=6
+    const FinalFormNumber=7
     const [Scale, SetScale] = useState('scale-0')
     const [SideBoard, SetSideBaord] = useState(false)
     useEffect(() => {
@@ -44,6 +44,11 @@ const CreateData = () => {
         Company: "",
         Duration: ""
     })
+    const [HobbyList,SetHobbyList] = useState([])
+    const [Hobby,SetHobby] = useState('')
+    useEffect(()=>{
+        SetSideBaord(false)
+    },[Form])
     function NextClick() {
         if(Form!==FinalFormNumber){
             SetScale('scale-0')
@@ -55,7 +60,7 @@ const CreateData = () => {
     }
 
     function BackClick() {
-        if(Form!==1){
+        if(Form!==0){
             SetScale('scale-0')
             setTimeout(() => {
                 SetForm(Form - 1)
@@ -169,6 +174,17 @@ const CreateData = () => {
         })
         SetSideBaord(!SideBoard)
     }
+
+    function RemoveHobby(id) {
+        SetHobbyList(HobbyList.map((v, idx) => { if (idx !== id) { return v } }).filter(item => item !== undefined))
+    }
+    function SetHobbies() {
+        HobbyList.push(Hobby)
+        SetHobbyList(HobbyList)
+        SetHobby('')
+      //  SetSideBaord(!SideBoard)
+    }
+   
     return (<>
 
         <div className="flex flex-col w-full max-w-[1920px] h-[60vh] md:max-h-[1920px] mt-[15vh]">
@@ -205,6 +221,43 @@ const CreateData = () => {
                 </>)}
                 {Form === 3 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
+                        <div className="mt-5">
+                            <p className="text-lg font-bold ">What do you do in your free time?</p>
+                            <p className="text-lg font-bold">Tell us about your hobbies</p>
+                        </div>
+                        <div className="flex gap-2 ">
+                            <div className={"flex flex-wrap  gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
+                                {HobbyList.map((item, idx) => (
+                                    <div className="  p-2 flex gap-5 bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  h-12 justify-center align-middle items-center" style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
+                                        <div className="mr-auto text-left">
+                                        <p className="font-semibold ">{item}</p>
+                                        </div>
+                                        <div className="ml-auto my-auto transition-all cursor-pointer" onClick={() => RemoveHobby(idx)}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                ))}
+                                {/* Button to toggle SideBoard */}
+                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-5 h-5 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className=" transition-all h-4" />
+                           
+                            </div>
+                            {/* Left div that appears when SideBoard is true */}
+
+                            <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
+                                <InputBox placeholder="Hobby" className="h-10" value={Hobby} onChange={(e) => SetHobby(e.target.value)} />
+                                  
+                                <PrimaryButton onClick={() => SetHobbies()} Name="Add" className="h-10 w-full transition-all mt-5" />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </>)}
+                {Form === 4 && (<>
+                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
                         <p className="text-lg font-bold mt-5 ">Tell us about your Educations</p>
                         <div className="flex gap-2 ">
                             <div className={"flex flex-col gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
@@ -240,7 +293,7 @@ const CreateData = () => {
 
                     </div>
                 </>)}
-                {Form === 4 && (<>
+                {Form === 5 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
                         <div className="mt-5">
                             <p className="text-lg font-bold ">Mentioning your skills always</p>
@@ -281,7 +334,7 @@ const CreateData = () => {
 
                     </div>
                 </>)}
-                {Form === 5 && (<>
+                {Form === 6 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
                         <p className="text-lg font-bold mt-5 ">Tell us about your Experiences</p>
                         <div className="flex gap-2 ">
@@ -317,9 +370,23 @@ const CreateData = () => {
 
                     </div>
                 </>)}
+
+                {Form === 7 && (<>
+                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
+                    <div className="mt-5">
+                            <p className="text-lg font-bold ">Finally , Everyone has some Social Profiles</p>
+                            <p className="text-lg font-semibold">Would u like to share them?</p>
+                        </div>
+                        <InputBox placeholder="Linkedin" className="h-12" value={Contacts.Number} onChange={(e) => AddContacts("number", e.target.value)} />
+                        <InputBox placeholder="Instagram" className="h-12" value={Contacts.Email} onChange={(e) => AddContacts("email", e.target.value)} />
+                        <InputBox placeholder="Facebook" className="h-12" value={Contacts.Link} onChange={(e) => AddContacts("link", e.target.value)} />
+                        
+
+                    </div>
+                </>)}
             </div>
             <div className="mx-auto mt-auto flex gap-20 mb-10">
-                {Form !== 1 && (<PrimaryButton Name="Back" onClick={() => BackClick()} className="w-36" />)}
+                {Form !== 0 && (<PrimaryButton Name="Back" onClick={() => BackClick()} className="w-36" />)}
                 <PrimaryButton Name="Next" onClick={() => NextClick()} className="w-36 transition-all" />
             </div>
         </div>
