@@ -5,7 +5,7 @@ import { ProgressBar } from "../component/ProgressBar";
 const CreateData = () => {
     const searchParams = new URLSearchParams(window.location.search);
 
-    const [Form, SetForm] = useState(7)
+    const [Form, SetForm] = useState(0)
     const FinalFormNumber = 8
     const [Scale, SetScale] = useState('scale-0')
     const [SideBoard, SetSideBaord] = useState(false)
@@ -260,7 +260,7 @@ const CreateData = () => {
     }
     return (<>
 
-        <div className="flex flex-col w-full max-w-[1920px] h-[60vh] md:max-h-[1920px] mt-[15vh]">
+        <div className="flex flex-col w-full max-w-[1920px] h-[85vh] md:max-h-[1920px] mt-[15vh]">
             {/* {"Intro"} */}
             <div className="w-10/12 mx-auto mb-16">
                 <ProgressBar FinalFormNumber={FinalFormNumber} Form={Form} />
@@ -270,7 +270,7 @@ const CreateData = () => {
                     <div className="mx-auto text-center flex flex-col gap-4 ">
                         <p className=" text-lg">Welcome, <b> {UserName}</b>, Good to see you today</p>
                         <p className=" text-lg">Let's start Building your Resume !!</p>
-                        <p className="text-lg font-bold mt-5">Tell us your Profession</p>
+                        <p className="text-lg font-semibold mt-5">Tell us your Profession</p>
                         <InputBox placeholder="Designer,Programmer,Artist etc" value={Profession} onChange={(e) => SetProfession(e.target.value)} />
                         <p className="text-center w-full md:w-[40rem] mt-5">Choosing the right profession name for your resume is important for accurately
                             reflecting your skills and experience. Use industry-standard titles, highlight your skills,
@@ -279,14 +279,14 @@ const CreateData = () => {
                 </>)}
                 {Form === 1 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4">
-                        <p className="text-lg font-bold mt-5">Alright, How will you introduce your self?</p>
+                        <p className="text-lg font-semibold mt-5">Alright, How will you introduce your self?</p>
                         <textarea placeholder="About Yourself !!" style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} className="p-2 mx-auto rounded-md h-36 w-96 outline-none bg-[#f5f5fa]" value={AboutMe} onChange={(e) => SetAboutMe(e.target.value)} />
                         <p className="text-center w-full md:w-[40rem] mt-5">Your "Introduction" section should be brief and highlight your key strengths and experiences that make you a great candidate for the job. Focus on showcasing your relevant skills, experience, and achievements in just a few lines.</p>
                     </div>
                 </>)}
                 {Form === 2 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4">
-                        <p className="text-lg font-bold mt-5 mx-32">How to reach you?</p>
+                        <p className="text-lg font-semibold mt-5 mx-32">How to reach you?</p>
                         <InputBox placeholder="Number" value={Contacts.Number} onChange={(e) => AddContacts("number", e.target.value)} />
                         <InputBox placeholder="Email" value={Contacts.Email} onChange={(e) => AddContacts("email", e.target.value)} />
                         <InputBox placeholder="Your Website" value={Contacts.Link} onChange={(e) => AddContacts("link", e.target.value)} />
@@ -295,8 +295,14 @@ const CreateData = () => {
                 {Form === 3 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
                         <div className="mt-5">
-                            <p className="text-lg font-bold ">What do you do in your free time?</p>
-                            <p className="text-lg font-bold">Tell us about your hobbies</p>
+                            <p className="text-lg font-semibold ">What do you do in your free time?</p>
+                            <p className="text-lg font-semibold">Tell us about your hobbies</p>
+                        </div>
+                        <div className="flex flex-col gap-2 ">
+                          <div className=" ml-auto">
+                           <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-5 h-5 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className=" transition-all h-4" />
+
+                          </div>
                         </div>
                         <div className="flex gap-2 ">
                             <div className={"flex flex-wrap  gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
@@ -313,8 +319,7 @@ const CreateData = () => {
                                     </div>
                                 ))}
                                 {/* Button to toggle SideBoard */}
-                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-5 h-5 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className=" transition-all h-4" />
-
+                               
                             </div>
                             {/* Left div that appears when SideBoard is true */}
 
@@ -331,8 +336,15 @@ const CreateData = () => {
                 </>)}
                 {Form === 4 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
-                        <p className="text-lg font-bold mt-5 ">Tell us about your Educations</p>
+                        <p className="text-lg font-semibold mt-5 ">Tell us about your Educations</p>
+                        <div className="flex flex-col gap-2 ">
+                          <div className=" ml-auto">
+                           <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-5 h-5 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className=" transition-all h-4" />
+
+                          </div>
+                        </div>
                         <div className="flex gap-2 ">
+                       
                             <div className={"flex flex-col gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
                                 {/* Education items */}
                                 {Education.map((item, idx) => (
@@ -350,7 +362,6 @@ const CreateData = () => {
                                     </div>
                                 ))}
                                 {/* Button to toggle SideBoard */}
-                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-8 h-8 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className="w-full transition-all h-12" />
                             </div>
                             {/* Left div that appears when SideBoard is true */}
 
@@ -369,15 +380,21 @@ const CreateData = () => {
                 {Form === 5 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
                         <div className="mt-5">
-                            <p className="text-lg font-bold ">Mentioning your skills always</p>
-                            <p className="text-lg font-bold">  give you an edge</p>
+                            <p className="text-lg font-semibold ">Mentioning your skills always</p>
+                            <p className="text-lg font-semibold">  give you an edge</p>
                         </div>
-                        <div className="flex gap-2 overflow-hidden">
+                        <div className="flex flex-col gap-2 ">
+                          <div className=" ml-auto">
+                           <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-5 h-5 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className=" transition-all h-4" />
+
+                          </div>
+                        </div>
+                        <div className="flex gap-2 ">
                             <div className={"flex flex-wrap  gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
 
                                 {SkillList.map((item, idx) => (
                                     <div key={idx} className="  p-2 flex gap-5 bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  h-12 justify-center align-middle items-center" style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
-                                        <div className="mr-auto text-left">
+                                        <div className="mr-auto text-left"> 
                                             <p className="font-semibold ">{item.Name} <span className="font-normal ml-2 ">{item.Level}%</span> </p>
 
 
@@ -390,12 +407,11 @@ const CreateData = () => {
                                     </div>
                                 ))}
                                 {/* Button to toggle SideBoard */}
-                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-5 h-5 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className=" transition-all h-4" />
-
+                               
                             </div>
                             {/* Left div that appears when SideBoard is true */}
 
-                            <div className={"transition-all transform  flex flex-col gap-4 " + (SideBoard ? "w-1/2" : "w-0")}>
+                            <div className={"transition-all transform  flex flex-col gap-4 p-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
                                 <InputBox placeholder="Skill" className="h-10" value={AddSkill.Name} onChange={(e) => AddSkillHandler("name", e.target.value)} />
                                 <InputBox placeholder="Prof. from 0-100" type="number" className="h-10 appearance-none " value={AddSkill.Level} onChange={(e) => AddSkillHandler("level", e.target.value)} />
 
@@ -409,7 +425,13 @@ const CreateData = () => {
                 </>)}
                 {Form === 6 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
-                        <p className="text-lg font-bold mt-5 ">Tell us about your Experiences</p>
+                        <p className="text-lg font-semibold mt-5 ">Tell us about your Experiences</p>
+                        <div className="flex flex-col gap-2 ">
+                          <div className=" ml-auto">
+                           <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-5 h-5 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className=" transition-all h-4" />
+
+                          </div>
+                        </div>
                         <div className="flex gap-2 ">
                             <div className={"flex flex-col gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
 
@@ -417,7 +439,7 @@ const CreateData = () => {
                                     <div key={idx} className="w-full  p-2 flex bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  " style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
                                         <div className="mr-auto text-left">
                                             <p className="text-lg font-semibold ">{item.Job}</p>
-                                            <p className="">{item.Company} <span className="text-xs font-bold ">({item.Duration})</span></p>
+                                            <p className="">{item.Company} <span className="text-xs font-semibold ">({item.Duration})</span></p>
                                         </div>
                                         <div className="ml-auto my-auto transition-all cursor-pointer" onClick={() => RemoveExperience(idx)}>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -427,8 +449,7 @@ const CreateData = () => {
                                     </div>
                                 ))}
                                 {/* Button to toggle SideBoard */}
-                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-8 h-8 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className="w-full transition-all h-12" />
-                            </div>
+                                   </div>
                             {/* Left div that appears when SideBoard is true */}
 
                             <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
@@ -446,8 +467,14 @@ const CreateData = () => {
                 {Form === 7 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
                         <div className=" mt-5">
-                            <p className="text-lg font-bold ">Mentioning your projects will</p>
-                            <p className="text-lg font-bold">Make u stand out from others !!</p>
+                            <p className="text-lg font-semibold ">Mentioning your projects will</p>
+                            <p className="text-lg font-semibold">Make u stand out from others !!</p>
+                        </div>
+                        <div className="flex flex-col gap-2 ">
+                          <div className=" ml-auto">
+                           <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-5 h-5 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className=" transition-all h-4" />
+
+                          </div>
                         </div>
                         <div className="flex gap-2 ">
                             <div className={"flex flex-col gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
@@ -466,8 +493,7 @@ const CreateData = () => {
                                     </div>
                                 ))}
                                 {/* Button to toggle SideBoard */}
-                                <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-8 h-8 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className="w-full transition-all h-12" />
-                            </div>
+                                </div>
                             {/* Left div that appears when SideBoard is true */}
 
                             <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
@@ -482,11 +508,10 @@ const CreateData = () => {
 
                     </div>
                 </>)}
-
                 {Form === 8 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
                         <div className="mt-5">
-                            <p className="text-lg font-bold ">Finally , Everyone has some Social Profiles</p>
+                            <p className="text-lg font-semibold ">Finally , Everyone has some Social Profiles</p>
                             <p className="text-lg font-semibold">Would u like to share them?</p>
                         </div>
                         <div className="flex flex-col gap-4">
