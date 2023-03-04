@@ -141,22 +141,24 @@ const Home = () => {
       <p className="text-xl text-center mb-10">What makes Resume a  <b> Good Resume ?</b></p>
       <div className="flex">
         {/* left */}
-        <div className="w-1/2 border-r-4  border-sky-500 ">
+        <div className="w-1/2   ">
           <div className="flex py-6 ">
             <div className="w-full ml-auto md:w-1/3  p-4 rounded-md bg-gradient-to-l from-transparent    to-yellow-400">
               <p className="text-xs md:text-sm   text-center font-bold ">Clearity</p>
               <p className=" text-xs md:text-sm   text-center">A resume should be easy to read and comprehend. Use clear fonts, spacing, and bullet points to make it easy to scan quickly.</p>
 
             </div>
-            <div className="ml-auto border translate-x-[calc(50%+2px)] my-auto">
+            <div className="ml-auto border translate-x-[calc(50%-2px)] my-auto z-50">
               <div className="bg-gradient-to-br from-sky-200 to-sky-300  w-[30px] h-[30px] rounded-full flex shadow-md ring-4    ring-sky-600">
-                {/* <div className="w-[10px] h-[10px] m-auto bg-sky-600 rounded-full ring-2 ring-blue-400 "></div> */}
+                 
               </div>
             </div>
           </div>
         </div>
         {/* right */}
-        <div className="w-1/2 "></div>
+        <div className="w-1/2 flex flex-col -translate-x-[4px]">
+          <div className="h-1/2 mt-auto border-l-4 border-sky-500"></div>
+        </div>
       </div>
 
       {/* {Second} */}
@@ -247,19 +249,19 @@ const Home = () => {
       {/* Sixth */}
       <div className="flex">
         {/* left */}
-        <div className="w-1/2 border-r-4  border-sky-500 ">
-          <div className="flex py-6 h-full">
-
-            <div className="ml-auto border translate-x-[calc(50%+2px)] my-auto">
+       
+        <div className="w-1/2 flex flex-col ">
+          <div className="h-1/2 border-r-4 border-sky-500"></div>
+        </div>
+       
+        {/* right */}
+        <div className="w-1/2 flex py-6 ">
+        <div className="border -translate-x-[calc(50%+2px)]  my-auto">
               <div className="bg-gradient-to-br from-sky-200 to-sky-300  w-[30px] h-[30px] rounded-full flex shadow-md ring-4    ring-sky-600">
                 {/* <div className="w-[10px] h-[10px] m-auto bg-sky-600 rounded-full ring-2 ring-blue-400 "></div> */}
               </div>
             </div>
-          </div>
-        </div>
-        {/* right */}
-        <div className="w-1/2 flex py-6 ">
-          <div className="w-full mx-auto md:w-1/3  p-4 rounded-md bg-gradient-to-l from-purple-400">
+          <div className="w-full mx-auto md:w-1/3 -translate-x-[15px]  p-4 rounded-md bg-gradient-to-l from-purple-400">
             <p className="text-xs md:text-sm   text-center font-bold ">Error-free</p>
             <p className=" text-xs md:text-sm   text-center">Make sure your resume is free of grammatical errors and typos. Proofread your resume carefully, and have someone else review it as well.</p>
 
