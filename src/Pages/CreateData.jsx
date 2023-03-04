@@ -5,8 +5,8 @@ import { ProgressBar } from "../component/ProgressBar";
 const CreateData = () => {
     const searchParams = new URLSearchParams(window.location.search);
 
-    const [Form, SetForm] = useState(0)
-    const FinalFormNumber=7
+    const [Form, SetForm] = useState(7)
+    const FinalFormNumber = 7
     const [Scale, SetScale] = useState('scale-0')
     const [SideBoard, SetSideBaord] = useState(false)
     useEffect(() => {
@@ -32,10 +32,10 @@ const CreateData = () => {
         Year: ""
     })
 
-    const [SkillList,SetSkillList] = useState([])
-    const [AddSkill,SetAddSkill] = useState({
-        Name:"",
-        Level:""
+    const [SkillList, SetSkillList] = useState([])
+    const [AddSkill, SetAddSkill] = useState({
+        Name: "",
+        Level: ""
     })
 
     const [ExperienceList, SetExperienceList] = useState([])
@@ -44,30 +44,39 @@ const CreateData = () => {
         Company: "",
         Duration: ""
     })
-    const [HobbyList,SetHobbyList] = useState([])
-    const [Hobby,SetHobby] = useState('')
-    useEffect(()=>{
+    const [HobbyList, SetHobbyList] = useState([])
+    const [Hobby, SetHobby] = useState('')
+    useEffect(() => {
         SetSideBaord(false)
-    },[Form])
+    }, [Form])
+    const [SocialsList, SetSocialsList] = useState([{
+        Name: "Instagram",
+        Link: "https://Instagram.com"
+    }])
+    const [Socials, SetSocials] = useState({
+        Name: "",
+        Link: ""
+    })
+
     function NextClick() {
-        if(Form!==FinalFormNumber){
+        if (Form !== FinalFormNumber) {
             SetScale('scale-0')
-        setTimeout(() => {
-            SetForm(Form + 1)
-            SetScale('')
-        }, 200);
+            setTimeout(() => {
+                SetForm(Form + 1)
+                SetScale('')
+            }, 200);
         }
     }
 
     function BackClick() {
-        if(Form!==0){
+        if (Form !== 0) {
             SetScale('scale-0')
             setTimeout(() => {
                 SetForm(Form - 1)
                 SetScale('')
             }, 200);
         }
-      
+
     }
     function AddContacts(type, value) {
         var ContactData = {
@@ -112,35 +121,35 @@ const CreateData = () => {
             From: "",
             Year: ""
         })
-        SetSideBaord(!SideBoard)
+
     }
     function RemoveSkill(id) {
         SetSkillList(SkillList.map((v, idx) => { if (idx !== id) { return v } }).filter(item => item !== undefined))
     }
     function AddSkillHandler(type, value) {
 
-        var TempData = 
-            {
-                Name:AddSkill.Name,
-                Level:AddSkill.Level
-            }
-        
+        var TempData =
+        {
+            Name: AddSkill.Name,
+            Level: AddSkill.Level
+        }
+
         if (type === 'name') {
             TempData.Name = value
         } else if (type === 'level') {
             TempData.Level = value
-        } 
+        }
         SetAddSkill(TempData)
     }
     function SetAddedSkill() {
-       
+
         SkillList.push(AddSkill)
         SetSkillList(SkillList)
         SetAddSkill({
-            Name:"",
-            Level:""
+            Name: "",
+            Level: ""
         })
-        SetSideBaord(!SideBoard)
+
     }
 
 
@@ -148,10 +157,10 @@ const CreateData = () => {
         SetExperienceList(ExperienceList.map((v, idx) => { if (idx !== id) { return v } }).filter(item => item !== undefined))
     }
     function AddExperienceHandler(type, value) {
-        
+
         var TempData = {
             Job: AddExperience.Job,
-            Company:AddExperience.Company,
+            Company: AddExperience.Company,
             Duration: AddExperience.Duration
         }
         if (type === 'job') {
@@ -159,12 +168,12 @@ const CreateData = () => {
         } else if (type === 'company') {
             TempData.Company = value
         } else if (type === 'duration') {
-            TempData.Duration= value
+            TempData.Duration = value
         }
         SetAddExperience(TempData)
     }
     function SetAddedExperience() {
-       
+
         ExperienceList.push(AddExperience)
         SetExperienceList(ExperienceList)
         SetAddExperience({
@@ -172,7 +181,7 @@ const CreateData = () => {
             Company: "",
             Duration: ""
         })
-        SetSideBaord(!SideBoard)
+
     }
 
     function RemoveHobby(id) {
@@ -182,16 +191,44 @@ const CreateData = () => {
         HobbyList.push(Hobby)
         SetHobbyList(HobbyList)
         SetHobby('')
-      //  SetSideBaord(!SideBoard)
+        //  SetSideBaord(!SideBoard)
     }
-   
+    function RemoveSocials(id) {
+
+        SetSocialsList(SocialsList.map((v, idx) => { if (idx !== id) { return v } }).filter(item => item !== undefined))
+    }
+
+    function SetNewSocial(type, value) {
+
+        var TempData = {
+            Name: Socials.Name,
+            Link: Socials.Link
+        }
+        if (type === 'name') {
+            TempData.Name = value
+        } else if (type === 'link') {
+            TempData.Link = value
+        }
+        SetSocials(TempData)
+    }
+    function AddSocials() {
+        if (Socials.Name !== "none"&&Socials.Name !== "") {
+            SocialsList.push(Socials)
+            SetSocialsList(SocialsList)
+            SetSocials({
+                Name: "",
+                Link: ""
+            })
+        }
+
+    }
     return (<>
 
         <div className="flex flex-col w-full max-w-[1920px] h-[60vh] md:max-h-[1920px] mt-[15vh]">
             {/* {"Intro"} */}
-          <div className="w-10/12 mx-auto mb-16">
-          <ProgressBar FinalFormNumber={FinalFormNumber} Form={Form} />
-          </div>
+            <div className="w-10/12 mx-auto mb-16">
+                <ProgressBar FinalFormNumber={FinalFormNumber} Form={Form} />
+            </div>
             <div className={"mx-auto w-full transition-all flex flex-col px-10 h-auto mb-10 " + Scale}>
                 {Form === 0 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 ">
@@ -230,7 +267,7 @@ const CreateData = () => {
                                 {HobbyList.map((item, idx) => (
                                     <div className="  p-2 flex gap-5 bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  h-12 justify-center align-middle items-center" style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
                                         <div className="mr-auto text-left">
-                                        <p className="font-semibold ">{item}</p>
+                                            <p className="font-semibold ">{item}</p>
                                         </div>
                                         <div className="ml-auto my-auto transition-all cursor-pointer" onClick={() => RemoveHobby(idx)}>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -241,13 +278,13 @@ const CreateData = () => {
                                 ))}
                                 {/* Button to toggle SideBoard */}
                                 <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-5 h-5 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className=" transition-all h-4" />
-                           
+
                             </div>
                             {/* Left div that appears when SideBoard is true */}
 
                             <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
                                 <InputBox placeholder="Hobby" className="h-10" value={Hobby} onChange={(e) => SetHobby(e.target.value)} />
-                                  
+
                                 <PrimaryButton onClick={() => SetHobbies()} Name="Add" className="h-10 w-full transition-all mt-5" />
 
                             </div>
@@ -263,7 +300,7 @@ const CreateData = () => {
                             <div className={"flex flex-col gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
                                 {/* Education items */}
                                 {Education.map((item, idx) => (
-                                    <div className="w-full  p-2 flex bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  " style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
+                                    <div key={idx} className="w-full  p-2 flex bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  " style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
                                         <div className="mr-auto text-left">
                                             <p className="text-lg font-semibold ">{item.Title}</p>
                                             <p className="">{item.From}</p>
@@ -299,15 +336,15 @@ const CreateData = () => {
                             <p className="text-lg font-bold ">Mentioning your skills always</p>
                             <p className="text-lg font-bold">  give you an edge</p>
                         </div>
-                        <div className="flex gap-2 ">
+                        <div className="flex gap-2 overflow-hidden">
                             <div className={"flex flex-wrap  gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
-                               
+
                                 {SkillList.map((item, idx) => (
-                                    <div className="  p-2 flex gap-5 bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  h-12 justify-center align-middle items-center" style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
+                                    <div key={idx} className="  p-2 flex gap-5 bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  h-12 justify-center align-middle items-center" style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
                                         <div className="mr-auto text-left">
-                                        <p className="font-semibold ">{item.Name} <span className="font-normal ml-2 ">{item.Level}%</span> </p>
-                                           
-                                          
+                                            <p className="font-semibold ">{item.Name} <span className="font-normal ml-2 ">{item.Level}%</span> </p>
+
+
                                         </div>
                                         <div className="ml-auto my-auto transition-all cursor-pointer" onClick={() => RemoveSkill(idx)}>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -318,14 +355,14 @@ const CreateData = () => {
                                 ))}
                                 {/* Button to toggle SideBoard */}
                                 <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-5 h-5 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className=" transition-all h-4" />
-                           
+
                             </div>
                             {/* Left div that appears when SideBoard is true */}
 
-                            <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
+                            <div className={"transition-all transform  flex flex-col gap-4 " + (SideBoard ? "w-1/2" : "w-0")}>
                                 <InputBox placeholder="Skill" className="h-10" value={AddSkill.Name} onChange={(e) => AddSkillHandler("name", e.target.value)} />
                                 <InputBox placeholder="Prof. from 0-100" type="number" className="h-10 appearance-none " value={AddSkill.Level} onChange={(e) => AddSkillHandler("level", e.target.value)} />
-                                
+
                                 <PrimaryButton onClick={() => SetAddedSkill()} Name="Add" className="h-10 w-full transition-all mt-5" />
 
                             </div>
@@ -339,9 +376,9 @@ const CreateData = () => {
                         <p className="text-lg font-bold mt-5 ">Tell us about your Experiences</p>
                         <div className="flex gap-2 ">
                             <div className={"flex flex-col gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
-                                {/* Education items */}
+
                                 {ExperienceList.map((item, idx) => (
-                                    <div className="w-full  p-2 flex bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  " style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
+                                    <div key={idx} className="w-full  p-2 flex bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  " style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
                                         <div className="mr-auto text-left">
                                             <p className="text-lg font-semibold ">{item.Job}</p>
                                             <p className="">{item.Company} <span className="text-xs font-bold ">({item.Duration})</span></p>
@@ -370,17 +407,43 @@ const CreateData = () => {
 
                     </div>
                 </>)}
-
                 {Form === 7 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
-                    <div className="mt-5">
+                        <div className="mt-5">
                             <p className="text-lg font-bold ">Finally , Everyone has some Social Profiles</p>
                             <p className="text-lg font-semibold">Would u like to share them?</p>
                         </div>
-                        <InputBox placeholder="Linkedin" className="h-12" value={Contacts.Number} onChange={(e) => AddContacts("number", e.target.value)} />
-                        <InputBox placeholder="Instagram" className="h-12" value={Contacts.Email} onChange={(e) => AddContacts("email", e.target.value)} />
-                        <InputBox placeholder="Facebook" className="h-12" value={Contacts.Link} onChange={(e) => AddContacts("link", e.target.value)} />
-                        
+                        <div className="flex flex-col gap-4">
+
+                            <div className="w-full   flex bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  " style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
+                                <div className="mr-auto flex  flex-grow">
+                                    <select className="outline-none appearance-none w-32 bg-transparent  p-2 border-r-2" value={Socials.Name} onChange={(e) => SetNewSocial("name", e.target.value)}>
+                                        <option value="none" >Select</option>
+                                        <option value="Linkdn">Linkdn</option>
+                                        <option value="Instagram">Instagram</option>
+                                        <option value="Github">Github</option>
+                                    </select>
+                                    <input placeholder="Link" className="p-2 bg-transparent outline-none flex-grow" value={Socials.Link} onChange={(e) => SetNewSocial("link", e.target.value)} />
+                                </div>
+                                <div className="ml-auto my-auto transition-all cursor-pointer p-2" onClick={() => AddSocials()}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 transition-all  " ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                                </div>
+                            </div>
+                            {SocialsList.map((item, idx) => (
+                                <div key={idx} className="w-full   flex bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  " style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
+                                    <div className="mr-auto flex  flex-grow">
+                                        <select className="outline-none appearance-none w-32 bg-transparent  p-2 border-r-2" disabled>
+                                            <option value="">{item.Name}</option>
+                                        </select>
+                                        <input placeholder="Link" value={item.Link} className="p-2 bg-transparent outline-none flex-grow" />
+                                    </div>
+                                    <div className="ml-auto my-auto transition-all cursor-pointer p-2" onClick={() => RemoveSocials(idx)}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 transition-all rotate-45 " ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
 
                     </div>
                 </>)}
