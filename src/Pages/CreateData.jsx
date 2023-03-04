@@ -626,10 +626,14 @@ const CreateData = (props) => {
                     </div>
                 </>)}
             </div>
-            <div className="mx-auto mt-auto flex gap-20 mb-10">
+            {Form!==FinalFormNumber&&(<div className="mx-auto mt-auto flex gap-20 mb-10">
                 {Form !== 0 && (<PrimaryButton Name="Back" onClick={() => BackClick()} className="w-36" />)}
                 <PrimaryButton Name="Next" onClick={() => NextClick()} className="w-36 transition-all" />
-            </div>
+            </div>)}
+            {Form===FinalFormNumber&&(<div className="mx-auto mt-auto flex gap-20 mb-10">
+               
+                <PrimaryButton Name="Select Resume Templates" onClick={() => CreateData()} className=" transition-all" />
+            </div>)}
         </div>
     </>)
 }
