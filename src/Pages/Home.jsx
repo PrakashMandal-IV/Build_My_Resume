@@ -97,7 +97,7 @@ const Home = () => {
       </div>
 
     </div> */}
-    <div className={"hidden lg:flex  bg-no-repeat bg-right     bg-transparent h-1/2  md:bg-cover  md:h-[100vh] md:max-h-[1920px] p-4 transition-all " + LoadHomePage} style={{ backgroundImage: `url(${homepageBg})` }}>
+    <div className={"hidden lg:flex  bg-no-repeat bg-right       md:bg-transparent h-1/2  md:bg-cover  md:h-[100vh] md:max-h-[1920px] p-4 transition-all " + LoadHomePage} style={{ backgroundImage: `url(${homepageBg})` }}>
       <div className={"flex items-center h-screen transition-all " + HomePageContent}>
         <div className="w-1/2 px-10 flex flex-col gap-10  mt-auto mb-auto" style={{ maxHeight: 'calc(100vh - 8rem)' }}>
           <p className="w-2/3 ">Elevate your job search with our <b> user-friendly website</b>. With multiple intuitive designs and templates, you can effortlessly create a professional <b>resume for free</b> . Impress potential employers and land your dream job today!</p>
@@ -132,7 +132,41 @@ const Home = () => {
         </div>
       </div>
     </div>
-    
+    <div className={"flex lg:hidden  bg-no-repeat bg-right       md:bg-transparent h-1/2  md:bg-cover  md:h-[100vh] md:max-h-[1920px] p-4 transition-all " + LoadHomePage}>
+      <div className={"flex items-center h-screen transition-all " + HomePageContent}>
+        <div className="px-2 flex flex-col gap-10  mt-auto mb-auto" style={{ maxHeight: 'calc(100vh - 8rem)' }}>
+          <p className="text-center   ">Elevate your job search with our <b> user-friendly website</b>. With multiple intuitive designs and templates, you can effortlessly create a professional <b>resume for free</b> . Impress potential employers and land your dream job today!</p>
+          <div className="flex ">
+            <div className="">
+
+              <InputBoxStyle type="text" className="h-10 w-full " value={UserName} placeholder="Tell us your Name" onChange={(e) => SetUserName(e.target.value)} />
+
+            </div>
+            <PrimaryButton Name="Get Started" className="h-10 mt-auto font-semibold   " onClick={() => GetStarted()} />
+          </div>
+          <div className="mt-32 flex gap-4" >
+            <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-sky-400 to-green-400 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center">
+              <div className="my-auto">
+                <p className="text-lg font-bold text-white text-center">10+</p>
+                <p className="text-white ">Designs</p>
+              </div>
+            </div>
+            <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-yellow-400 to-green-400 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center align-middle">
+              <div className="my-auto">
+                <p className="text-lg font-bold text-white text-center">100+</p>
+                <p className="text-white ">Creations</p>
+              </div>
+            </div>
+            <div className="flex-grow aspect-square rounded-md bg-gradient-to-br from-green-400 to-sky-400 shadow-lg drop-shadow-md    shadow-sky-200 flex justify-center align-middle">
+              <div className="my-auto">
+                <p className="text-lg font-bold text-white text-center">100+</p>
+                <p className="text-white ">Users</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div className="p-6 relative  " id="Designs">
       <p className="text-xl text-center">Checkout our new <b>Designs</b></p>
       <ImageSlideshow images={Images} />
