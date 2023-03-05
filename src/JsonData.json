@@ -13,41 +13,45 @@
     "Education": [
         {
             "Title": "Masters in Designing",
+            "From":"ABC Place",
             "Duration": "2020-2021"
         },
         {
             "Title": "Udemy Course",
+            "From":"ABC Place",
             "Duration": "2018-2020"
         },
         {
             "Title": "B.tecth (CSE)",
+            "From":"ABC Place",
             "Duration": "2016-2020"
         },
         {
             "Title": "12th (Science)",
+            "From":"ABC Place",
             "Duration": "2015-2016"
         }
     ],
     "Skills": [
         {
-            "Title": "Adobe Xd",
-            "Duration": "2020-2021"
+            "Name": "Adobe Xd",
+            "Level": "2020-2021"
         },
         {
-            "Title": "Figma",
-            "Duration": "2018-2020"
+            "Name": "Figma",
+            "Level": "2018-2020"
         },
         {
-            "Title": "Wireframe",
-            "Duration": "2016-2020"
+            "Name": "Wireframe",
+            "Level": "2016-2020"
         },
         {
-            "Title": "Photoshop",
-            "Duration": "2015-2016"
+            "Name": "Photoshop",
+            "Level": "2015-2016"
         },
         {
-            "Title": "Blender",
-            "Duration": "2015-2016"
+            "Name": "Blender",
+            "Level": "2015-2016"
         }
     ],
     "Hobbies": [
@@ -58,85 +62,68 @@
     ],
     "Socials": [
         {
-            "Type": "instagram",
+            "Name": "instagram",
             "Link":""
         },
         {
-            "Type": "linkedin",
+            "Name": "linkedin",
             "Link":""
         },
         {
-            "Type": "twitter",
+            "Name": "twitter",
             "Link":""
         },
         {
-            "Type": "facebook",
+            "Name": "facebook",
             "Link":""
         }
     ],
     "Experience":[
         {
-            "Title":"XXX Company",
-            "JobTitle":"Project Manager",
+            "Company":"XXX Company",
+            "Jon":"Project Manager",
             "Duration":"2025-Current"
         },
         {
-            "Title":"XXX Company",
-            "JobTitle":"Senior Forntend Developer",
+            "Company":"XXX Company",
+            "Jon":"Senior Forntend Developer",
             "Duration":"2022-2025"
         },
         {
-            "Title":"XXX Company",
-            "JobTitle":"Junior Forntend Developer",
+            "Company":"XXX Company",
+            "Jon":"Junior Forntend Developer",
             "Duration":"2021-2022"
         },
         {
-            "Title":"XXX Company",
-            "JobTitle":"Forntend Intern",
+            "Company":"XXX Company",
+            "Jon":"Forntend Intern",
             "Duration":"2020-2021"
         }
     ],
-    "Certificates": [
-        {
-            "Title": "Codecon",
-            "Duration": "2020-2021"
-        },
-        {
-            "Title": "Leetcode",
-            "Duration": "2018-2020"
-        },
-        {
-            "Title": "Hackathon",
-            "Duration": "2016-2020"
-        },
-        {
-            "Title": "JS Master class",
-            "Duration": "2015-2016"
-        }
-    ],
+    "Certificates": ["Codecon","Leetcode","Hackathon","JS Master class"],
     "Projects":[
         {
             "Image":"https://i.pinimg.com/564x/82/09/11/820911e5ded735f2c06d0669ca99afb4.jpg",
-            "Name":"Pendora 3d",
-            "Description":"Hi there, my name is Prakash and I am a full-stack web developer",
+            "Title":"Pendora 3d",
+            "Details":"Hi there, my name is Prakash and I am a full-stack web developer",
             "Link":"https://mathiasbynens.github.io/rel-noopener/#recommen"
         },
         {
             "Image":"https://i.pinimg.com/564x/82/09/11/820911e5ded735f2c06d0669ca99afb4.jpg",
-            "Name":"Pendora 3d",
-            "Description":"Hi there, my name is Prakash and I am a full-stack web developer",
+            "Title":"Pendora 3d",
+            "Details":"Hi there, my name is Prakash and I am a full-stack web developer",
             "Link":"https://mathiasbynens.github.io/rel-noopener/#recommen"
         },
         {
             "Image":"https://i.pinimg.com/564x/82/09/11/820911e5ded735f2c06d0669ca99afb4.jpg",
-            "Name":"Pendora 3d",
-            "Description":"Hi there, my name is Prakash and I am a full-stack web developer",
+            "Title":"Pendora 3d",
+            "Details":"Hi there, my name is Prakash and I am a full-stack web developer",
             "Link":"https://mathiasbynens.github.io/rel-noopener/#recommen"
         },
         {
             "Image":"https://i.pinimg.com/564x/82/09/11/820911e5ded735f2c06d0669ca99afb4.jpg",
-            "Name":"Pendora 3d",
-            "Description":"Hi there, my name is Prakash and I am a full-stack web developer",
+            "Title":"Pendora 3d",
+            "Details":"Hi there, my name is Prakash and I am a full-stack web developer",
             "Link":"https://mathiasbynens.github.io/rel-noopener/#recommen"
         }
     ]

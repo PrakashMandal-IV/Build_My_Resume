@@ -52,10 +52,7 @@ const CreateData = (props) => {
     const [CertificatesList, SetCertificatesList] = useState([])
     const [Certificates, SetCertificates] = useState('')
 
-    const [SocialsList, SetSocialsList] = useState([{
-        Name: "Instagram",
-        Link: "https://Instagram.com"
-    }])
+    const [SocialsList, SetSocialsList] = useState([])
     const [Socials, SetSocials] = useState({
         Name: "",
         Link: ""
