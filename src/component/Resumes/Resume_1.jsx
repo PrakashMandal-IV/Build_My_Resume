@@ -5,7 +5,6 @@ import MyData from '../../JsonData.json'
 function Resume_1(props) {
   const [Information, SetInformation] = useState(null)
   useEffect(() => {
-    debugger 
     SetInformation({...props.UserData}) 
 
   }, [])

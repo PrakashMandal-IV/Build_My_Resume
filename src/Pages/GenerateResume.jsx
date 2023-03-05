@@ -5,6 +5,7 @@ import { useReactToPrint } from "react-to-print/lib"
 import { PrimaryButton } from "../component/Button"
 import PreviewList, { ResumePreviewList } from "../component/ResumePreviewList"
 import Resume_1 from "../component/Resumes/Resume_1"
+import Resume_2 from "../component/Resumes/Resume_2"
 const GenerateResume = (props) => {
 
     const printref = useRef()
@@ -18,15 +19,17 @@ const GenerateResume = (props) => {
 
 
     function ImageSelectHandler(imgNumber) {
+        debugger
+        SetImageIngex(imgNumber)
         if (UserData) {
 
 
-            SetImageIngex(imgNumber)
+          
             const myDiv = document.querySelector('#top');
             // Scroll to the div with the ID "myDiv"
             myDiv.scrollIntoView({ behavior: "smooth" });
         } else {
-            SetImageIngex('')
+         //   SetImageIngex('')
         }
     }
     const handlePrint = useReactToPrint({
@@ -61,6 +64,9 @@ const GenerateResume = (props) => {
                     <div className="hidden md:block mx-auto md:w-[50rem] shadow-md" >
                         {ImageIndex === 0 && (
                             <Resume_1 printref={printref} UserData={UserData} />
+                        )}
+                         {ImageIndex === 2 && (
+                            <Resume_2 printref={printref} UserData={UserData} />
                         )}
                     </div>
 
