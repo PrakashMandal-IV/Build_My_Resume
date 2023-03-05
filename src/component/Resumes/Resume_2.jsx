@@ -22,6 +22,9 @@ function Resume_2(props) {
                         <div className="flex h-full">
                             <div className="w-1/2 flex flex-col">
                                 <div className="ml-auto h-20 w-4/6 bg-black"></div>
+                                <div className="ml-auto w-5/6 h-[28rem] overflow-hidden">
+                                    <img src={Information?.PersonalData?.ProfilePic} alt="" className=" object-contain " />
+                                </div>
                             </div>
                             <div className="w-1/2">
                                 <div className=" h-2/5 bg-black  ">
