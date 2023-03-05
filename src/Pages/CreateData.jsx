@@ -51,9 +51,7 @@ const CreateData = (props) => {
 
     const [CertificatesList, SetCertificatesList] = useState([])
     const [Certificates, SetCertificates] = useState('')
-    useEffect(() => {
-        SetSideBaord(false)
-    }, [Form])
+
     const [SocialsList, SetSocialsList] = useState([{
         Name: "Instagram",
         Link: "https://Instagram.com"
@@ -68,6 +66,9 @@ const CreateData = (props) => {
         Details: "",
         Link: ""
     })
+    useEffect(() => {
+        SetSideBaord(false)
+    }, [Form])
     function NextClick() {
         if (Form !== FinalFormNumber) {
             SetScale('scale-0')
@@ -274,24 +275,24 @@ const CreateData = (props) => {
 
     const CreateData = () => {
         const UserData = {
-            "PersonalData": {
-                "FirstName": UserName.split(" ")[0],
-                "LastName": UserName.split(" ")[1] ? UserName.split(" ")[1] : "",
-                "Profession": Profession,
-                "AboutMe": AboutMe,
-                "Contact": {
-                    "Phone": Contacts.Number,
-                    "Email": Contacts.Email,
-                    "Website": Contacts.Website
+            PersonalData: {
+                FirstName: UserName.split(" ")[0],
+                LastName: UserName.split(" ")[1] ? UserName.split(" ")[1] : "",
+                Profession: Profession,
+                AboutMe: AboutMe,
+                Contact: {
+                    Phone: Contacts.Number,
+                    Email: Contacts.Email,
+                    Website: Contacts.Website
                 }
             },
-            "Education": Education,
-            "Skills": SkillList,
-            "Hobbies": HobbyList,
-            "Socials": SocialsList,
-            "Experience": ExperienceList,
-            "Certificates": CertificatesList,
-            "Projects": ProjectList
+            Education: Education,
+            Skills: SkillList,
+            Hobbies: HobbyList,
+            Socials: SocialsList,
+            Experience: ExperienceList,
+            Certificates: CertificatesList,
+            Projects: ProjectList
         }
         props.GetUserData(UserData)
         SetSavedData(true)
@@ -600,7 +601,7 @@ const CreateData = (props) => {
                                 <div className="mr-auto flex  flex-grow">
                                     <select className="outline-none appearance-none w-32 bg-transparent  p-2 border-r-2" value={Socials.Name} onChange={(e) => SetNewSocial("name", e.target.value)}>
                                         <option value="none" >Select</option>
-                                        <option value="Linkdn">Linkdn</option>
+                                        <option value="Linkedin">Linkdn</option>
                                         <option value="Instagram">Instagram</option>
                                         <option value="Github">Github</option>
                                     </select>

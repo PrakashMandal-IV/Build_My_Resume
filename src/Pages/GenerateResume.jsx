@@ -1,5 +1,6 @@
 
 import { useEffect, useRef, useState } from "react"
+import { useNavigate } from "react-router"
 import { useReactToPrint } from "react-to-print/lib"
 import { PrimaryButton } from "../component/Button"
 import PreviewList, { ResumePreviewList } from "../component/ResumePreviewList"
@@ -7,19 +8,26 @@ import Resume_1 from "../component/Resumes/Resume_1"
 const GenerateResume = (props) => {
 
     const printref = useRef()
-    const [ImageIndex, SetImageIngex] = useState(0)
-    const [UserData,SetUserData] = useState(null)
+    const [ImageIndex, SetImageIngex] = useState('')
+    const [UserData, SetUserData] = useState(null)
+    const nav = useNavigate()
+    useEffect(() => {
 
-    useEffect(()=>{
-           SetUserData(props.UserData)
-    },[])
+        SetUserData(props.UserData)
+    }, [])
 
 
     function ImageSelectHandler(imgNumber) {
-        SetImageIngex(imgNumber)
-        const myDiv = document.querySelector('#top');
-        // Scroll to the div with the ID "myDiv"
-        myDiv.scrollIntoView({ behavior: "smooth" });
+        if (UserData) {
+
+
+            SetImageIngex(imgNumber)
+            const myDiv = document.querySelector('#top');
+            // Scroll to the div with the ID "myDiv"
+            myDiv.scrollIntoView({ behavior: "smooth" });
+        } else {
+            SetImageIngex('')
+        }
     }
     const handlePrint = useReactToPrint({
         content: () => printref.current,
@@ -31,6 +39,11 @@ const GenerateResume = (props) => {
                     <p className="text-lg font-semibold text-center">Select Design</p>
                 </div>
                 <div className="flex-grow flex">
+                    <div className="mt-auto">
+                        {!UserData && (
+                            <p className="text-sm text-red-500">No Date to create Resume! Click here to <span onClick={() => nav('/createdata')} className="text-gray-600 hover:text-black transition-all cursor-pointer">Create Data</span> </p>
+                        )}
+                    </div>
                     <div className="flex flex-col gap-2 ml-auto lg:mr-10" >
                         <PrimaryButton Name="Print" className="w-20 lg:w-40 h-12 ml-auto" onClick={handlePrint} />
                         <p className="text-[.65rem] lg:text-sm ">On print window, select A4 size if not selected by default </p>
@@ -47,7 +60,7 @@ const GenerateResume = (props) => {
                     </p>
                     <div className="hidden md:block mx-auto md:w-[50rem] shadow-md" >
                         {ImageIndex === 0 && (
-                            <Resume_1 printref={printref} UserData={UserData}/>
+                            <Resume_1 printref={printref} UserData={UserData} />
                         )}
                     </div>
 

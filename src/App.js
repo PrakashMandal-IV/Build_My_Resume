@@ -10,13 +10,18 @@ import LandingPage from './Pages/LandingPage';
 function App() {
   const [UserData,SetUserData] = useState(null)
 
+
+  const addData=(data)=>{
+ 
+    SetUserData(data)
+  }
   return (
     <Routes>
     <Route path='/' element={<LandingPage/>}/>
     <Route path='/' element={<Nav />}>
       <Route path='home' element={<Home/>}/>
-      <Route path='createdata' element={<CreateData GetUserData={(data)=>SetUserData(data)}/>} />
-      {true&&(<Route path='generateresume' element={<GenerateResume UserData={UserData} />} />)}
+      <Route path='createdata' element={<CreateData GetUserData={(data)=>addData(data)}/>} />
+      <Route path='generateresume' element={<GenerateResume UserData={UserData} />} />
     </Route>
     </Routes>
   );
