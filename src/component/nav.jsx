@@ -44,7 +44,7 @@ const Nav = () => {
     </div>
 
     <Outlet />
-    <div className="mt-auto h-20 flex gap-10 justify-center">
+    <div className="mt-auto  h-20 flex gap-10 pl-10">
       <div className="">
         <Logo className="h-14 ml-0" />
       </div>
