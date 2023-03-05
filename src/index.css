@@ -44,6 +44,21 @@ body::-webkit-scrollbar-thumb {
   
 }
 
+.ImagePrevSlider::-webkit-scrollbar {
+  cursor:grab;
+  border-radius: 10px;
+  width: 8px;
+}
+
+.ImagePrevSlider::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ImagePrevSlider::-webkit-scrollbar-thumb {
+  background:  linear-gradient(to bottom,#60A5FA,#2a8aff);
+  
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

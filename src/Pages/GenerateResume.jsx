@@ -10,8 +10,8 @@ const GenerateResume = (props) => {
  
     return (<>
         <div className="mt-[10vh]">
-            <div className="flex flex-col md:flex-row h-[100vh-3rem]">
-                <div className="w-1/3 border">
+            <div className="flex flex-col md:flex-row h-[calc(90vh)]">
+                <div className="w-1/3 overflow-x-hidden overflow-y-scroll scroll-smooth ImagePrevSlider">
                    
                    <PreviewList />
                     {/* <ReactToPrint
