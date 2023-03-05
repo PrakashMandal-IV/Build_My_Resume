@@ -302,7 +302,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <p className="text-center mt-10">Our Designs Follows each and every key features and provides you the best Resume for your next <b> Interview!</b></p>
+      {/* <p className="text-center mt-10">Our Designs Follows each and every key features and provides you the best Resume for your next <b> Interview!</b></p> */}
     </div>
 
   </div>)
