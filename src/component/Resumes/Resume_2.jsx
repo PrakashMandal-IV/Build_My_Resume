@@ -25,12 +25,19 @@ function Resume_2(props) {
                                 <div className="ml-auto w-5/6 h-[28rem] overflow-hidden">
                                     <img src={Information?.PersonalData?.ProfilePic} alt="" className=" object-contain " />
                                 </div>
+                                <div className="ml-auto pl-4 w-5/6 ">
+                                    <div className="mt-20">
+                                        <p className="text-xl font-semibold ">EDUCATION</p>
+                                    </div>
+
+                                </div>
                             </div>
-                            <div className="w-1/2">
+                            {/* Section 1 */}
+                            <div className="w-1/2 flex flex-col gap-5">
                                 <div className="pl-10 h-2/5 bg-black flex flex-col  ">
                                     <div className="mt-20">
-                                        <p className="text-5xl text-white">{Information?.PersonalData?.FirstName}</p>
-                                        <p className="text-5xl text-white">{Information?.PersonalData?.LastName}</p>
+                                        <p className="text-5xl text-white">{Information?.PersonalData?.FirstName.toUpperCase()}</p>
+                                        <p className="text-5xl text-white">{Information?.PersonalData?.LastName.toUpperCase()}</p>
                                         <p className="mt-5 text-2xl text-white">{Information?.PersonalData?.Profession}</p>
                                     </div>
                                     <div className="mt-20 flex flex-col gap-5">
@@ -57,6 +64,11 @@ function Resume_2(props) {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="">
+                                    <p className="px-5 font-semibold">ABOUT ME</p>
+                                    <p className="px-5 text-sm">{Information.PersonalData.AboutMe}</p>
+                                </div>
+
                             </div>
                         </div>
                     </div>

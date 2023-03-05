@@ -4,7 +4,7 @@
         "FirstName": "Lacy",
         "LastName": "Grace",
         "Profession": "Graphic Designer",
-        "AboutMe":"<div><p>Hi there, my name is Lacy and I am a full-stack web developer with experience in creating dynamic and interactive web applications. With a strong experience in C#, Javascript, HTML/CSS etc. I am capable of bringing your vision to life and delivering high-quality results in a timely manner.</p><p>Thank you for taking the time to read about me.</div>",
+        "AboutMe":"Hi there, my name is Lacy and I am a full-stack web developer with experience in creating dynamic and interactive web applications. With a strong experience in C#, Javascript, HTML/CSS etc. I am capable of bringing your vision to life and delivering high-quality results in a timely manner.Thank you for taking the time to read about me.",
         "Contact": {
             "Phone": "+91 999 8888 000",
             "Email": "lacygrace@gmail.com",

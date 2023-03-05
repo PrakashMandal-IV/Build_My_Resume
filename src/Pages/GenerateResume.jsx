@@ -24,12 +24,12 @@ const GenerateResume = (props) => {
         if (UserData) {
 
 
-          
+
             const myDiv = document.querySelector('#top');
             // Scroll to the div with the ID "myDiv"
             myDiv.scrollIntoView({ behavior: "smooth" });
         } else {
-         //   SetImageIngex('')
+            //   SetImageIngex('')
         }
     }
     const handlePrint = useReactToPrint({
@@ -61,11 +61,11 @@ const GenerateResume = (props) => {
                     <p className="ml-5  text-sm">
                         Note: The Preview below can be different from the Actual Print
                     </p>
-                    <div className="hidden md:block mx-auto md:w-[50rem] shadow-md" >
+                    <div className="hidden md:block mx-auto md:w-[50rem] shadow-md   " >
                         {ImageIndex === 0 && (
                             <Resume_1 printref={printref} UserData={UserData} />
                         )}
-                         {ImageIndex === 2 && (
+                        {ImageIndex === 2 && (
                             <Resume_2 printref={printref} UserData={UserData} />
                         )}
                     </div>
