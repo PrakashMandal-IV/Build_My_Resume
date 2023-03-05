@@ -16,7 +16,7 @@ function App() {
     <Route path='/' element={<Nav />}>
       <Route path='home' element={<Home/>}/>
       <Route path='createdata' element={<CreateData GetUserData={(data)=>SetUserData(data)}/>} />
-      {UserData&&(<Route path='generateresume' element={<GenerateResume UserData={UserData} />} />)}
+      {true&&(<Route path='generateresume' element={<GenerateResume UserData={UserData} />} />)}
     </Route>
     </Routes>
   );
