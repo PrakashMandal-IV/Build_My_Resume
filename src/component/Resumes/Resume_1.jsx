@@ -4,7 +4,9 @@ import './Resume_1.css'
 import MyData from '../../JsonData.json'
 function Resume_1(props) {
   const [Information, SetInformation] = useState(MyData)
- 
+ useEffect(()=>{
+      SetInformation(props.UserData)
+ },[])
 
 
   return (<>

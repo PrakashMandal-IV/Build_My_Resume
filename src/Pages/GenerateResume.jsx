@@ -7,12 +7,19 @@ import Resume_1 from "../component/Resumes/Resume_1"
 const GenerateResume = (props) => {
 
     const printref = useRef()
-    const [ImageIndex,SetImageIngex] = useState(0)
+    const [ImageIndex, SetImageIngex] = useState(0)
+    const [UserData,SetUserData] = useState(null)
+
+    useEffect(()=>{
+           SetUserData(props.UserData)
+    },[])
+
+
     function ImageSelectHandler(imgNumber) {
-         SetImageIngex(imgNumber)
-         const myDiv = document.querySelector('#print_button');
-      // Scroll to the div with the ID "myDiv"
-      myDiv.scrollIntoView({behavior: "smooth"});
+        SetImageIngex(imgNumber)
+        const myDiv = document.querySelector('#top');
+        // Scroll to the div with the ID "myDiv"
+        myDiv.scrollIntoView({ behavior: "smooth" });
     }
     const handlePrint = useReactToPrint({
         content: () => printref.current,
@@ -39,8 +46,8 @@ const GenerateResume = (props) => {
                         Note: The Preview below can be different from the Actual Print
                     </p>
                     <div className="hidden md:block mx-auto md:w-[50rem] shadow-md" >
-                        {ImageIndex===0&&(
-                              <Resume_1 printref={printref} number="1" />
+                        {ImageIndex === 0 && (
+                            <Resume_1 printref={printref} UserData={UserData}/>
                         )}
                     </div>
 

@@ -39,7 +39,7 @@ const PreviewList = (props) => {
         <div className="flex  flex-col gap-5   px-4  ">
            
             {List.map((item,idx)=>(
-                        <div onClick={()=>props.ImageSelect(item.Id)} className=" cursor-pointer w-4/5 lg:w-3/5 mx-auto flex flex-col gap-4 p-4 rounded-md  hover:bg-gradient-to-br from-sky-400 to-green-200 transition-[background-color]  duration-300 ease-out" key={idx}>
+                        <div onClick={()=>props.ImageSelect(item.Id)} className={" cursor-pointer w-4/5 lg:w-3/5 mx-auto flex flex-col gap-4 p-4 rounded-md  hover:bg-gradient-to-br from-sky-400 to-green-200 transition-all   duration-200 ease-out "+(props.selectedImage===item.Id?"bg-gradient-to-br from-sky-300 to-green-100":"")} key={idx}>
                         <div className="">
                           <img src={item.img} alt="" className="rounded-md w-full" />
                         </div>
