@@ -41,13 +41,13 @@ body::-webkit-scrollbar-thumb {
 
 .ImageSlider::-webkit-scrollbar-thumb {
   background:  #60A5FA;
-  
+  border-radius: 10px;
 }
 
 .ImagePrevSlider::-webkit-scrollbar {
   cursor:grab;
-  border-radius: 10px;
-  width: 8px;
+ 
+  width: 5px;
 }
 
 .ImagePrevSlider::-webkit-scrollbar-track {
@@ -56,7 +56,7 @@ body::-webkit-scrollbar-thumb {
 
 .ImagePrevSlider::-webkit-scrollbar-thumb {
   background:  linear-gradient(to bottom,#60A5FA,#2a8aff);
-  
+  border-radius: 10px;
 }
 
 code {

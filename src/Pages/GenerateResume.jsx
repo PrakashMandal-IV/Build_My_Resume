@@ -33,10 +33,3 @@ const GenerateResume = (props) => {
 export default GenerateResume
 
 
-
-const ImagePreview=(props)=>{
-return (<>
-   
-
-</>)
-}
