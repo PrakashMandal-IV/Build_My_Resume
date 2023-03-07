@@ -12,18 +12,16 @@ function Resume_2(props) {
 
     return (<>
         {Information && (
-            <div id="printable-area" ref={props.printref} className="body bg-white h-full" size="A4">
+            <div id="printable-area" ref={props.printref} className="body bg-white  border-black border-l-[12px] " size="A4">
                 {/* {Body} */}
-                <div className="flex gap-5 flex-grow ">
-                    <div className="bg-black w-4  ">
-
-                    </div>
+                <div className="flex">
+                   
                     <div className="flex-grow">
                         <div className="flex h-full">
                             <div className="w-1/2 flex flex-col">
-                                <div className="ml-auto h-16 w-4/6 bg-black"></div>
-                                <div className="ml-auto w-5/6 h-[28rem] overflow-hidden">
-                                    <img src={Information?.PersonalData?.ProfilePic} alt="" className=" object-contain " />
+                                <div className="ml-auto h-16 w-8/12 bg-black"></div>
+                                <div className="ml-auto w-10/12 h-[28rem] overflow-hidden">
+                                    <img src={Information?.PersonalData?.ProfilePic} alt="" className="object-contain " />
                                 </div>
                                 <div className="ml-auto pl-4 w-5/6 ">
                                     <div className="mt-20 flex flex-col gap-1">
