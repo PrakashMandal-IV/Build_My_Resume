@@ -26,8 +26,28 @@ function Resume_2(props) {
                                     <img src={Information?.PersonalData?.ProfilePic} alt="" className=" object-contain " />
                                 </div>
                                 <div className="ml-auto pl-4 w-5/6 ">
-                                    <div className="mt-20">
-                                        <p className="text-xl font-semibold ">EDUCATION</p>
+                                    <div className="mt-20 flex flex-col gap-1">
+                                        <p className="text-xl font-semibold mb-2">EDUCATION</p>
+                                        {Information?.Education.slice(0.5).map((item, idx) => (
+                                            <div className="flex flex-col" key={idx}>
+                                                <p className="text-sm font-medium">{item.Title}</p>
+                                                <p className="text-sm font-normal">{item.From} | {item.Duration}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                </div>
+                                <div className="ml-auto pl-4 w-5/6 ">
+                                    <div className="mt-5 flex flex-col gap-1">
+                                        <p className="text-xl font-semibold mb-2">EDUCATION</p>
+                                        {Information?.Skills.slice(0.5).map((item, idx) => (
+                                            <div className="flex" key={idx}>
+                                                <p className="text-sm font-medium">{item.Name}</p>
+                                                <div className="bg-gray-400 h-2 rounded-md ml-auto flex-grow max-w-[30%]   ">
+                                                    <div className="rounded-md h-full bg-black" style={{ width: `${item.Level}%` }}></div>
+                                                </div>
+                                            </div>
+                                        ))}
                                     </div>
 
                                 </div>

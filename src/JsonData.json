@@ -36,23 +36,23 @@
     "Skills": [
         {
             "Name": "Adobe Xd",
-            "Level": "2020-2021"
+            "Level": 66
         },
         {
             "Name": "Figma",
-            "Level": "2018-2020"
+            "Level": 88
         },
         {
             "Name": "Wireframe",
-            "Level": "2016-2020"
+            "Level": 50
         },
         {
             "Name": "Photoshop",
-            "Level": "2015-2016"
+            "Level": 90
         },
         {
             "Name": "Blender",
-            "Level": "2015-2016"
+            "Level": 85
         }
     ],
     "Hobbies": [
