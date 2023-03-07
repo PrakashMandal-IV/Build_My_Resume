@@ -61,7 +61,7 @@ function Resume_3(props) {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                                         </svg>
 
-                                        <p href={Information?.PersonalData?.Contact.Website} target="_blank" className="text-black text-sm font-normal" >{Information?.PersonalData?.Contact.Location}</p>
+                                        <p target="_blank" className="text-black text-sm font-normal" >{Information?.PersonalData?.Contact.Location}</p>
                                     </div>
                                 )}
                                 {Information?.PersonalData?.Contact.Website !== "" && (
@@ -75,7 +75,38 @@ function Resume_3(props) {
 
                             </div>
                         </div>
+                        {/* Section 2 */}
+                        <div className="flex flex-col gap-8 mt-10">
+                            <div className=" mx-auto bg-black w-40 ">
+                                <p className="text-white text-center font-light text-2xl ">SKILLS</p>
+                            </div>
+                            <div className="flex flex-col ">
+                                {Information?.Skills.slice(0, 5).map((item, idx) => (
+                                    <div className="flex gap-2  py-1">
+                                        <div className="w-6 flex">
+                                            <div className="mx-auto my-auto w-2 h-2 rounded-full bg-black">
 
+                                            </div>
+                                        </div>
+                                        <p target="_blank" className="text-black text-sm font-normal " >{item.Name}</p>
+                                    </div>
+                                ))}
+
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-8 mt-10">
+                            <div className=" mx-auto bg-black w-40 ">
+                                <p className="text-white text-center font-light text-2xl ">Hobbies</p>
+                            </div>
+                            <div className="flex flex-wrap gap-2 ">
+                                {Information?.Hobbies.slice(0, 5).map((item, idx) => (
+                                    <div className="px-3 py-1 rounded-full border flex gap-2">
+                                        <p target="_blank" className="text-black text-sm font-normal " >{item}</p>
+                                    </div>
+                                ))}
+
+                            </div>
+                        </div>
                     </div>
 
                     {/* Right */}
