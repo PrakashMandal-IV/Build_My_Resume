@@ -24,7 +24,7 @@ function Resume_3(props) {
                             <img src={Information?.PersonalData?.ProfilePic} alt="" />
                         </div>
                     </div>
-                    <div className="flex-grow  flex flex-col px-8">
+                    <div className="flex-grow  flex flex-col px-5">
                         <div className="border-b-2 border-black my-auto py-4 ">
                             <p className="text-3xl font-light">{Information?.PersonalData?.FirstName}</p>
                             <p className="text-3xl font-light">{Information?.PersonalData?.LastName}</p>
@@ -38,7 +38,7 @@ function Resume_3(props) {
                         {/* {Section1} */}
                         <div className="flex flex-col gap-8 mt-32">
                             <div className=" mx-auto bg-black w-40 ">
-                                <p className="text-white text-center font-light text-2xl ">CONTACT</p>
+                                <p className="text-white text-center font-light text-xl ">CONTACT</p>
                             </div>
                             <div className="flex flex-col gap-4">
                                 {Information?.PersonalData?.Contact?.Email !== "" && (<div className="flex gap-4">
@@ -78,7 +78,7 @@ function Resume_3(props) {
                         {/* Section 2 */}
                         <div className="flex flex-col gap-8 mt-10">
                             <div className=" mx-auto bg-black w-40 ">
-                                <p className="text-white text-center font-light text-2xl ">SKILLS</p>
+                                <p className="text-white text-center font-light text-xl ">SKILLS</p>
                             </div>
                             <div className="flex flex-col ">
                                 {Information?.Skills.slice(0, 5).map((item, idx) => (
@@ -96,11 +96,11 @@ function Resume_3(props) {
                         </div>
                         <div className="flex flex-col gap-8 mt-10">
                             <div className=" mx-auto bg-black w-40 ">
-                                <p className="text-white text-center font-light text-2xl ">Hobbies</p>
+                                <p className="text-white text-center font-light text-xl ">Hobbies</p>
                             </div>
-                            <div className="flex flex-wrap gap-2 ">
+                            <div className="flex flex-wrap gap-2 pr-2 ">
                                 {Information?.Hobbies.slice(0, 5).map((item, idx) => (
-                                    <div className="px-3 py-1 rounded-full border flex gap-2">
+                                    <div className="px-3 py-1 rounded-lg   border flex gap-2">
                                         <p target="_blank" className="text-black text-sm font-normal " >{item}</p>
                                     </div>
                                 ))}
@@ -110,7 +110,12 @@ function Resume_3(props) {
                     </div>
 
                     {/* Right */}
-                    <div className="">
+                    <div className=" flex">
+                        {/* divider */}
+                        <div className="w-1 h-3/5 rounded-md my-auto bg-black"></div>
+                        <div className="flex-grow">
+
+                        </div>
 
                     </div>
                 </div>
@@ -118,7 +123,7 @@ function Resume_3(props) {
 
 
 
-                <div className="mt-auto h-[5%] bg-[#f9d6d0]">
+                <div className="mt-auto h-[5%] bg-[#f9d6d0] ">
 
                 </div>
 
