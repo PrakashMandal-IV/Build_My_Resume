@@ -1,10 +1,11 @@
 import { useState } from "react"
 import Resume_1 from "../Assets/ResumePrevews/Resume_1.jpg"
 import Resume_2 from "../Assets/ResumePrevews/Resume_2.jpg"
-import Resume_3 from "../Assets/ResumePrevews/Resume_3.jpg"
+import Resume_3 from "../Assets/ResumePrevews/Resume_3.png"
 import Resume_4 from "../Assets/ResumePrevews/Resume_4.jpg"
 import Resume_5 from "../Assets/ResumePrevews/Resume_5.jpg"
-
+import Resume_6 from "../Assets/ResumePrevews/Resume_6.jpg"
+import Resume_7 from "../Assets/ResumePrevews/Resume_7.jpg"
 const PreviewList = (props) => {
     const [List, SetList] = useState([
         {
@@ -31,6 +32,16 @@ const PreviewList = (props) => {
             img: Resume_5,
             name: "Image Name",
             Id:4
+        },
+        {
+            img: Resume_6,
+            name: "Image Name",
+            Id:5
+        },
+        {
+            img: Resume_7,
+            name: "Image Name",
+            Id:6
         }
     ])
 

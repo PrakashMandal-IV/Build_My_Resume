@@ -6,10 +6,11 @@ import { PrimaryButton } from "../component/Button"
 import PreviewList, { ResumePreviewList } from "../component/ResumePreviewList"
 import Resume_1 from "../component/Resumes/Resume_1"
 import Resume_2 from "../component/Resumes/Resume_2"
+import Resume_3 from "../component/Resumes/Resume_3"
 const GenerateResume = (props) => {
 
     const printref = useRef()
-    const [ImageIndex, SetImageIngex] = useState('')
+    const [ImageIndex, SetImageIngex] = useState(2)
     const [UserData, SetUserData] = useState(null)
     const nav = useNavigate()
     useEffect(() => {
@@ -19,7 +20,7 @@ const GenerateResume = (props) => {
 
 
     function ImageSelectHandler(imgNumber) {
-        debugger
+
         SetImageIngex(imgNumber)
         if (UserData) {
 
@@ -75,6 +76,9 @@ const GenerateResume = (props) => {
                         )}
                         {ImageIndex === 1 && (
                             <Resume_2 printref={printref} UserData={UserData} />
+                        )}
+                        {ImageIndex === 2 && (
+                            <Resume_3 printref={printref} UserData={UserData} />
                         )}
                     </div>
 
