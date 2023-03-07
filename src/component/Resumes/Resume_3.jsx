@@ -24,7 +24,7 @@ function Resume_3(props) {
                             <img src={Information?.PersonalData?.ProfilePic} alt="" />
                         </div>
                     </div>
-                    <div className="flex-grow p-4 flex flex-col px-10">
+                    <div className="flex-grow  flex flex-col px-8">
                         <div className="border-b-2 border-black my-auto py-4 ">
                             <p className="text-3xl font-light">{Information?.PersonalData?.FirstName}</p>
                             <p className="text-3xl font-light">{Information?.PersonalData?.LastName}</p>
@@ -32,10 +32,34 @@ function Resume_3(props) {
                         </div>
                     </div>
                 </div>
+                <div className="flex-grow px-10 flex">
+                    {/* Left */}
+                    <div className="w-[35%] flex flex-col">
+                        {/* {Section1} */}
+                        <div className="flex flex-col mt-32">
+                            <div className=" mx-auto bg-black w-40 ">
+                                <p className="text-white text-center font-light text-2xl ">CONTACT</p>
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <div className="">
 
- 
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    {/* Right */}
+                    <div className="">
+
+                    </div>
+                </div>
+
+
+
+
                 <div className="mt-auto h-[5%] bg-[#f9d6d0]">
-                
+
                 </div>
 
             </div>
