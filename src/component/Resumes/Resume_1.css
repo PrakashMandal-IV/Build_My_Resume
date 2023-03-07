@@ -10,7 +10,9 @@
     width: 100%;
     aspect-ratio: 0.707/1;
 }
-
+@page {
+   size: A4;
+}
 
 
 p {

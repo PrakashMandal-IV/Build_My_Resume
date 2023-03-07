@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import './Resume_1.css'
+
 import MyData from '../../JsonData.json'
 function Resume_2(props) {
     const [Information, SetInformation] = useState(MyData)
@@ -60,7 +60,7 @@ function Resume_2(props) {
                                         <div className="flex gap-2 flex-wrap">
                                             {Information?.Hobbies.slice(0, 7).map((item, idx) => (
                                                 <div className="flex" key={idx}>
-                                                    <p className="text-sm px-2 py-1 border rounded-full font-medium">{item}</p>
+                                                    <p className="text-sm px-2 py-1 border rounded-full font-normal">{item}</p>
 
                                                 </div>
                                             ))}
