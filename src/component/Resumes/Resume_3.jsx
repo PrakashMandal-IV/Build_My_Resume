@@ -33,6 +33,11 @@ function Resume_3(props) {
                     </div>
                 </div>
 
+ 
+                <div className="mt-auto h-[5%] bg-[#f9d6d0]">
+                
+                </div>
+
             </div>
         )}
 
