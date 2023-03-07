@@ -5,7 +5,12 @@ import MyData from '../../JsonData.json'
 function Resume_1(props) {
   const [Information, SetInformation] = useState(null)
   useEffect(() => {
-    SetInformation({...props.UserData}) 
+    if(props.UserData){
+      SetInformation({...props.UserData}) 
+    }else{
+      SetInformation(MyData)
+    }
+ 
 
   }, [])
 

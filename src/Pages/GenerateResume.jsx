@@ -68,7 +68,7 @@ const GenerateResume = (props) => {
                         {ImageIndex === 0 && (
                             <Resume_1 printref={printref} UserData={UserData} />
                         )}
-                        {ImageIndex === 2 && (
+                        {ImageIndex === 1 && (
                             <Resume_2 printref={printref} UserData={UserData} />
                         )}
                     </div>
