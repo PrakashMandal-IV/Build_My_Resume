@@ -45,7 +45,7 @@ const PreviewList = (props) => {
         }
     ])
 
-
+// og image https://i.pinimg.com/564x/9c/df/b3/9cdfb3e1ceb70179afbc83cbe5cba29f.jpg
     return (<>
         <div className="flex  flex-col gap-5   px-4  ">
            
