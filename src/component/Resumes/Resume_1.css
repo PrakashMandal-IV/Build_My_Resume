@@ -11,16 +11,7 @@
     aspect-ratio: 0.707/1;
 }
 
-div[size="A4"] {
-    width: 21cm;
-    height: 29.7cm;
-}
 
-div[size="A4"][layout="portrait"] {
-    width: 29.7cm;
-    height: 21cm;
-
-}
 
 p {
     margin: 0;

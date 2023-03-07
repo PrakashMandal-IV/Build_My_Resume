@@ -66,15 +66,19 @@ code {
 @media print {
   
   body * {
-    size: A4;
+    size: "A4";
     visibility: hidden;
-    
+   
   }
   #printable-area, #printable-area * {
     visibility: visible;
+   
+    
   }
   #printable-area {
     position: absolute;
+    width: 21cm;
+    max-height: 29.7cm;
     left: 0;
     top: 0;
   }

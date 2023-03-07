@@ -33,7 +33,10 @@ const GenerateResume = (props) => {
         }
     }
     const handlePrint = useReactToPrint({
+       
         content: () => printref.current,
+        copyStyles:true,
+        documentTitle:"MyResume.pdf"
     });
     return (<>
         <div className="mt-32 lg:mt-20" id="print_button">
