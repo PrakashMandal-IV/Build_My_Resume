@@ -8,7 +8,8 @@
         "Contact": {
             "Phone": "+91 999 8888 000",
             "Email": "lacygrace@gmail.com",
-            "Website": "https://larainfo.com/blogs"
+            "Website": "https://larainfo.com/blogs",
+            "Location":"Mumbai, India"
         }
     },
     "Education": [
