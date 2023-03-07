@@ -23,8 +23,8 @@ const Nav = () => {
   }, [navVisible]);
 
   return (<div className="flex flex-col min-h-screen " id="top">
-    <div className={`fixed top-0 w-full flex-col md:flex-row flex gap-5 md:gap-20 p-2 max-h-28 lg:max-h-20 transition-all  ${navVisible ? '' : ' -translate-y-[200px]  '}`}>
-      <Logo className="h-14 ml-0" />
+    <div className={`fixed top-0 w-full flex-col md:flex-row flex gap-2  md:gap-20 p-2 max-h-28 lg:max-h-20 transition-all  ${navVisible ? '' : ' -translate-y-[200px]  '}`}>
+      <Logo className="h-10 md:h-12 ml-0" />
       <div className="flex gap-7 lg:gap-20 justify-center ">
         <div className=" text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all" onClick={() => nav('home')}>
           <p className="my-auto" >Home</p>
@@ -34,9 +34,9 @@ const Nav = () => {
           <p className="my-auto"  >Designs</p>
 
         </div>
-        <div className="text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all" onClick={() => nav('home?ScrollTo=KeyFeatures')}>
+        <div className="text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all" onClick={() => nav('/generateresume')}>
 
-          <p className="my-auto" >Key Features</p>
+          <p className="my-auto" >My Resume</p>
 
 
         </div>

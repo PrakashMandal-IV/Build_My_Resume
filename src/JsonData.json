@@ -4,7 +4,7 @@
         "FirstName": "Lacy",
         "LastName": "Grace",
         "Profession": "Graphic Designer",
-        "AboutMe":"<div><p>Hi there, my name is Lacy and I am a full-stack web developer with experience in creating dynamic and interactive web applications. With a strong experience in C#, Javascript, HTML/CSS etc. I am capable of bringing your vision to life and delivering high-quality results in a timely manner.</p><p>Thank you for taking the time to read about me.</div>",
+        "AboutMe":"Hi there, my name is Lacy and I am a full-stack web developer with experience in creating dynamic and interactive web applications. With a strong experience in C#, Javascript, HTML/CSS etc. I am capable of bringing your vision to life and delivering high-quality results in a timely manner",
         "Contact": {
             "Phone": "+91 999 8888 000",
             "Email": "lacygrace@gmail.com",
@@ -36,68 +36,73 @@
     "Skills": [
         {
             "Name": "Adobe Xd",
-            "Level": "2020-2021"
+            "Level": 66
         },
         {
             "Name": "Figma",
-            "Level": "2018-2020"
+            "Level": 88
         },
         {
             "Name": "Wireframe",
-            "Level": "2016-2020"
+            "Level": 50
         },
         {
             "Name": "Photoshop",
-            "Level": "2015-2016"
+            "Level": 90
         },
         {
             "Name": "Blender",
-            "Level": "2015-2016"
+            "Level": 85
         }
     ],
     "Hobbies": [
         "Art",
         "Video game",
         "Coding",
-        "Travel"
+        "Travel",
+        "Sports"
     ],
     "Socials": [
         {
-            "Name": "instagram",
+            "Name": "Instagram",
             "Link":""
         },
         {
-            "Name": "linkedin",
+            "Name": "Linkedin",
             "Link":""
         },
         {
-            "Name": "twitter",
+            "Name": "Twitter",
             "Link":""
         },
         {
-            "Name": "facebook",
+            "Name": "Facebook",
+            "Link":""
+        },
+        {
+            "Name": "Github",
             "Link":""
         }
     ],
     "Experience":[
         {
             "Company":"XXX Company",
-            "Jon":"Project Manager",
+            "Job":"Project Manager",
             "Duration":"2025-Current"
         },
         {
             "Company":"XXX Company",
-            "Jon":"Senior Forntend Developer",
+            "Job":"Senior Forntend Developer",
             "Duration":"2022-2025"
         },
         {
             "Company":"XXX Company",
-            "Jon":"Junior Forntend Developer",
+            "Job":"Junior Forntend Developer",
             "Duration":"2021-2022"
         },
         {
             "Company":"XXX Company",
-            "Jon":"Forntend Intern",
+            "Job":"Forntend Intern",
             "Duration":"2020-2021"
         }
     ],
@@ -105,26 +110,26 @@
     "Projects":[
         {
             "Image":"https://i.pinimg.com/564x/82/09/11/820911e5ded735f2c06d0669ca99afb4.jpg",
-            "Title":"Pendora 3d",
-            "Details":"Hi there, my name is Prakash and I am a full-stack web developer",
+            "Title":"Chat App",
+            "Details":"End to end Encrypted chat app made in .net,react and sql",
             "Link":"https://mathiasbynens.github.io/rel-noopener/#recommen"
         },
         {
             "Image":"https://i.pinimg.com/564x/82/09/11/820911e5ded735f2c06d0669ca99afb4.jpg",
-            "Title":"Pendora 3d",
-            "Details":"Hi there, my name is Prakash and I am a full-stack web developer",
+            "Title":"Instagram Clone",
+            "Details":"Built and Instagram clone using Flutter",
             "Link":"https://mathiasbynens.github.io/rel-noopener/#recommen"
         },
         {
             "Image":"https://i.pinimg.com/564x/82/09/11/820911e5ded735f2c06d0669ca99afb4.jpg",
-            "Title":"Pendora 3d",
-            "Details":"Hi there, my name is Prakash and I am a full-stack web developer",
+            "Title":"A Chatbot",
+            "Details":"Built the chat bot for day-to-day chat and as assistant",
             "Link":"https://mathiasbynens.github.io/rel-noopener/#recommen"
         },
         {
             "Image":"https://i.pinimg.com/564x/82/09/11/820911e5ded735f2c06d0669ca99afb4.jpg",
-            "Title":"Pendora 3d",
-            "Details":"Hi there, my name is Prakash and I am a full-stack web developer",
+            "Title":"Social Media App Interface",
+            "Details":"Build an interactive UI for Social Media based web pages",
             "Link":"https://mathiasbynens.github.io/rel-noopener/#recommen"
         }
     ]

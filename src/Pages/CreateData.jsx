@@ -316,7 +316,7 @@ const CreateData = (props) => {
                 {Form === 1 && (<>
                     <div className="mx-auto text-center flex flex-col gap-4">
                         <p className="text-lg font-semibold mt-5">Alright, How will you introduce your self?</p>
-                        <textarea placeholder="About Yourself !!" style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} className="p-2 mx-auto rounded-md h-36 w-96 outline-none bg-[#f5f5fa]" value={AboutMe} onChange={(e) => SetAboutMe(e.target.value)} />
+                        <textarea placeholder="About Yourself !!" maxLength={350} style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} className="p-2 mx-auto rounded-md h-36 w-96 outline-none bg-[#f5f5fa]" value={AboutMe} onChange={(e) => SetAboutMe(e.target.value)} />
                         <p className="text-center w-full md:w-[40rem] mt-5">Your "Introduction" section should be brief and highlight your key strengths and experiences that make you a great candidate for the job. Focus on showcasing your relevant skills, experience, and achievements in just a few lines.</p>
                     </div>
                 </>)}
@@ -337,7 +337,6 @@ const CreateData = (props) => {
                         <div className="flex flex-col gap-2 ">
                             <div className=" ml-auto">
                                 <PrimaryButton onClick={() => SetSideBaord(!SideBoard)} Name={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={"w-5 h-5 transition-all  " + (SideBoard ? "rotate-45" : "")} ><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>} className=" transition-all h-4" />
-
                             </div>
                         </div>
                         <div className="flex gap-2 ">
