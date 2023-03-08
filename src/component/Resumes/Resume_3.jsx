@@ -30,7 +30,7 @@ function Resume_3(props) {
                             <p className="text-3xl font-light">{Information?.PersonalData?.LastName}</p>
                             <div className="flex  mt-2">
                                 <p className="text-xl font-light">{Information?.PersonalData?.Profession}</p>
-                                <div className="ml-auto  flex gap-2">
+                                <div className="ml-auto  flex gap-2 my-auto">
                                     {Information?.Socials?.map((item, idx) => {
                                         return (<div className="" key={idx}>
                                             {item.Name === "Instagram" && (
