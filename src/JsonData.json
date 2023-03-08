@@ -1,6 +1,6 @@
 {
     "PersonalData": {
-        "ProfilePic":"https://i.pinimg.com/564x/5f/3f/82/5f3f8220a4f49c8f983539b6e8eb5db7.jpg",
+        "ProfilePic":"https://i.pinimg.com/564x/9c/df/b3/9cdfb3e1ceb70179afbc83cbe5cba29f.jpg" ,
         "FirstName": "Lacy",
         "LastName": "Grace",
         "Profession": "Graphic Designer",
@@ -8,7 +8,8 @@
         "Contact": {
             "Phone": "+91 999 8888 000",
             "Email": "lacygrace@gmail.com",
-            "Website": "https://larainfo.com/blogs"
+            "Website": "https://larainfo.com/blogs",
+            "Location":"Mumbai, India"
         }
     },
     "Education": [
@@ -88,7 +89,7 @@
         {
             "Company":"XXX Company",
             "Job":"Project Manager",
-            "Duration":"2025-Current"
+            "Duration":"2025-Present"
         },
         {
             "Company":"XXX Company",

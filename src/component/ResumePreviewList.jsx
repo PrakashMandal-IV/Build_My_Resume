@@ -4,7 +4,8 @@ import Resume_2 from "../Assets/ResumePrevews/Resume_2.jpg"
 import Resume_3 from "../Assets/ResumePrevews/Resume_3.jpg"
 import Resume_4 from "../Assets/ResumePrevews/Resume_4.jpg"
 import Resume_5 from "../Assets/ResumePrevews/Resume_5.jpg"
-
+import Resume_6 from "../Assets/ResumePrevews/Resume_6.jpg"
+import Resume_7 from "../Assets/ResumePrevews/Resume_7.jpg"
 const PreviewList = (props) => {
     const [List, SetList] = useState([
         {
@@ -31,10 +32,20 @@ const PreviewList = (props) => {
             img: Resume_5,
             name: "Image Name",
             Id:4
+        },
+        {
+            img: Resume_6,
+            name: "Image Name",
+            Id:5
+        },
+        {
+            img: Resume_7,
+            name: "Image Name",
+            Id:6
         }
     ])
 
-
+// og image https://i.pinimg.com/564x/9c/df/b3/9cdfb3e1ceb70179afbc83cbe5cba29f.jpg
     return (<>
         <div className="flex  flex-col gap-5   px-4  ">
            
