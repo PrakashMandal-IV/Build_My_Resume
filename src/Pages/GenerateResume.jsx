@@ -36,7 +36,7 @@ const GenerateResume = (props) => {
     const handlePrint = useReactToPrint({
 
         content: () => printref.current,
-
+        documentTitle:"MyResume"
     });
 
     return (<>

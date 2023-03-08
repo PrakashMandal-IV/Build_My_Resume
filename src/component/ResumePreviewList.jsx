@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Resume_1 from "../Assets/ResumePrevews/Resume_1.jpg"
 import Resume_2 from "../Assets/ResumePrevews/Resume_2.jpg"
-import Resume_3 from "../Assets/ResumePrevews/Resume_3.png"
+import Resume_3 from "../Assets/ResumePrevews/Resume_3.jpg"
 import Resume_4 from "../Assets/ResumePrevews/Resume_4.jpg"
 import Resume_5 from "../Assets/ResumePrevews/Resume_5.jpg"
 import Resume_6 from "../Assets/ResumePrevews/Resume_6.jpg"
