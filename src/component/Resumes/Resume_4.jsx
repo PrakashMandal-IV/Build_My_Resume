@@ -61,6 +61,16 @@ function Resume_4(props) {
                                 </div>
                             ))}
                         </div>
+                        <div className="flex flex-col gap-4 pr-10">
+                            <p className="text-white font-semibold text-lg"> <span className="border-b">Hobbies</span></p>
+                            <div className="flex  gap-2 flex-wrap">
+                            {Information?.Hobbies?.map((item, idx) => (
+                                <div className="flex border px-2 py-1 rounded-md" key={idx}>
+                                    <p className="text-sm font-medium text-white">{item}</p>
+                                </div>
+                            ))}
+                            </div>
+                        </div>
                     </div>
                     {/* Right */}
                     <div className="w-1/2"></div>
