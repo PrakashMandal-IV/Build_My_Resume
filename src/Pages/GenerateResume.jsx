@@ -7,10 +7,11 @@ import PreviewList, { ResumePreviewList } from "../component/ResumePreviewList"
 import Resume_1 from "../component/Resumes/Resume_1"
 import Resume_2 from "../component/Resumes/Resume_2"
 import Resume_3 from "../component/Resumes/Resume_3"
+import Resume_4 from "../component/Resumes/Resume_4"
 const GenerateResume = (props) => {
 
     const printref = useRef()
-    const [ImageIndex, SetImageIngex] = useState(2)
+    const [ImageIndex, SetImageIngex] = useState(3)
     const [UserData, SetUserData] = useState(null)
     const nav = useNavigate()
     useEffect(() => {
@@ -79,6 +80,9 @@ const GenerateResume = (props) => {
                         )}
                         {ImageIndex === 2 && (
                             <Resume_3 printref={printref} UserData={UserData} />
+                        )}
+                        {ImageIndex === 3 && (
+                            <Resume_4 printref={printref} UserData={UserData} />
                         )}
                     </div>
 
