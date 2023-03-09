@@ -92,6 +92,24 @@ function Resume_5(props) {
                         </div>
                     </div>
                 </div>
+                <div className="flex flex-col gap-2 mx-14">
+                    <div className="text-lg font-medium border-b border-gray-400 ">ABOUT ME</div>
+                    <p className="text-sm font-light">{Information?.PersonalData?.AboutMe}</p>
+
+                    <div className="mt-8 flex">
+                        <div className="w-1/2 flex flex-col gap-5">
+                            <div className="flex flex-col gap-2">
+                                <div className="text-lg font-medium border-b border-gray-400 ">Experience</div>
+                                 <div className="">
+                                     <p className="text-xs font-medium">2019</p>
+                                     <p className="text-xs font-medium">Intern in Frontend Framework / ABC Company</p>
+                                     <p className="text-xs text-light ">Interned in React front-end. Gained practical experience building user interfaces using React components, JSX, and CSS.</p>
+                                 </div>
+                            </div>
+                        </div>
+                        <div className="w-1/2"></div>
+                    </div>
+                </div>
 
             </div>
         )}
