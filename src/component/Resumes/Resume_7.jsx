@@ -100,7 +100,7 @@ function Resume_7(props) {
                                         </div>
                                         <div className="w-3/4 border-l border-gray-200 pl-5 flex flex-col">
                                             <p className="text-sm font-semibold ">{item.Company}<span className="font-normal"> | {item.Job}</span> </p>
-                                         
+
                                             <p className="text-[.65rem] text-gray-300/75 pb-1">{item.Details}</p>
                                         </div>
                                     </div>
@@ -127,7 +127,7 @@ function Resume_7(props) {
                                     </div>
                                 ))}
                             </div>
-                            
+
                         </div>
                         <div className="flex flex-col mt-10">
                             <div className="flex">
@@ -138,15 +138,33 @@ function Resume_7(props) {
                             <div className=" text-gray-300 mt-5 mr-5">
                                 {Information?.Skills?.slice(0, 5).map((item, idx) => (
                                     <div className="flex" key={idx}>
-                                    <p className="text-sm font-medium text-white">{item.Name}</p>
-                                    <div className="bg-red-900 h-1 ml-auto flex-grow max-w-[60%] my-auto  ">
-                                        <div className=" h-full bg-white" style={{ width: `${item.Level}%` }}></div>
+                                        <p className="text-sm font-medium text-white">{item.Name}</p>
+                                        <div className="bg-red-900 h-1 ml-auto flex-grow max-w-[60%] my-auto  ">
+                                            <div className=" h-full bg-white" style={{ width: `${item.Level}%` }}></div>
+                                        </div>
+                                        <p className="ml-1"> {item.Level}%</p>
                                     </div>
-                                    <p className="ml-1"> {item.Level}%</p>
-                                </div>
                                 ))}
                             </div>
-                            
+
+                        </div>
+                        <div className=" ">
+                            <div className="mt-5 flex flex-col gap-1">
+                                <div className="flex">
+                                    <p className="text-3xl font-semibold text-gray-300  ">HOBBIES</p>
+                                    <div className="flex-grow ml-2 my-1 bg-red-400">
+                                    </div>
+                                </div>
+                                <div className="flex gap-2 flex-wrap">
+                                    {Information?.Hobbies.slice(0, 7).map((item, idx) => (
+                                        <div className="flex" key={idx}>
+                                            <p className="text-sm px-2 py-1 border  font-normal text-gray-300">{item}</p>
+
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
