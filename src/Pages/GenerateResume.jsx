@@ -14,10 +14,12 @@ import Resume_7 from "../component/Resumes/Resume_7"
 const GenerateResume = (props) => {
 
     const printref = useRef()
-    const [ImageIndex, SetImageIngex] = useState(6)
+    const [ImageIndex, SetImageIngex] = useState('')
     const [UserData, SetUserData] = useState(null)
     const nav = useNavigate()
     useEffect(() => {
+        debugger 
+
 
         SetUserData(props.UserData)
     }, [])

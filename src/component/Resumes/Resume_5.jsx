@@ -17,7 +17,7 @@ function Resume_5(props) {
 
     return (<>
         {Information && (
-            <div id="printable-area" ref={props.printref} className="body bg-gray-200 flex flex-col " size="A4">
+            <div id="printable-area" ref={props.printref} className="body bg-gray-50 flex flex-col " size="A4">
                 {/* body */}
                 <div className="flex  ">
                     <div className="w-1/2  py-5 px-14">
@@ -27,14 +27,14 @@ function Resume_5(props) {
                     </div>
                     <div className="w-1/2 b  ">
                         <div className="border border-black my-6 mr-14 flex flex-col">
-                            <div className=" bg-gray-200 text-center -translate-y-3 mx-16 ">
+                            <div className=" bg-gray-50  text-center -translate-y-3 mx-16 ">
                                 <p className="text-sm font-medium">PERSONAL CONTACT</p>
                                 <p className="text-xs font-light">{Information?.PersonalData?.Contact?.Email}</p>
                                 <p className="text-xs font-light">{Information?.PersonalData?.Contact?.Phone}</p>
                                 <p className="text-xs font-light">{Information?.PersonalData?.Contact?.Location}</p>
                             </div>
                             <div className="flex ">
-                                <div className=" bg-gray-200 mr-auto flex ml-5 translate-y-[50%] px-2 gap-2">
+                                <div className=" bg-gray-50  mr-auto flex ml-5 translate-y-[50%] px-2 gap-2">
                                     {Information?.Socials?.map((item, idx) => {
                                         return (<div className="" key={idx}>
                                             {item.Name === "Instagram" && (
@@ -83,7 +83,7 @@ function Resume_5(props) {
                                     })}
                                 </div>
                                 {Information?.PersonalData?.Contact?.Website !== "" && (
-                                    <div className="mr-2 translate-y-[50%] px-2 bg-gray-200" >
+                                    <div className="mr-2 translate-y-[50%] px-2 bg-gray-50 " >
                                         <a href={Information?.PersonalData?.Contact?.Website} className="text-sm">My Portfolio</a>
                                     </div>
                                 )}
