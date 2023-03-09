@@ -14,7 +14,7 @@ import Resume_7 from "../component/Resumes/Resume_7"
 const GenerateResume = (props) => {
 
     const printref = useRef()
-    const [ImageIndex, SetImageIngex] = useState(5)
+    const [ImageIndex, SetImageIngex] = useState(6)
     const [UserData, SetUserData] = useState(null)
     const nav = useNavigate()
     useEffect(() => {
