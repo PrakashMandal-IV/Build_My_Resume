@@ -44,7 +44,8 @@ const CreateData = (props) => {
     const [AddExperience, SetAddExperience] = useState({
         Job: "",
         Company: "",
-        Duration: ""
+        Duration: "",
+        Details:""
     })
     const [HobbyList, SetHobbyList] = useState([])
     const [Hobby, SetHobby] = useState('')
@@ -491,6 +492,8 @@ const CreateData = (props) => {
                                 <InputBox placeholder="Job" className="h-10" value={AddExperience.Job} onChange={(e) => AddExperienceHandler("job", e.target.value)} />
                                 <InputBox placeholder="Company" className="h-10" value={AddExperience.Company} onChange={(e) => AddExperienceHandler("company", e.target.value)} />
                                 <InputBox placeholder="From-to (eg :2015-2020,2018-Present)" className="h-10" value={AddExperience.Duration} onChange={(e) => AddExperienceHandler("duration", e.target.value)} />
+                                <textarea placeholder="Discribe your Experience" maxLength={350} style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} className="p-2 mx-auto rounded-md h-36 w-96 outline-none bg-[#f5f5fa]" value={AboutMe} onChange={(e) => SetAboutMe(e.target.value)} />
+                     
                                 <PrimaryButton onClick={() => SetAddedExperience()} Name="Add" className="h-10 w-full transition-all mt-5" />
 
                             </div>
