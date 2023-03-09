@@ -10,10 +10,11 @@ import Resume_3 from "../component/Resumes/Resume_3"
 import Resume_4 from "../component/Resumes/Resume_4"
 import Resume_5 from "../component/Resumes/Resume_5"
 import Resume_6 from "../component/Resumes/Resume_6"
+import Resume_7 from "../component/Resumes/Resume_7"
 const GenerateResume = (props) => {
 
     const printref = useRef()
-    const [ImageIndex, SetImageIngex] = useState(5)
+    const [ImageIndex, SetImageIngex] = useState(6)
     const [UserData, SetUserData] = useState(null)
     const nav = useNavigate()
     useEffect(() => {
@@ -91,6 +92,9 @@ const GenerateResume = (props) => {
                         )}
                         {ImageIndex === 5 && (
                             <Resume_6 printref={printref} UserData={UserData} />
+                        )}
+                         {ImageIndex === 6 && (
+                            <Resume_7 printref={printref} UserData={UserData} />
                         )}
                     </div>
 
