@@ -17,7 +17,7 @@ function Resume_5(props) {
 
     return (<>
         {Information && (
-            <div id="printable-area" ref={props.printref} className="body bg-gray-200  flex flex-col " size="A4">
+            <div id="printable-area" ref={props.printref} className="body bg-gray-200 flex flex-col " size="A4">
                 {/* body */}
                 <div className="flex  ">
                     <div className="w-1/2  py-5 px-14">
@@ -83,7 +83,7 @@ function Resume_5(props) {
                                     })}
                                 </div>
                                 {Information?.PersonalData?.Contact?.Website !== "" && (
-                                    <div className="mr-2 translate-y-[50%] px-2 bg-gray-200">
+                                    <div className="mr-2 translate-y-[50%] px-2 bg-gray-200" >
                                         <a href={Information?.PersonalData?.Contact?.Website} className="text-sm">My Portfolio</a>
                                     </div>
                                 )}
@@ -98,13 +98,13 @@ function Resume_5(props) {
 
                     <div className="mt-4 flex">
                         <div className="w-1/2 flex flex-col gap-5">
-                            <div className="flex flex-col gap-2">
+                            <div className="flex flex-col gap-3">
                                 <div className="text-lg font-medium border-b border-gray-400 ">Experience</div>
                                 {Information?.Experience?.slice(0, 5).map((item, idx) => (
-                                    <div className="">
+                                    <div className="" key={idx}>
                                         <p className="text-xs font-medium ">{item.Duration}</p>
                                         <p className="text-[.85rem] font-medium">{item.Job} / {item.Company}</p>
-                                        <p className="text-xs text-light mt-1">{item.Details}</p>
+                                        <p className="text-xs text-light ">{item.Details}</p>
                                     </div>
                                 ))}
                             </div>
@@ -112,12 +112,12 @@ function Resume_5(props) {
                                 <div className="text-lg font-medium border-b border-gray-400 ">Projects</div>
                                 {Information?.Projects?.slice(0, 5).map((item, idx) => {
                                     if (item.Link === "") {
-                                        return (<div className="border border-gray-400 py-1 rounded-md px-2">
+                                        return (<div className="border border-gray-300 py-1 rounded-md px-2" key={idx}>
                                             <p className="text-sm font-medium">{item.Title}</p>
                                             <p className="text-xs text-light mt-1">{item.Details}</p>
                                         </div>)
                                     } else {
-                                        return (<a href={item.Link} target="_blank" className="border border-gray-400 py-1 rounded-md px-2">
+                                        return (<a href={item.Link} target="_blank" className="border border-gray-300 py-1 rounded-md px-2" key={idx}>
                                             <p className="text-sm font-medium">{item.Title}</p>
                                             <p className="text-xs text-light mt-1">{item.Details}</p>
                                         </a>)
@@ -125,14 +125,30 @@ function Resume_5(props) {
                                 })}
                             </div>
                         </div>
-                        <div className="w-1/2 flex flex-col gap-5">
+                        <div className="flex-grow ml-20 flex flex-col gap-5 ">
                             <div className="flex flex-col gap-2">
                                 <div className="text-lg font-medium border-b border-gray-400 ">Education</div>
                                 {Information?.Education?.slice(0, 5).map((item, idx) => (
-                                    <div className="">
+                                    <div className="" key={idx}>
                                         <p className="text-xs font-medium ">{item.Duration}</p>
-                                        <p className="text-[.85rem] font-medium">{item.Job} / {item.Company}</p>
-                                        <p className="text-xs text-light mt-1">{item.Details}</p>
+                                        <p className="text-[.85rem] font-medium">{item.Title}</p>
+                                        <p className="text-xs text-light">{item.From}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <div className="text-lg font-medium border-b border-gray-400 ">Skills</div>
+                                {Information?.Skills?.slice(0, 8).map((item, idx) => (
+                                    <div className="" key={idx}>
+                                        <p className="text-xs font-medium ">{item.Name}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <div className="text-lg font-medium border-b border-gray-400 ">Certificates & Achievments</div>
+                                {Information?.Certificates?.slice(0, 8).map((item, idx) => (
+                                    <div className="" key={idx}>
+                                        <p className="text-xs font-medium ">{item}</p>
                                     </div>
                                 ))}
                             </div>
