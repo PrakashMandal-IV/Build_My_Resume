@@ -83,8 +83,51 @@ function Resume_7(props) {
                             <div className="w-10 bg-[#d32a2d] ml-auto"></div>
                         </div>
                     </div>
-                    <div className="w-1/2  bg-[#d32a2d] ">
-
+                    <div className="w-1/2  bg-[#d32a2d] pl-10 flex flex-col gap-5">
+                        <div className="flex flex-col mt-10">
+                            <div className="flex">
+                                <p className="text-3xl font-semibold text-gray-300  ">EXPERIENCE</p>
+                                <div className="flex-grow ml-2 my-1 bg-red-400">
+                                </div>
+                            </div>
+                            <div className=" text-gray-300">
+                                {Information?.Experience?.slice(0, 5).map((item, idx) => (
+                                    <div className="flex" key={idx}>
+                                        {/* Date */}
+                                        <div className="w-1/4  flex">
+                                            <p className="text-xs font-semibold">{item.Duration}</p>
+                                            <div className="ml-auto w-4 h-4 rounded-full border-2   translate-x-[calc(50%+.5px)] bg-gray-300"></div>
+                                        </div>
+                                        <div className="w-3/4 border-l border-gray-200 pl-5 flex flex-col">
+                                            <p className="text-sm font-semibold ">{item.Company}<span className="font-normal"> | {item.Job}</span> </p>
+                                         
+                                            <p className="text-[.65rem] text-gray-300/75 pb-1">{item.Details}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="flex flex-col mt-10">
+                            <div className="flex">
+                                <p className="text-3xl font-semibold text-gray-300  ">EDUCATION</p>
+                                <div className="flex-grow ml-2 my-1 bg-red-400">
+                                </div>
+                            </div>
+                            <div className=" text-gray-300">
+                                {Information?.Education?.slice(0, 5).map((item, idx) => (
+                                    <div className="flex " key={idx}>
+                                        {/* Date */}
+                                        <div className="w-1/4  flex my-auto">
+                                            <p className="text-xs font-semibold">{item.Duration}</p>
+                                            <div className="ml-auto w-4 h-4 rounded-full border-2   translate-x-[calc(50%+.5px)] bg-gray-300"></div>
+                                        </div>
+                                        <div className="w-3/4 border-l border-gray-200 pl-5 flex flex-col  my-auto">
+                                            <p className="text-sm font-semibold py-2 ">{item.Title}<span className="font-normal"> | {item.From}</span> </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
