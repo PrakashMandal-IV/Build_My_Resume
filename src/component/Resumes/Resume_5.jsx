@@ -19,14 +19,14 @@ function Resume_5(props) {
         {Information && (
             <div id="printable-area" ref={props.printref} className="body bg-gray-200  flex flex-col " size="A4">
                 {/* body */}
-                <div className="flex ">
-                    <div className="w-1/2 py-10 px-14">
+                <div className="flex  ">
+                    <div className="w-1/2  py-5 px-14">
                         <p className="text-4xl font-medium">{Information?.PersonalData?.FirstName}</p>
                         <p className="text-4xl font-medium    ">{Information?.PersonalData?.LastName}</p>
                         <p className="text-lg font-light     ">{Information?.PersonalData?.Profession}</p>
                     </div>
                     <div className="w-1/2 b  ">
-                        <div className="border border-black my-12 mr-14 flex flex-col">
+                        <div className="border border-black my-6 mr-14 flex flex-col">
                             <div className=" bg-gray-200 text-center -translate-y-3 mx-16 ">
                                 <p className="text-sm font-medium">PERSONAL CONTACT</p>
                                 <p className="text-xs font-light">{Information?.PersonalData?.Contact?.Email}</p>
@@ -94,20 +94,49 @@ function Resume_5(props) {
                 </div>
                 <div className="flex flex-col gap-2 mx-14">
                     <div className="text-lg font-medium border-b border-gray-400 ">ABOUT ME</div>
-                    <p className="text-sm font-light">{Information?.PersonalData?.AboutMe}</p>
+                    <p className="text-xs font-light">{Information?.PersonalData?.AboutMe}</p>
 
-                    <div className="mt-8 flex">
+                    <div className="mt-4 flex">
                         <div className="w-1/2 flex flex-col gap-5">
                             <div className="flex flex-col gap-2">
                                 <div className="text-lg font-medium border-b border-gray-400 ">Experience</div>
-                                 <div className="">
-                                     <p className="text-xs font-medium">2019</p>
-                                     <p className="text-xs font-medium">Intern in Frontend Framework / ABC Company</p>
-                                     <p className="text-xs text-light ">Interned in React front-end. Gained practical experience building user interfaces using React components, JSX, and CSS.</p>
-                                 </div>
+                                {Information?.Experience?.slice(0, 5).map((item, idx) => (
+                                    <div className="">
+                                        <p className="text-xs font-medium ">{item.Duration}</p>
+                                        <p className="text-[.85rem] font-medium">{item.Job} / {item.Company}</p>
+                                        <p className="text-xs text-light mt-1">{item.Details}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <div className="text-lg font-medium border-b border-gray-400 ">Projects</div>
+                                {Information?.Projects?.slice(0, 5).map((item, idx) => {
+                                    if (item.Link === "") {
+                                        return (<div className="border border-gray-400 py-1 rounded-md px-2">
+                                            <p className="text-sm font-medium">{item.Title}</p>
+                                            <p className="text-xs text-light mt-1">{item.Details}</p>
+                                        </div>)
+                                    } else {
+                                        return (<a href={item.Link} target="_blank" className="border border-gray-400 py-1 rounded-md px-2">
+                                            <p className="text-sm font-medium">{item.Title}</p>
+                                            <p className="text-xs text-light mt-1">{item.Details}</p>
+                                        </a>)
+                                    }
+                                })}
                             </div>
                         </div>
-                        <div className="w-1/2"></div>
+                        <div className="w-1/2 flex flex-col gap-5">
+                            <div className="flex flex-col gap-2">
+                                <div className="text-lg font-medium border-b border-gray-400 ">Education</div>
+                                {Information?.Education?.slice(0, 5).map((item, idx) => (
+                                    <div className="">
+                                        <p className="text-xs font-medium ">{item.Duration}</p>
+                                        <p className="text-[.85rem] font-medium">{item.Job} / {item.Company}</p>
+                                        <p className="text-xs text-light mt-1">{item.Details}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
 

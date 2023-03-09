@@ -89,22 +89,29 @@
         {
             "Company":"XXX Company",
             "Job":"Project Manager",
-            "Duration":"2025-Present"
+            "Duration":"2025-Present",
+            "Details":"Managed projects by planning, coordinating, and leading teams to achieve project objectives while ensuring quality, timeliness, and budget adherence."
+            
         },
         {
             "Company":"XXX Company",
             "Job":"Senior Forntend Developer",
-            "Duration":"2022-2025"
+            "Duration":"2022-2025",
+            "Details":"As a senior frontend developer, designed, developed and maintained complex web applications using modern frontend technologies, while mentoring and collaborating with other team members."
+           
         },
         {
             "Company":"XXX Company",
             "Job":"Junior Forntend Developer",
-            "Duration":"2021-2022"
+            "Duration":"2021-2022",
+            "Details":"As a Junior frontend developer, designed, developed and maintained complex web applications using modern frontend technologies, while mentoring and collaborating with other team members."
+           
         },
         {
             "Company":"XXX Company",
             "Job":"Forntend Intern",
-            "Duration":"2020-2021"
+            "Duration":"2020-2021",
+            "Details":"Interned in React front-end. Gained practical experience building user interfaces using React components, JSX, and CSS."
         }
     ],
     "Certificates": ["Codecon","Leetcode","Hackathon","JS Master class"],
