@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 
 function ImageSlideshow({ images }) {
-const  [Rem,SetRem] = useState(0)
 
   
     return (
