@@ -45,7 +45,7 @@ const CreateData = (props) => {
         Job: "",
         Company: "",
         Duration: "",
-        Details:""
+        Details: ""
     })
     const [HobbyList, SetHobbyList] = useState([])
     const [Hobby, SetHobby] = useState('')
@@ -330,7 +330,7 @@ const CreateData = (props) => {
                     </div>
                 </>)}
                 {Form === 3 && (<>
-                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
+                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-3/5  ">
                         <div className="mt-5">
                             <p className="text-lg font-semibold ">What do you do in your free time?</p>
                             <p className="text-lg font-semibold">Tell us about your hobbies</p>
@@ -341,7 +341,7 @@ const CreateData = (props) => {
                             </div>
                         </div>
                         <div className="flex gap-2 ">
-                            <div className={"flex flex-wrap  gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
+                            <div className={"flex flex-wrap  gap-5 transition-all " + (SideBoard ? "w-2/3" : "w-full")}>
                                 {HobbyList.map((item, idx) => (
                                     <div className="  p-2 flex gap-5 bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  h-12 justify-center align-middle items-center" style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
                                         <div className="mr-auto text-left">
@@ -359,7 +359,7 @@ const CreateData = (props) => {
                             </div>
                             {/* Left div that appears when SideBoard is true */}
 
-                            <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
+                            <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/3" : "hidden w-0")}>
                                 <InputBox placeholder="Hobby" className="h-10" value={Hobby} onChange={(e) => SetHobby(e.target.value)} />
 
                                 <PrimaryButton onClick={() => SetHobbies()} Name="Add" className="h-10 w-full transition-all mt-5" />
@@ -371,7 +371,7 @@ const CreateData = (props) => {
                     </div>
                 </>)}
                 {Form === 4 && (<>
-                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
+                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-3/5  ">
                         <p className="text-lg font-semibold mt-5 ">Tell us about your Educations</p>
                         <div className="flex flex-col gap-2 ">
                             <div className=" ml-auto">
@@ -381,7 +381,7 @@ const CreateData = (props) => {
                         </div>
                         <div className="flex gap-2 ">
 
-                            <div className={"flex flex-col gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
+                            <div className={"flex flex-col gap-5 transition-all " + (SideBoard ? "w-2/3" : "w-full")}>
                                 {/* Education items */}
                                 {Education.map((item, idx) => (
                                     <div key={idx} className="w-full  p-2 flex bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  " style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
@@ -401,7 +401,7 @@ const CreateData = (props) => {
                             </div>
                             {/* Left div that appears when SideBoard is true */}
 
-                            <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
+                            <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/3" : "hidden w-0")}>
                                 <InputBox placeholder="Title" className="h-10" value={AddEducation.Title} onChange={(e) => AddEducationHandler("title", e.target.value)} />
                                 <InputBox placeholder="From" className="h-10" value={AddEducation.From} onChange={(e) => AddEducationHandler("from", e.target.value)} />
                                 <InputBox placeholder="Complition Year" className="h-10" value={AddEducation.Year} onChange={(e) => AddEducationHandler("year", e.target.value)} />
@@ -414,7 +414,7 @@ const CreateData = (props) => {
                     </div>
                 </>)}
                 {Form === 5 && (<>
-                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
+                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-3/5  ">
                         <div className="mt-5">
                             <p className="text-lg font-semibold ">Mentioning your skills always</p>
                             <p className="text-lg font-semibold">  give you an edge</p>
@@ -426,7 +426,7 @@ const CreateData = (props) => {
                             </div>
                         </div>
                         <div className="flex gap-2 ">
-                            <div className={"flex flex-wrap  gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
+                            <div className={"flex flex-wrap  gap-5 transition-all " + (SideBoard ? "w-2/3" : "w-full")}>
 
                                 {SkillList.map((item, idx) => (
                                     <div key={idx} className="  p-2 flex gap-5 bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  h-12 justify-center align-middle items-center" style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
@@ -447,7 +447,7 @@ const CreateData = (props) => {
                             </div>
                             {/* Left div that appears when SideBoard is true */}
 
-                            <div className={"transition-all transform  flex flex-col gap-4 p-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
+                            <div className={"transition-all transform  flex flex-col gap-4 p-2 " + (SideBoard ? "w-1/3" : "hidden w-0")}>
                                 <InputBox placeholder="Skill" className="h-10" value={AddSkill.Name} onChange={(e) => AddSkillHandler("name", e.target.value)} />
                                 <InputBox placeholder="Prof. from 0-100" type="number" className="h-10 appearance-none " value={AddSkill.Level} onChange={(e) => AddSkillHandler("level", e.target.value)} />
 
@@ -460,7 +460,7 @@ const CreateData = (props) => {
                     </div>
                 </>)}
                 {Form === 6 && (<>
-                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
+                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-3/5  ">
                         <p className="text-lg font-semibold mt-5 ">Tell us about your Experiences</p>
                         <div className="flex flex-col gap-2 ">
                             <div className=" ml-auto">
@@ -469,7 +469,7 @@ const CreateData = (props) => {
                             </div>
                         </div>
                         <div className="flex gap-2 ">
-                            <div className={"flex flex-col gap-5 transition-all " + (SideBoard ? "w-1/2" : "w-full")}>
+                            <div className={"flex flex-col gap-5 transition-all " + (SideBoard ? "w-2/3" : "w-full")}>
 
                                 {ExperienceList.map((item, idx) => (
                                     <div key={idx} className="w-full  p-2 flex bg-[#f5f5fa] hover:bg-[#f8f8ff] rounded-md transition-all  " style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} >
@@ -488,12 +488,12 @@ const CreateData = (props) => {
                             </div>
                             {/* Left div that appears when SideBoard is true */}
 
-                            <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
+                            <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/3" : "hidden w-0")}>
                                 <InputBox placeholder="Job" className="h-10" value={AddExperience.Job} onChange={(e) => AddExperienceHandler("job", e.target.value)} />
                                 <InputBox placeholder="Company" className="h-10" value={AddExperience.Company} onChange={(e) => AddExperienceHandler("company", e.target.value)} />
                                 <InputBox placeholder="From-to (eg :2015-2020,2018-Present)" className="h-10" value={AddExperience.Duration} onChange={(e) => AddExperienceHandler("duration", e.target.value)} />
                                 <textarea placeholder="Discribe your Experience" maxLength={350} style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} className="p-2 mx-auto rounded-md h-36 w-96 outline-none bg-[#f5f5fa]" value={AboutMe} onChange={(e) => SetAboutMe(e.target.value)} />
-                     
+
                                 <PrimaryButton onClick={() => SetAddedExperience()} Name="Add" className="h-10 w-full transition-all mt-5" />
 
                             </div>
@@ -503,7 +503,7 @@ const CreateData = (props) => {
                     </div>
                 </>)}
                 {Form === 7 && (<>
-                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
+                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-3/5  ">
                         <div className=" mt-5">
                             <p className="text-lg font-semibold ">Mentioning your projects will</p>
                             <p className="text-lg font-semibold">Make u stand out from others !!</p>
@@ -547,7 +547,7 @@ const CreateData = (props) => {
                     </div>
                 </>)}
                 {Form === 8 && (<>
-                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
+                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-3/5  ">
                         <div className="mt-5">
                             <p className="text-lg font-semibold ">Have u achieved something special ? Or Certificates?</p>
                             <p className="text-lg font-semibold">worth mentioning them as well </p>
@@ -589,7 +589,7 @@ const CreateData = (props) => {
                     </div>
                 </>)}
                 {Form === 9 && (<>
-                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-2/5  ">
+                    <div className="mx-auto text-center flex flex-col gap-4 w-4/5 md:w-3/5  ">
                         <div className="mt-5">
                             <p className="text-lg font-semibold ">Finally , Everyone has some Social Profiles</p>
                             <p className="text-lg font-semibold">Would u like to share them?</p>
