@@ -11,6 +11,7 @@ import Resume_4 from "../component/Resumes/Resume_4"
 import Resume_5 from "../component/Resumes/Resume_5"
 import Resume_6 from "../component/Resumes/Resume_6"
 import Resume_7 from "../component/Resumes/Resume_7"
+import Resume_8 from "../component/Resumes/Resume_8"
 const GenerateResume = (props) => {
 
     const printref = useRef()
@@ -96,6 +97,9 @@ const GenerateResume = (props) => {
                         )}
                          {ImageIndex === 6 && (
                             <Resume_7 printref={printref} UserData={UserData} />
+                        )}
+                        {ImageIndex === 7 && (
+                            <Resume_8 printref={printref} UserData={UserData} />
                         )}
                     </div>
 
