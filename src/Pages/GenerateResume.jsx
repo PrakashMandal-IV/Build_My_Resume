@@ -15,7 +15,7 @@ import Resume_8 from "../component/Resumes/Resume_8"
 const GenerateResume = (props) => {
 
     const printref = useRef()
-    const [ImageIndex, SetImageIngex] = useState(7)
+    const [ImageIndex, SetImageIngex] = useState('')
     const [UserData, SetUserData] = useState(null)
     const nav = useNavigate()
     useEffect(() => {
@@ -76,7 +76,6 @@ const GenerateResume = (props) => {
                         Note: The Preview below can be different from the Actual Print
                     </p>
                     <div className="hidden md:block mx-auto md:w-[50rem] shadow-md   " >
-
                         {ImageIndex === 0 && (
                             <Resume_1 printref={printref} UserData={UserData} />
                         )}
