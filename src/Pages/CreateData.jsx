@@ -274,6 +274,7 @@ const CreateData = (props) => {
     const CreateData = () => {
         const UserData = {
             PersonalData: {
+                ProfilePic:"",
                 FirstName: UserName.split(" ")[0],
                 LastName: UserName.split(" ")[1] ? UserName.split(" ")[1] : "",
                 Profession: Profession,

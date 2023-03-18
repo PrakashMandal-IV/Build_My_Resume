@@ -4,6 +4,7 @@ import { useNavigate } from "react-router"
 import { useReactToPrint } from "react-to-print/lib"
 import { PrimaryButton } from "../component/Button"
 import PreviewList, { ResumePreviewList } from "../component/ResumePreviewList"
+import styled from 'styled-components';
 import Resume_1 from "../component/Resumes/Resume_1"
 import Resume_2 from "../component/Resumes/Resume_2"
 import Resume_3 from "../component/Resumes/Resume_3"
@@ -19,8 +20,6 @@ const GenerateResume = (props) => {
     const [UserData, SetUserData] = useState(null)
     const nav = useNavigate()
     useEffect(() => {
-       
-
         SetUserData(props.UserData)
     }, [])
 
@@ -42,19 +41,35 @@ const GenerateResume = (props) => {
     const handlePrint = useReactToPrint({
 
         content: () => printref.current,
-        documentTitle:"MyResume"
+        documentTitle: "MyResume"
     });
-
+    
+   const SetImageUpload=(event)=>{
+    if(UserData){
+        UserData.PersonalData.ProfilePic= URL.createObjectURL(event.target.files[0])
+    }
+    
+   }
     return (<>
-        <div className="mt-32 lg:mt-14" id="print_button">
+        <div className="mt-32 lg:mt-14" id="print_button" >
             <div className="flex p-1 px-2">
                 <div className="hidden lg:block lg:w-1/4  mt-auto">
                     <p className="text-lg font-semibold text-center">Select Design</p>
                 </div>
                 <div className="flex-grow flex flex-col gap-2 ">
                     <div className="flex gap-4">
-                        <PrimaryButton Name="New" className="  h-12" />
-                        <PrimaryButton Name="Upload" className="  h-12" />
+                        <PrimaryButton Name="New" className="  h-12" onClick={() => nav('/home')} />
+                        <Avatar className=''>
+                            <div className="avatar-upload mx-auto">
+                                <div className="avatar-edit">
+                                    <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" onChange={(e)=> SetImageUpload(e)} />
+                                    <label htmlFor="imageUpload" >
+                                        Upload Image
+                                    </label>
+                                </div>
+
+                            </div>
+                        </Avatar>
                         <PrimaryButton Name="Edit" className="  h-12" />
                         {/* {!UserData && (
                             <p className="text-sm text-red-500">No Date to create Resume! Click here to <span onClick={() => nav('/createdata')} className="text-gray-600 hover:text-black transition-all cursor-pointer">Create Data</span> </p>
@@ -88,13 +103,13 @@ const GenerateResume = (props) => {
                         {ImageIndex === 3 && (
                             <Resume_4 printref={printref} UserData={UserData} />
                         )}
-                         {ImageIndex === 4 && (
+                        {ImageIndex === 4 && (
                             <Resume_5 printref={printref} UserData={UserData} />
                         )}
                         {ImageIndex === 5 && (
                             <Resume_6 printref={printref} UserData={UserData} />
                         )}
-                         {ImageIndex === 6 && (
+                        {ImageIndex === 6 && (
                             <Resume_7 printref={printref} UserData={UserData} />
                         )}
                         {ImageIndex === 7 && (
@@ -112,3 +127,49 @@ const GenerateResume = (props) => {
 export default GenerateResume
 
 
+const Avatar = styled.div`
+.avatar-upload {
+  position: relative;
+ 
+
+}
+
+.avatar-upload .avatar-edit input {
+  display: none;
+}
+.avatar-upload .avatar-edit input + label {
+    align-items: center;
+    background: #f5f5fa;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: -10px -10px 30px 0 #fff,10px 10px 30px 0 #1d0dca17;
+    box-sizing: border-box;
+    color: #2a1f62;
+    cursor: pointer;
+    display: flex; 
+    font-size: 1rem;
+    justify-content: center;
+    line-height: 1.5rem;
+    padding: 12px;
+    position: relative;
+    text-align: left;
+    transition: .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: pre;
+    word-break: normal;
+    word-spacing: normal;
+    
+    &:hover {
+      background: #f8f8ff;
+      box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+    }
+  
+  
+}
+.avatar-upload .avatar-edit input + label:hover {
+    background: #f8f8ff;
+    box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+}
+`
