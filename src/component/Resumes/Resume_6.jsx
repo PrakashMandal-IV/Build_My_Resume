@@ -13,7 +13,13 @@ function Resume_6(props) {
 
 
     }, [])
-
+    useEffect(()=>{
+    
+        if (props.UserData) {
+            SetInformation({ ...props.UserData })
+        } 
+       },[props.UserData])
+    
 
     return (<>
         {Information && (

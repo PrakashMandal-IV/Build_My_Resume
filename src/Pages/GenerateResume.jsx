@@ -45,7 +45,7 @@ const GenerateResume = (props) => {
     });
 
     const SetImageUpload = (event) => {
-      debugger
+     
         if (UserData) {
             var img = URL.createObjectURL(event.target.files[0])
             UserData.PersonalData.ProfilePic = img

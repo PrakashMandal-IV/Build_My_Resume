@@ -14,7 +14,13 @@ function Resume_3(props) {
 
     }, [])
 
-
+    useEffect(()=>{
+    
+        if (props.UserData) {
+            SetInformation({ ...props.UserData })
+        } 
+       },[props.UserData])
+    
     return (<>
         {Information && (
             <div id="printable-area" ref={props.printref} className="body bg-white border flex flex-col " size="A4">
