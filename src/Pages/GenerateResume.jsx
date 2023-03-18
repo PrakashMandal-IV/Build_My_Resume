@@ -45,10 +45,10 @@ const GenerateResume = (props) => {
     });
     
    const SetImageUpload=(event)=>{
-    if(UserData){
-        UserData.PersonalData.ProfilePic= URL.createObjectURL(event.target.files[0])
-    }
-    
+   
+      var img=   URL.createObjectURL(event.target.files[0])
+      UserData.PersonalData.ProfilePic = img
+      SetUserData({ ... UserData })
    }
     return (<>
         <div className="mt-32 lg:mt-14" id="print_button" >
