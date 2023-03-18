@@ -7,7 +7,6 @@ import Resume_5 from "../Assets/ResumePrevews/Resume_5.jpg"
 import Resume_6 from "../Assets/ResumePrevews/Resume_6.jpg"
 import Resume_7 from "../Assets/ResumePrevews/Resume_7.jpg"
 import Resume_8 from "../Assets/ResumePrevews/Resume_8.jpg"
-import Resume_9 from "../Assets/ResumePrevews/Resume_9.jpg"
 const PreviewList = (props) => {
     const [List, SetList] = useState([
         {
@@ -49,11 +48,6 @@ const PreviewList = (props) => {
             img: Resume_8,
             name: "Image Name",
             Id:7
-        },
-        {
-            img: Resume_9,
-            name: "Image Name",
-            Id:8
         }
     ])
 

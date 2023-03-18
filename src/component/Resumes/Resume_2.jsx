@@ -15,7 +15,7 @@ function Resume_2(props) {
 
     }, [])
    useEffect(()=>{
-    debugger
+    
     if (props.UserData) {
         SetInformation({ ...props.UserData })
     } 

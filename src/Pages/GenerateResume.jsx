@@ -43,13 +43,15 @@ const GenerateResume = (props) => {
         content: () => printref.current,
         documentTitle: "MyResume"
     });
-    
-   const SetImageUpload=(event)=>{
-   
-      var img=   URL.createObjectURL(event.target.files[0])
-      UserData.PersonalData.ProfilePic = img
-      SetUserData({ ... UserData })
-   }
+
+    const SetImageUpload = (event) => {
+      debugger
+        if (UserData) {
+            var img = URL.createObjectURL(event.target.files[0])
+            UserData.PersonalData.ProfilePic = img
+            SetUserData({ ...UserData })
+        }
+    }
     return (<>
         <div className="mt-32 lg:mt-14" id="print_button" >
             <div className="flex p-1 px-2">
@@ -62,15 +64,14 @@ const GenerateResume = (props) => {
                         <Avatar className=''>
                             <div className="avatar-upload mx-auto">
                                 <div className="avatar-edit">
-                                    <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" onChange={(e)=> SetImageUpload(e)} />
+                                    <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" onChange={(e) => SetImageUpload(e)} />
                                     <label htmlFor="imageUpload" >
                                         Upload Image
                                     </label>
                                 </div>
-
                             </div>
                         </Avatar>
-                        <PrimaryButton Name="Edit" className="  h-12" />
+                        {/* <PrimaryButton Name="Edit" className="  h-12" /> */}
                         {/* {!UserData && (
                             <p className="text-sm text-red-500">No Date to create Resume! Click here to <span onClick={() => nav('/createdata')} className="text-gray-600 hover:text-black transition-all cursor-pointer">Create Data</span> </p>
                         )} */}
