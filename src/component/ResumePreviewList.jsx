@@ -11,42 +11,42 @@ const PreviewList = (props) => {
     const [List, SetList] = useState([
         {
             img: Resume_1,
-            name: "Image Name",
+            name: "Minimal Design 1",
             Id:0
         },
         {
             img: Resume_2,
-            name: "Image Name",
+            name: "Styled Design 1",
             Id:1
         },
         {
             img: Resume_3,
-            name: "Image Name",
+            name: "Styled Design 2",
             Id:2
         },
         {
             img: Resume_4,
-            name: "Image Name",
+            name: "Styled Design 3",
             Id:3
         },
         {
             img: Resume_5,
-            name: "Image Name",
+            name: "Minimal Detailed Design",
             Id:4
         },
         {
             img: Resume_6,
-            name: "Image Name",
+            name: "Styled Details Design 1",
             Id:5
         },
         {
             img: Resume_7,
-            name: "Image Name",
+            name: "Styled Details Design 2",
             Id:6
         },
         {
             img: Resume_8,
-            name: "Image Name",
+            name: "Styled Details Design 3",
             Id:7
         }
     ])
