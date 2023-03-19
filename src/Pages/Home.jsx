@@ -50,8 +50,9 @@ const Home = () => {
     SetChangeLink(false)
     SetHomePage('translate-x-full')
     SetHomePageContent('-translate-x-[200%]')
+    localStorage.setItem('Name',UserName)
     setTimeout(() => {
-      nav("/createdata?Name=" + UserName)
+      nav("/createdata")
     }, 200);
     
 

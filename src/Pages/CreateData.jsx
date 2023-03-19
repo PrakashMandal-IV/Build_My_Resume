@@ -12,7 +12,7 @@ const CreateData = (props) => {
     const [SideBoard, SetSideBaord] = useState(false)
     const [DataSaved, SetSavedData] = useState(false)
     useEffect(() => {
-        SetUserName(searchParams.get('Name'))
+        SetUserName(localStorage.getItem('Name'))
         setTimeout(() => {
             SetScale('')
         }, 200);
@@ -170,7 +170,8 @@ const CreateData = (props) => {
         var TempData = {
             Job: AddExperience.Job,
             Company: AddExperience.Company,
-            Duration: AddExperience.Duration
+            Duration: AddExperience.Duration,
+            Details:AddExperience.Details
         }
         if (type === 'job') {
             TempData.Job = value
@@ -178,6 +179,9 @@ const CreateData = (props) => {
             TempData.Company = value
         } else if (type === 'duration') {
             TempData.Duration = value
+        }
+        else if (type === 'details') {
+            TempData.Details = value
         }
         SetAddExperience(TempData)
     }
@@ -493,7 +497,7 @@ const CreateData = (props) => {
                                 <InputBox placeholder="Job" className="h-10" value={AddExperience.Job} onChange={(e) => AddExperienceHandler("job", e.target.value)} />
                                 <InputBox placeholder="Company" className="h-10" value={AddExperience.Company} onChange={(e) => AddExperienceHandler("company", e.target.value)} />
                                 <InputBox placeholder="From-to (eg :2015-2020,2018-Present)" className="h-10" value={AddExperience.Duration} onChange={(e) => AddExperienceHandler("duration", e.target.value)} />
-                                <textarea placeholder="Discribe your Experience" maxLength={350} style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} className="p-2 mx-auto rounded-md h-36 w-96 outline-none bg-[#f5f5fa]" value={AboutMe} onChange={(e) => SetAboutMe(e.target.value)} />
+                                <textarea placeholder="Discribe your Experience" maxLength={350} style={{ boxShadow: "-10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17" }} className="p-2 mx-auto rounded-md h-36 w-96 outline-none bg-[#f5f5fa]" value={AddExperience.Details} onChange={(e) => AddExperienceHandler("details", e.target.value)} />
 
                                 <PrimaryButton onClick={() => SetAddedExperience()} Name="Add" className="h-10 w-full transition-all mt-5" />
 
@@ -579,7 +583,7 @@ const CreateData = (props) => {
                             {/* Left div that appears when SideBoard is true */}
 
                             <div className={"transition-all transform  flex flex-col gap-2 " + (SideBoard ? "w-1/2" : "hidden w-0")}>
-                                <InputBox placeholder="Hobby" className="h-10" value={Certificates} onChange={(e) => SetCertificates(e.target.value)} />
+                                <InputBox placeholder="Certificates" className="h-10" value={Certificates} onChange={(e) => SetCertificates(e.target.value)} />
 
                                 <PrimaryButton onClick={() => SetCertificate()} Name="Add" className="h-10 w-full transition-all mt-5" />
 
