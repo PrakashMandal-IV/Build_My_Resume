@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Build_My_Resume/static/css/main.326832ab.css",
-    "main.js": "/Build_My_Resume/static/js/main.8f5b7f7f.js",
+    "main.js": "/Build_My_Resume/static/js/main.a8adbe93.js",
     "static/js/787.c123bd52.chunk.js": "/Build_My_Resume/static/js/787.c123bd52.chunk.js",
     "static/media/Resume_7.jpg": "/Build_My_Resume/static/media/Resume_7.ed5df2c2fea3705d831b.jpg",
     "static/media/Resume_6.jpg": "/Build_My_Resume/static/media/Resume_6.393ca835d5d8995899ae.jpg",
@@ -9,16 +9,16 @@
     "static/media/Resume_8.jpg": "/Build_My_Resume/static/media/Resume_8.ecfc47f7af5209bad384.jpg",
     "static/media/Resume_5.jpg": "/Build_My_Resume/static/media/Resume_5.c575d1a994afaf934684.jpg",
     "static/media/Resume_3.jpg": "/Build_My_Resume/static/media/Resume_3.fb6d6196739338da031e.jpg",
-    "static/media/Resume_2.jpg": "/Build_My_Resume/static/media/Resume_2.8add227d3adca545e7df.jpg",
     "static/media/HomepageBG.png": "/Build_My_Resume/static/media/HomepageBG.46d397cda67c9b35a15c.png",
+    "static/media/Resume_2.jpg": "/Build_My_Resume/static/media/Resume_2.73b2dbc61d5f2024c7d0.jpg",
     "static/media/Resume_1.jpg": "/Build_My_Resume/static/media/Resume_1.fde1f568e74bfb5edcb1.jpg",
     "index.html": "/Build_My_Resume/index.html",
     "main.326832ab.css.map": "/Build_My_Resume/static/css/main.326832ab.css.map",
-    "main.8f5b7f7f.js.map": "/Build_My_Resume/static/js/main.8f5b7f7f.js.map",
+    "main.a8adbe93.js.map": "/Build_My_Resume/static/js/main.a8adbe93.js.map",
     "787.c123bd52.chunk.js.map": "/Build_My_Resume/static/js/787.c123bd52.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.326832ab.css",
-    "static/js/main.8f5b7f7f.js"
+    "static/js/main.a8adbe93.js"
   ]
 }
