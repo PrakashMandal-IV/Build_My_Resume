@@ -37,7 +37,7 @@ const StartBuilding=()=>{
                 <div className="m-auto flex flex-col gap-5">
 
                     <PrimaryButton Name={"Start Building"} className="mx-auto" onClick={()=>StartBuilding()} />
-                    <PrimaryButton Name={"View Templates"} />
+                    {/* <PrimaryButton Name={"View Templates"} /> */}
                 </div>
             </div>
         </div>
