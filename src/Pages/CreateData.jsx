@@ -636,7 +636,7 @@ const CreateData = (props) => {
             </div>
             {!DataSaved && (<div className="mx-auto mt-auto flex gap-20 mb-10">
                 {Form !== 0 && (<PrimaryButton Name="Back" onClick={() => BackClick()} className="w-36" />)}
-                {Form === FinalFormNumber ? <PrimaryButton Name="Select Resume Templates" onClick={() => CreateData()} className=" transition-all" /> : <PrimaryButton Name="Next" onClick={() => NextClick()} className="w-36 transition-all" />}
+                {Form === FinalFormNumber ? <PrimaryButton Name="Finish" onClick={() => CreateData()} className=" transition-all" /> : <PrimaryButton Name="Next" onClick={() => NextClick()} className="w-36 transition-all" />}
 
             </div>)}
 

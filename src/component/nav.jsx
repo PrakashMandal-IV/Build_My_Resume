@@ -26,10 +26,10 @@ const Nav = () => {
     <div className={`fixed top-0 w-full flex-col md:flex-row flex gap-2  md:gap-20 p-2 max-h-28 lg:max-h-20 transition-all  ${navVisible ? '' : ' -translate-y-[200px]  '}`}>
       <Logo className="h-10 md:h-12 ml-0" />
       <div className="flex gap-7 lg:gap-20 justify-center ">
-        <div className=" text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all" onClick={() => nav('home')}>
+        <div className=" text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all" onClick={() => nav('/home')}>
           <p className="my-auto" >Home</p>
         </div>
-        <div className="text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all" onClick={() => nav('home?ScrollTo=Designs')}>
+        <div className="text-lg flex justify-center align-middle cursor-pointer hover:text-blue-600 transition-all" onClick={() => nav('/home?ScrollTo=Designs')}>
 
           <p className="my-auto"  >Designs</p>
 
