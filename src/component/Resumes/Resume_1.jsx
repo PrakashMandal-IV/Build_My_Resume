@@ -59,7 +59,7 @@ function Resume_1(props) {
           {/* Left */}
           <div className="" style={{ width: "40%", display: "flex", flexDirection: "column", gap: "20px" }}>
             {/* Education */}
-            <div className="">
+           {Information?.Education?.length!==0&&( <div className="">
               <p className="titles text-xl">Education</p>
               <div className="left-items" style={{ marginLeft: "12px" }}>
                 {Information?.Education?.map((item, idx) => {
@@ -72,8 +72,8 @@ function Resume_1(props) {
                   </div>)
                 })}
               </div>
-            </div>
-            <div className="">
+            </div>)}
+            {Information?.Skills?.lenght!==0&&(<div className="">
               <p className="titles text-xl">Skills</p>
               <div className="left-items" style={{ marginLeft: "12px" }}>
                 {Information?.Skills?.map((item, idx) => {
@@ -102,8 +102,8 @@ function Resume_1(props) {
                   );
                 })}
               </div>
-            </div>
-            <div className="">
+            </div>)}
+          {Information?.Hobbies?.lenght!==0&&(  <div className="">
               <p className="titles text-xl">Hobbies</p>
               <div className="left-items" style={{ marginLeft: "12px" }} >
                 {Information?.Hobbies?.map((item, idx) => {
@@ -115,8 +115,8 @@ function Resume_1(props) {
                   </div>)
                 })}
               </div>
-            </div>
-            <div className="" style={{ marginTop: "auto" }}>
+            </div>)}
+           {Information?.Socials?.lenght!==0&&( <div className="" style={{ marginTop: "auto" }}>
               <p className="titles">Socials</p>
               <div className="left-items" style={{ marginLeft: "12px", display: "flex", gap: "10px" }}>
                 {Information?.Socials?.map((item, idx) => {
@@ -166,7 +166,7 @@ function Resume_1(props) {
                   </div>)
                 })}
               </div>
-            </div>
+            </div>)}
           </div>
           <div className="" style={{ width: "40%", display: "flex", flexDirection: "column", gap: "20px", flexGrow: "1" }}>
             {/* Section 1 */}
@@ -178,7 +178,7 @@ function Resume_1(props) {
             </div>
             {/* Section 2 */}
             <div className="" style={{ display: "flex", gap: "10px" }}>
-              <div className="" style={{ flexGrow: "1" }}>
+              {Information?.Experience?.lenght!==0&&(<div className="" style={{ flexGrow: "1" }}>
                 <p className="mainPagetitle text-xl">Experience</p>
                 <div className="left-items mt-2" style={{ marginLeft: "12px" }}>
                   {Information?.Experience?.map((item, idx) => {
@@ -193,8 +193,8 @@ function Resume_1(props) {
                     </div>)
                   })}
                 </div>
-              </div>
-              <div className="" style={{ flexGrow: "1" }}>
+              </div>)}
+              {Information?.Certificates?.lenght!==0&&(<div className="" style={{ flexGrow: "1" }}>
                 <p className="mainPagetitle  text-xl">Cretificates</p>
                 <div className="left-items mt-2" style={{ marginLeft: "12px" }}>
                   {Information?.Certificates?.map((item, idx) => {
@@ -207,10 +207,10 @@ function Resume_1(props) {
                       </div>)
                   })}
                 </div>
-              </div>
+              </div>)}
             </div>
             {/* Section 2 */}
-            <div className="">
+            {Information?.Projects?.lenght!==0&&(<div className="">
               <div className="" style={{ display: "flex" }}>
                 <p className="mainPagetitle">Projects</p>
                 <a href="" className="" style={{ marginLeft: "auto", fontSize: "12px", marginTop: "auto" }}>See more&gt;&gt; </a>
@@ -224,7 +224,7 @@ function Resume_1(props) {
                   </a>
                 ))}
               </div>
-            </div>
+            </div>)}
           </div>
         </div>
       </div>
