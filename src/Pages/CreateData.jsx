@@ -609,6 +609,8 @@ const CreateData = (props) => {
                                         <option value="Linkedin">Linkdn</option>
                                         <option value="Instagram">Instagram</option>
                                         <option value="Github">Github</option>
+                                        <option value="Twitter">Twitter</option>
+                                        <option value="Facebook">Facebook</option>
                                     </select>
                                     <input placeholder="Link" className="p-2 bg-transparent outline-none flex-grow" value={Socials.Link} onChange={(e) => SetNewSocial("link", e.target.value)} />
                                 </div>
