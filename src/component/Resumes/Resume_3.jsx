@@ -14,13 +14,13 @@ function Resume_3(props) {
 
     }, [])
 
-    useEffect(()=>{
-    
+    useEffect(() => {
+
         if (props.UserData) {
             SetInformation({ ...props.UserData })
-        } 
-       },[props.UserData])
-    
+        }
+    }, [props.UserData])
+
     return (<>
         {Information && (
             <div id="printable-area" ref={props.printref} className="body bg-white border flex flex-col " size="A4">
@@ -34,7 +34,7 @@ function Resume_3(props) {
                         <div className="border-b-2 border-black my-auto py-4 ">
                             <p className="text-3xl font-light">{Information?.PersonalData?.FirstName}</p>
                             <p className="text-3xl font-light">{Information?.PersonalData?.LastName}</p>
-                           {Information?.Socials?.lenght!==0&&( <div className="flex  mt-2">
+                            {Information?.Socials?.length !== 0 && (<div className="flex  mt-2">
                                 <p className="text-xl font-light">{Information?.PersonalData?.Profession}</p>
                                 <div className="ml-auto  flex gap-2 my-auto">
                                     {Information?.Socials?.map((item, idx) => {
@@ -132,7 +132,7 @@ function Resume_3(props) {
                             </div>
                         </div>
                         {/* Section 2 */}
-                       {Information?.Skills?.lenght!==0&&( <div className="flex flex-col gap-8 mt-10">
+                        {Information?.Skills?.length !== 0 && (<div className="flex flex-col gap-8 mt-10">
                             <div className=" mx-auto bg-black w-40 ">
                                 <p className="text-white text-center font-light text-xl ">SKILLS</p>
                             </div>
@@ -150,7 +150,7 @@ function Resume_3(props) {
 
                             </div>
                         </div>)}
-                        {Information?.Hobbies?.lenght!==0&&(<div className="flex flex-col gap-8 mt-10">
+                        {Information?.Hobbies?.length !== 0 && (<div className="flex flex-col gap-8 mt-10">
                             <div className=" mx-auto bg-black w-40 ">
                                 <p className="text-white text-center font-light text-xl ">Hobbies</p>
                             </div>
@@ -168,7 +168,7 @@ function Resume_3(props) {
                     <div className="w-2 h-3/5 rounded-md my-auto bg-black"></div>
                     {/* Right */}
                     <div className="flex-grow flex">
-                        
+
 
                         <div className="flex-grow flex flex-col gap-5  mt-10">
                             {/* about */}
@@ -178,7 +178,7 @@ function Resume_3(props) {
                                     {Information?.PersonalData?.AboutMe}
                                 </p>
                             </div>
-                            <div className="flex flex-col gap-4">
+                           {Information?.Education?.length!==0&&( <div className="flex flex-col gap-4">
                                 <div className="flex gap-5">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
@@ -203,8 +203,8 @@ function Resume_3(props) {
                                         </div>
                                     ))}
                                 </div>
-                            </div>
-                            <div className="flex flex-col gap-4">
+                            </div>)}
+                           {Information?.Experience?.length!==0&&( <div className="flex flex-col gap-4">
                                 <div className="flex gap-5">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
@@ -230,8 +230,8 @@ function Resume_3(props) {
                                         </div>
                                     ))}
                                 </div>
-                            </div>
-                            <div className="flex flex-col gap-4">
+                            </div>)}
+                            {Information?.Projects?.length!==0&&(<div className="flex flex-col gap-4">
                                 <div className="flex gap-5">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
@@ -257,7 +257,7 @@ function Resume_3(props) {
                                         </div>
                                     ))}
                                 </div>
-                            </div>
+                            </div>)}
                         </div>
 
                     </div>

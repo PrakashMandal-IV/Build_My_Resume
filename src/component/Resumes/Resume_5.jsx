@@ -39,7 +39,7 @@ function Resume_5(props) {
                                 <p className="text-xs font-light">{Information?.PersonalData?.Contact?.Phone}</p>
                                 <p className="text-xs font-light">{Information?.PersonalData?.Contact?.Location}</p>
                             </div>
-                           {Information?.Skills.lenght!==0&&( <div className="flex ">
+                           {Information?.Skills.length!==0&&( <div className="flex ">
                                 <div className=" bg-gray-50  mr-auto flex ml-5 translate-y-[50%] px-2 gap-2">
                                     {Information?.Socials?.map((item, idx) => {
                                         return (<div className="" key={idx}>
@@ -104,7 +104,7 @@ function Resume_5(props) {
 
                     <div className="mt-4 flex">
                         <div className="w-1/2 flex flex-col gap-5">
-                            <div className="flex flex-col gap-3">
+                            {Information?.Experience?.length!==0&&(<div className="flex flex-col gap-3">
                                 <div className="text-lg font-medium border-b border-gray-400 ">Experience</div>
                                 {Information?.Experience?.slice(0, 5).map((item, idx) => (
                                     <div className="" key={idx}>
@@ -113,8 +113,8 @@ function Resume_5(props) {
                                         <p className="text-xs text-light ">{item.Details}</p>
                                     </div>
                                 ))}
-                            </div>
-                           {Information?.Projects?.lenght!==0&&( <div className="flex flex-col gap-2">
+                            </div>)}
+                           {Information?.Projects?.length!==0&&( <div className="flex flex-col gap-2">
                                 <div className="text-lg font-medium border-b border-gray-400 ">Projects</div>
                                 {Information?.Projects?.slice(0, 5).map((item, idx) => {
                                     if (item.Link === "") {
@@ -132,7 +132,7 @@ function Resume_5(props) {
                             </div>)}
                         </div>
                         <div className="flex-grow ml-20 flex flex-col gap-5 ">
-                            {Information?.Education?.lenght!==0&&(<div className="flex flex-col gap-2">
+                            {Information?.Education?.length!==0&&(<div className="flex flex-col gap-2">
                                 <div className="text-lg font-medium border-b border-gray-400 ">Education</div>
                                 {Information?.Education?.slice(0, 5).map((item, idx) => (
                                     <div className="" key={idx}>
@@ -142,7 +142,7 @@ function Resume_5(props) {
                                     </div>
                                 ))}
                             </div>)}
-                          {Information?.Skills?.lenght!==0&&(  <div className="flex flex-col gap-2">
+                          {Information?.Skills?.length!==0&&(  <div className="flex flex-col gap-2">
                                 <div className="text-lg font-medium border-b border-gray-400 ">Skills</div>
                                 {Information?.Skills?.slice(0, 8).map((item, idx) => (
                                     <div className="" key={idx}>
@@ -150,7 +150,7 @@ function Resume_5(props) {
                                     </div>
                                 ))}
                             </div>)}
-                           {Information?.Certificates?.lenght!==0&&( <div className="flex flex-col gap-2">
+                           {Information?.Certificates?.length!==0&&( <div className="flex flex-col gap-2">
                                 <div className="text-lg font-medium border-b border-gray-400 ">Certificates & Achievments</div>
                                 {Information?.Certificates?.slice(0, 8).map((item, idx) => (
                                     <div className="" key={idx}>

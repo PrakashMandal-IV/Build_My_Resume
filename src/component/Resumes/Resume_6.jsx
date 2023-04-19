@@ -78,7 +78,7 @@ function Resume_6(props) {
                             </div>
 
                         </div>
-                        {Information?.Education?.lenght!==0&&(<div className="flex flex-col gap-4">
+                        {Information?.Education?.length!==0&&(<div className="flex flex-col gap-4">
                             <p className="border-b-2  text-white text-2xl">EDUCATION</p>
                             <div className="flex flex-col gap-1 text-white">
                                 {Information?.Education?.slice(0, 8).map((item, idx) => (
@@ -91,7 +91,7 @@ function Resume_6(props) {
                             </div>
 
                         </div>)}
-                       {Information?.Skills?.lenght!==0&&( <div className="flex flex-col gap-4">
+                       {Information?.Skills?.length!==0&&( <div className="flex flex-col gap-4">
                             <p className="border-b-2  text-white text-2xl">SKILLS</p>
                             <div className="flex flex-col gap-1 text-white">
                                 {Information?.Skills?.slice(0, 8).map((item, idx) => (
@@ -103,7 +103,7 @@ function Resume_6(props) {
                             </div>
 
                         </div>)}
-                        {Information?.Skills?.lenght!==0&&(<div className="flex flex-col gap-4">
+                        {Information?.Skills?.length!==0&&(<div className="flex flex-col gap-4">
                             <p className="border-b-2  text-white text-2xl">SOCIALS</p>
                             <div className="flex gap-1 text-white">
                             {Information?.Socials?.map((item, idx) => {
@@ -164,7 +164,7 @@ function Resume_6(props) {
                             <p className="text-lg  ">{Information?.PersonalData?.Profession.toUpperCase()} </p>
                             <p className="text-xs mt-4">{Information?.PersonalData?.AboutMe}</p>
                         </div>
-                       {Information?.Experience?.lenght!==0&&( <div className="mt-10 flex flex-col">
+                       {Information?.Experience?.length!==0&&( <div className="mt-10 flex flex-col">
                             <p className="border-b border-[#333a4c] text-lg font-medium ">WORK EXPERIENCE</p>
                             <div className="mt-4">
                                 {Information?.Experience?.slice(0, 4).map((item, idx) => (
@@ -183,7 +183,7 @@ function Resume_6(props) {
                             </div>
 
                         </div>)}
-                       {Information?.Projects?.lenght!==0&&( <div className="mt-10 flex flex-col gap-2">
+                       {Information?.Projects?.length!==0&&( <div className="mt-10 flex flex-col gap-2">
                             <p className="border-b border-[#333a4c] text-lg font-medium ">PROJECTS</p>
                             {Information?.Projects?.slice(0, 5).map((item, idx) => {
                                 if (item.Link === "") {

@@ -36,7 +36,7 @@ function Resume_8(props) {
                                 </div>
                             </div>
 
-                           {Information?.Education?.lenght!==0&&( <div className="flex flex-col">
+                           {Information?.Education?.length!==0&&( <div className="flex flex-col">
 
                                 <p className=" bg-pink-300 w-52 text-center text-slate-700 font-semibold text-xl  rounded-full">EDUCATION</p>
                                 <div className="flex flex-col gap-2 mt-3 pl-4">
@@ -50,7 +50,7 @@ function Resume_8(props) {
                                 </div>
 
                             </div>)}
-                           {Information?.Skills?.lenght!==0&&( <div className="flex flex-col">
+                           {Information?.Skills?.length!==0&&( <div className="flex flex-col">
 
                                 <p className=" bg-pink-300 w-52 text-center text-slate-700 font-semibold text-xl  rounded-full">SKILLS</p>
                                 <div className="flex flex-col gap-2 mt-3 px-4">
@@ -78,7 +78,7 @@ function Resume_8(props) {
                                 <p className="my-4">{Information?.PersonalData?.Profession}</p>
                                 <p className="text-[.75rem] font-light ">{Information?.PersonalData?.AboutMe}</p>
                             </div>
-                           {Information?.Experience?.lenght!==0&&( <div className="flex flex-col">
+                           {Information?.Experience?.length!==0&&( <div className="flex flex-col">
 
                                 <p className=" bg-pink-300 w-52 text-center text-slate-700 font-semibold text-xl  rounded-full">EXPERIENCE</p>
                                 <div className="flex flex-col gap-2 mt-3 px-4">
@@ -92,7 +92,7 @@ function Resume_8(props) {
                                 </div>
 
                             </div>)}
-                           {Information?.Projects?.lenght!==0&&( <div className="flex flex-col">
+                           {Information?.Projects?.length!==0&&( <div className="flex flex-col">
 
                                 <p className=" bg-pink-300 w-52 text-center text-slate-700 font-semibold text-xl  rounded-full">PROJECTS</p>
                                 <div className="flex flex-col gap-2 mt-3 px-4">
