@@ -82,7 +82,7 @@ function Resume_7(props) {
                                     </div>
                                 )}
                             </div>
-                            <div className="flex flex-col gap-4">
+                           {Information?.Socials?.lenght!==0&&( <div className="flex flex-col gap-4">
                                 <div className="flex gap-3 text-white ml-auto">
                                     {Information?.Socials?.map((item, idx) => {
                                         return (<div className="flex gap-2" key={idx}>
@@ -134,7 +134,7 @@ function Resume_7(props) {
                                     })}
                                 </div>
 
-                            </div>
+                            </div>)}
                         </div>
 
 
@@ -143,7 +143,7 @@ function Resume_7(props) {
                         </div>
                     </div>
                     <div className="w-1/2  bg-[#d32a2d] pl-10 flex flex-col gap-5">
-                        <div className="flex flex-col mt-10">
+                       {Information?.Experience?.lenght!==0&&( <div className="flex flex-col mt-10">
                             <div className="flex">
                                 <p className="text-3xl font-semibold text-gray-300  ">EXPERIENCE</p>
                                 <div className="flex-grow ml-2 my-1 bg-red-400">
@@ -165,8 +165,8 @@ function Resume_7(props) {
                                     </div>
                                 ))}
                             </div>
-                        </div>
-                        <div className="flex flex-col mt-10">
+                        </div>)}
+                       {Information?.Education?.lenght!==0&&( <div className="flex flex-col mt-10">
                             <div className="flex">
                                 <p className="text-3xl font-semibold text-gray-300  ">EDUCATION</p>
                                 <div className="flex-grow ml-2 my-1 bg-red-400">
@@ -187,8 +187,8 @@ function Resume_7(props) {
                                 ))}
                             </div>
 
-                        </div>
-                        <div className="flex flex-col mt-10">
+                        </div>)}
+                        {Information?.Skills.lenght!==0&&(<div className="flex flex-col mt-10">
                             <div className="flex">
                                 <p className="text-3xl font-semibold text-gray-300  ">SKILLS</p>
                                 <div className="flex-grow ml-2 my-1 bg-red-400">
@@ -206,8 +206,8 @@ function Resume_7(props) {
                                 ))}
                             </div>
 
-                        </div>
-                        <div className=" ">
+                        </div>)}
+                       {Information?.Hobbies?.lenght!==0&&( <div className=" ">
                             <div className="mt-5 flex flex-col gap-1">
                                 <div className="flex">
                                     <p className="text-3xl font-semibold text-gray-300  ">HOBBIES</p>
@@ -224,7 +224,7 @@ function Resume_7(props) {
                                 </div>
                             </div>
 
-                        </div>
+                        </div>)}
                     </div>
                 </div>
             </div>

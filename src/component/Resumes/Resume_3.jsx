@@ -34,7 +34,7 @@ function Resume_3(props) {
                         <div className="border-b-2 border-black my-auto py-4 ">
                             <p className="text-3xl font-light">{Information?.PersonalData?.FirstName}</p>
                             <p className="text-3xl font-light">{Information?.PersonalData?.LastName}</p>
-                            <div className="flex  mt-2">
+                           {Information?.Socials?.lenght!==0&&( <div className="flex  mt-2">
                                 <p className="text-xl font-light">{Information?.PersonalData?.Profession}</p>
                                 <div className="ml-auto  flex gap-2 my-auto">
                                     {Information?.Socials?.map((item, idx) => {
@@ -84,7 +84,7 @@ function Resume_3(props) {
                                         </div>)
                                     })}
                                 </div>
-                            </div>
+                            </div>)}
                         </div>
                     </div>
                 </div>
@@ -132,7 +132,7 @@ function Resume_3(props) {
                             </div>
                         </div>
                         {/* Section 2 */}
-                        <div className="flex flex-col gap-8 mt-10">
+                       {Information?.Skills?.lenght!==0&&( <div className="flex flex-col gap-8 mt-10">
                             <div className=" mx-auto bg-black w-40 ">
                                 <p className="text-white text-center font-light text-xl ">SKILLS</p>
                             </div>
@@ -149,8 +149,8 @@ function Resume_3(props) {
                                 ))}
 
                             </div>
-                        </div>
-                        <div className="flex flex-col gap-8 mt-10">
+                        </div>)}
+                        {Information?.Hobbies?.lenght!==0&&(<div className="flex flex-col gap-8 mt-10">
                             <div className=" mx-auto bg-black w-40 ">
                                 <p className="text-white text-center font-light text-xl ">Hobbies</p>
                             </div>
@@ -162,7 +162,7 @@ function Resume_3(props) {
                                 ))}
 
                             </div>
-                        </div>
+                        </div>)}
                     </div>
                     {/* divider */}
                     <div className="w-2 h-3/5 rounded-md my-auto bg-black"></div>

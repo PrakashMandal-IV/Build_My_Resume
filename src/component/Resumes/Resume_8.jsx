@@ -36,7 +36,7 @@ function Resume_8(props) {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col">
+                           {Information?.Education?.lenght!==0&&( <div className="flex flex-col">
 
                                 <p className=" bg-pink-300 w-52 text-center text-slate-700 font-semibold text-xl  rounded-full">EDUCATION</p>
                                 <div className="flex flex-col gap-2 mt-3 pl-4">
@@ -49,8 +49,8 @@ function Resume_8(props) {
                                     ))}
                                 </div>
 
-                            </div>
-                            <div className="flex flex-col">
+                            </div>)}
+                           {Information?.Skills?.lenght!==0&&( <div className="flex flex-col">
 
                                 <p className=" bg-pink-300 w-52 text-center text-slate-700 font-semibold text-xl  rounded-full">SKILLS</p>
                                 <div className="flex flex-col gap-2 mt-3 px-4">
@@ -67,7 +67,7 @@ function Resume_8(props) {
                                     ))}
                                 </div>
 
-                            </div>
+                            </div>)}
                         </div>
                     </div>
                     <div className="w-1/2  flex">
@@ -78,7 +78,7 @@ function Resume_8(props) {
                                 <p className="my-4">{Information?.PersonalData?.Profession}</p>
                                 <p className="text-[.75rem] font-light ">{Information?.PersonalData?.AboutMe}</p>
                             </div>
-                            <div className="flex flex-col">
+                           {Information?.Experience?.lenght!==0&&( <div className="flex flex-col">
 
                                 <p className=" bg-pink-300 w-52 text-center text-slate-700 font-semibold text-xl  rounded-full">EXPERIENCE</p>
                                 <div className="flex flex-col gap-2 mt-3 px-4">
@@ -91,8 +91,8 @@ function Resume_8(props) {
                                     ))}
                                 </div>
 
-                            </div>
-                            <div className="flex flex-col">
+                            </div>)}
+                           {Information?.Projects?.lenght!==0&&( <div className="flex flex-col">
 
                                 <p className=" bg-pink-300 w-52 text-center text-slate-700 font-semibold text-xl  rounded-full">PROJECTS</p>
                                 <div className="flex flex-col gap-2 mt-3 px-4">
@@ -104,7 +104,7 @@ function Resume_8(props) {
                                     ))}
                                 </div>
 
-                            </div>
+                            </div>)}
                             <div className="flex flex-col">
 
                                 <p className=" bg-pink-300 w-52 text-center text-slate-700 font-semibold text-xl  rounded-full">CONTACTS</p>
