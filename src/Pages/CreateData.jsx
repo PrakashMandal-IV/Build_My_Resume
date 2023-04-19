@@ -192,7 +192,8 @@ const CreateData = (props) => {
         SetAddExperience({
             Job: "",
             Company: "",
-            Duration: ""
+            Duration: "",
+            Details:""
         })
 
     }
