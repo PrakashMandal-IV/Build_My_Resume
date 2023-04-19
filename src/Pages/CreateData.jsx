@@ -99,6 +99,8 @@ const CreateData = (props) => {
             ContactData.Email = value
         } else if (type === 'link') {
             ContactData.Link = value
+        }else if(type==="location"){
+            ContactData.Location= value
         }
         SetContacts(ContactData)
     }
@@ -332,7 +334,9 @@ const CreateData = (props) => {
                         <p className="text-lg font-semibold mt-5 mx-32">How to reach you?</p>
                         <InputBox placeholder="Number" value={Contacts.Number} onChange={(e) => AddContacts("number", e.target.value)} />
                         <InputBox placeholder="Email" value={Contacts.Email} onChange={(e) => AddContacts("email", e.target.value)} />
+                        <InputBox placeholder="Location" value={Contacts.Link} onChange={(e) => AddContacts("location", e.target.value)} />
                         <InputBox placeholder="Your Website" value={Contacts.Link} onChange={(e) => AddContacts("link", e.target.value)} />
+                        
                     </div>
                 </>)}
                 {Form === 3 && (<>
