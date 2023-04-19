@@ -25,7 +25,8 @@ const CreateData = (props) => {
     const [Contacts, SetContacts] = useState({
         Number: "",
         Email: "",
-        Link: ""
+        Link: "",
+        Location:""
     })
     const [Education, SetEducation] = useState([])
     const [AddEducation, SetAddEducation] = useState({
@@ -88,10 +89,12 @@ const CreateData = (props) => {
 
     }
     function AddContacts(type, value) {
+     
         var ContactData = {
             Number: Contacts.Number,
             Email: Contacts.Email,
-            Link: Contacts.Link
+            Link: Contacts.Link,
+            Location:  Contacts.Location
         }
         if (type === 'number') {
             ContactData.Number = value
@@ -289,7 +292,8 @@ const CreateData = (props) => {
                 Contact: {
                     Phone: Contacts.Number,
                     Email: Contacts.Email,
-                    Website: Contacts.Website
+                    Website: Contacts.Website,
+                    Location:Contacts.Location
                 }
             },
             Education: Education,
@@ -334,7 +338,7 @@ const CreateData = (props) => {
                         <p className="text-lg font-semibold mt-5 mx-32">How to reach you?</p>
                         <InputBox placeholder="Number" value={Contacts.Number} onChange={(e) => AddContacts("number", e.target.value)} />
                         <InputBox placeholder="Email" value={Contacts.Email} onChange={(e) => AddContacts("email", e.target.value)} />
-                        <InputBox placeholder="Location" value={Contacts.Link} onChange={(e) => AddContacts("location", e.target.value)} />
+                        <InputBox placeholder="Location" value={Contacts.Location} onChange={(e) => AddContacts("location", e.target.value)} />
                         <InputBox placeholder="Your Website" value={Contacts.Link} onChange={(e) => AddContacts("link", e.target.value)} />
                         
                     </div>

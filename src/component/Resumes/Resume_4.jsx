@@ -97,22 +97,22 @@ function Resume_4(props) {
                         <div className="mt-5 border-b w-20 ml-10"></div>
                         <div className="mt-5 ml-10">
                             <div className="" style={{ marginLeft: "10", marginRight: "25px", display: "flex", flexDirection: "column", gap: "4px" }}>
-                                <div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
+                                {Information?.PersonalData?.Contact.Phone!==""&&(<div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
                                     <p className="text-[.6rem]" style={{ fontWeight: "bold" }}>T : </p>
                                     <p className="text-[.6rem]" >{Information?.PersonalData?.Contact.Phone}</p>
-                                </div>
-                                <div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
+                                </div>)}
+                               { Information?.PersonalData?.Contact.Email!==""&&( <div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
                                     <p className="text-[.6rem]" style={{ fontWeight: "bold" }}>E : </p>
                                     <a href={"mailto:" + Information?.PersonalData?.Contact.Email} target="_blank" className="text-[.6rem]">{Information?.PersonalData?.Contact.Email}</a>
-                                </div>
-                                <div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
+                                </div>)}
+                                {Information?.PersonalData?.Contact.Website!==""&&(<div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
                                     <p className="text-[.6rem]" style={{ fontWeight: "bold" }}>W : </p>
                                     <a href={Information?.PersonalData?.Contact.Website} target="_blank" className="text-[.6rem]" >{Information?.PersonalData?.Contact.Website}</a>
-                                </div>
-                                <div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
+                                </div>)}
+                               {(Information?.PersonalData?.Contact.Website!==""||Information?.PersonalData?.Contact.Website)&&( <div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
                                     <p className="text-[.6rem]" style={{ fontWeight: "bold" }}>A : </p>
                                     <a href={Information?.PersonalData?.Contact.Website} target="_blank" className="text-[.6rem]" >{Information?.PersonalData?.Contact.Location}</a>
-                                </div>
+                                </div>)}
                             </div>
                         </div>
                         {Information?.Socials?.length!==0&&(<div className="ml-10 mt-3 flex gap-1">

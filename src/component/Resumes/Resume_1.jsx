@@ -6,6 +6,7 @@ function Resume_1(props) {
   const [Information, SetInformation] = useState(null)
   useEffect(() => {
     if (props.UserData) {
+     
       SetInformation({ ...props.UserData })
     } else {
       SetInformation(MyData)
@@ -35,18 +36,18 @@ function Resume_1(props) {
             </div>
             <div className="my-auto" style={{ flexGrow: "1", display: "flex", flexDirection: "column", gap: "2px" }}>
               <div className="" style={{ marginLeft: "auto", marginRight: "25px", display: "flex", flexDirection: "column", gap: "4px" }}>
-                <div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
+               {Information?.PersonalData?.Contact.Phone!==""&&( <div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
                   <p className="text-[.6rem]" style={{ fontWeight: "bold" }}>T : </p>
                   <p className="text-[.6rem]" >{Information?.PersonalData?.Contact.Phone}</p>
-                </div>
-                <div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
+                </div>)}
+                {Information?.PersonalData?.Contact?.Email!==""&&(<div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
                   <p className="text-[.6rem]" style={{ fontWeight: "bold" }}>M : </p>
                   <a href={"mailto:" + Information?.PersonalData?.Contact.Email} target="_blank" className="text-[.6rem]">{Information?.PersonalData?.Contact.Email}</a>
-                </div>
-                <div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
+                </div>)}
+               {Information?.PersonalData?.Contact?.Website!==""&&( <div className="" style={{ display: "flex", letterSpacing: "2px", gap: "3px" }}>
                   <p className="text-[.6rem]" style={{ fontWeight: "bold" }}>W : </p>
                   <a href={Information?.PersonalData?.Contact.Website} target="_blank" className="text-[.6rem]" >{Information?.PersonalData?.Contact.Website}</a>
-                </div>
+                </div>)}
               </div>
             </div>
           </div>
